@@ -1,9 +1,14 @@
-import BoardForm from "./components/BoardForm.js";
-import CardForm from './components/CardForm.js';
+import React from 'react';
+import BoardForm from "./components/BoardForm";
 
 function App() {
   return (
-    <div></div>
+    <div className="App">
+      <header className="app-headder">
+        <BoardForm />
+        
+        </header>
+      </div>
   );
 }
 
