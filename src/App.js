@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import BoardForm from "./components/BoardForm";
+import CardForm from './components/CardForm';
 
 function App() {
   const [boards, setBoards] = useState([]);
