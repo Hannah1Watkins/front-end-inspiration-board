@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CardForm = () => {
+const CardForm = ({createCardCallback}) => {
     const [formFields, setFormFields] = React.useState({
         message: '',
     });
@@ -11,11 +11,11 @@ const CardForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        
-    }
+        createCardCallback(formFields);
+    };
 
     return (
-        <form className="new_card_form">
+        <form className="new_card_form" onSubmit={handleSubmit}>
             <section>
                 <h2>Create A New Card: </h2>
                 <div className="new_card_fields">
@@ -30,7 +30,10 @@ const CardForm = () => {
                     <div>
                         <p>Preview:{formFields.message}</p>
                     </div>
-                    <button className="button new_card_submit" type="submit" value="add_card">Create Card</button>
+                    <button 
+                        className="button new_card_submit" 
+                        type="submit" 
+                        value="add_card">Create Card</button>
                 </div>
             </section>
         </form>

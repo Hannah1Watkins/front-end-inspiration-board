@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BoardForm = () => {
+const BoardForm = ({createBoardCallback}) => {
     const [formFields, setFormFields] = React.useState({
         title: '',
         owner: ''
@@ -9,8 +9,14 @@ const BoardForm = () => {
     const handleChange = (e) => {
         setFormFields({ ...formFields, [e.target.name] : e.target.value });
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        createBoardCallback(formFields);
+    };
+
     return (
-        <form className="new_board_form">
+        <form className="new_board_form" onSubmit={handleSubmit}>
             <section>
                 <h2>New Board: </h2>
                 <div className="new_board_fields">
