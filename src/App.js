@@ -2,17 +2,18 @@ import React, {useState} from 'react';
 import BoardForm from "./components/BoardForm";
 import CardForm from './components/CardForm';
 import axios from 'axios';
+import Card from './components/Card';
 
 function App() {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
   const [selectedBoard, setSelectedBoard] = useState(null);
 
-  // React.useEffect(() => {
-  //   axios.get('http://localhost:5000/cards').then((resp)=>{
-  //     setCards(resp.data);
-  //   });
-  // }, []);
+  React.useEffect(() => {
+    axios.get('http://localhost:5000/cards').then((resp)=>{
+      setCards(resp.data);
+    });
+  }, []);
 
   const deleteBoard = (boardId) => {
     setBoards(boards.filter((board) => board.id !== boardId));
@@ -75,10 +76,45 @@ function App() {
   return (
     <div className="App">
       <header className="app-header">
-        <CardForm createCardCallback={createCard}></CardForm>
-        <BoardForm createBoardCallback={createBoard}></BoardForm>
-        </header>
-      </div>
+        <h1>Inspiration Board</h1>
+        {/* Nav Component */}
+      </header>
+      <main>
+        {selectedBoard ? (
+          <>
+            <h2>{selectedBoard.title}</h2>
+            <button onClick={() => setSelectedBoard(null)}>Back to Boards</button>
+            <ul>
+              {selectedBoard.cards.map((card) => (
+                <Card
+                  key={card.id}
+                  card={card}
+                  deleteCard={() => deleteCard(card.id)}
+                />
+              ))}
+            </ul>
+            <CardForm createCardCallback={createCard} />
+          </>
+        ) : (
+          <>
+            <h2>Boards</h2>
+            <button onClick={() => setSelectedBoard({})}>Create New Board</button>
+            <ul>
+              {boards.map((board) => (
+                <li key={board.id}>
+                  <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
+                  <button onClick={() => deleteBoard(board.id)}>Delete</button>
+                </li>
+              ))}
+            </ul>
+            <BoardForm createBoardCallback={createBoard} />
+          </>
+        )}
+      </main>
+      <footer>
+        <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
+      </footer>
+    </div>
   );
 }
 
