@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import BoardForm from "./components/BoardForm";
 import CardForm from './components/CardForm';
+import Card from './components/Card';
 
 function App() {
   const [boards, setBoards] = useState([]);
@@ -50,9 +51,40 @@ function App() {
         {/* Nav Component */}
       </header>
       <main>
-        <BoardForm />
+        {selectedBoard ? (
+          <>
+            <h2>{selectedBoard.title}</h2>
+            <button onClick={() => setSelectedBoard(null)}>Back to Boards</button>
+            <ul>
+              {selectedBoard.cards.map((card) => (
+                <Card
+                  key={card.id}
+                  card={card}
+                  deleteCard={() => deleteCard(card.id)}
+                />
+              ))}
+            </ul>
+            <CardForm createCard={createCard} />
+          </>
+        ) : (
+          <>
+            <h2>Boards</h2>
+            <button onClick={() => setSelectedBoard({})}>Create New Board</button>
+            <ul>
+              {boards.map((board) => (
+                <li key={board.id}>
+                  <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
+                  <button onClick={() => deleteBoard(board.id)}>Delete</button>
+                </li>
+              ))}
+            </ul>
+            <BoardForm createBoard={createBoard} />
+          </>
+        )}
       </main>
-      <footer>&amp</footer>
+      <footer>
+        <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
+      </footer>
     </div>
   );
 }
