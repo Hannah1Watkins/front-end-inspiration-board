@@ -44,11 +44,15 @@ function App() {
 
   return (
     <div className="App">
-      <header className="app-headder">
+      <header className="app-header">
+        <h1>Inspiration Board</h1>
+        {/* Nav Component */}
+      </header>
+      <main>
         <BoardForm />
-        
-        </header>
-      </div>
+      </main>
+      <footer></footer>
+    </div>
   );
 }
 
