@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import BoardForm from "./components/BoardForm";
+import CardForm from './components/CardForm';
 
 function App() {
   const [boards, setBoards] = useState([]);
@@ -44,9 +45,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="app-headder">
+      <header className="app-header">
         <BoardForm />
-        
+        <CardForm></CardForm>
         </header>
       </div>
   );
