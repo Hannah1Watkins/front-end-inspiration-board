@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import BoardForm from "./components/BoardForm";
+import NavBar from './components/NavBar';
 import CardForm from './components/CardForm';
 import axios from 'axios';
 import Card from './components/Card';
@@ -8,6 +9,12 @@ function App() {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
   const [selectedBoard, setSelectedBoard] = useState(null);
+
+  React.useEffect( () => {
+    axios.get('http://127.0.0.1:5000/boards').then(resp => {
+      setBoards(resp.data)
+    })
+  }, [])
 
   React.useEffect(() => {
     axios.get('http://localhost:5000/cards').then((resp)=>{
@@ -66,7 +73,7 @@ function App() {
         owner: response.data.owner,
         title: response.data.title,
       });
-      setCards(newBoards);
+      setBoards(newBoards);
     })
     .catch((error) => {
       console.log(error)
@@ -77,7 +84,7 @@ function App() {
     <div className="App">
       <header className="app-header">
         <h1>Inspiration Board</h1>
-        {/* Nav Component */}
+        <NavBar boards={boards}/>
       </header>
       <main>
         {selectedBoard ? (
@@ -111,6 +118,7 @@ function App() {
           </>
         )}
       </main>
+
       <footer>
         <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
       </footer>

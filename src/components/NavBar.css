@@ -1,0 +1,27 @@
+nav ul li {
+    list-style-type: none;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown_content {
+    display: block;
+    width: auto;
+    padding: 10px 15px;
+    margin-top: -20px;
+    line-height: 30px;
+    background-color: white;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    border: 2px solid black;
+}
+
+.dropdown_content li:hover {
+    text-decoration: underline;
+}

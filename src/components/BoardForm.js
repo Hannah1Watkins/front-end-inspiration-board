@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './BoardForm.css'
 
 const BoardForm = ({createBoardCallback}) => {
     const [formFields, setFormFields] = React.useState({
@@ -13,12 +14,22 @@ const BoardForm = ({createBoardCallback}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         createBoardCallback(formFields);
+
+        setFormFields({
+            title: '',
+            owner: ''
+        });
     };
+
+    const toggleShow = () => {
+        console.log('Show/Hide')
+    }
+
 
     return (
         <form className="new_board_form" onSubmit={handleSubmit}>
+            <h2>Add a New Board: </h2>
             <section>
-                <h2>New Board: </h2>
                 <div className="new_board_fields">
                     <div>
                         <label htmlFor="title">Title: </label>
@@ -35,16 +46,12 @@ const BoardForm = ({createBoardCallback}) => {
                         onChange={handleChange} />
                     </div>
                     <div>
-                        <h3>Preview: </h3>
-                        <section>
-                            Title: {formFields.title}
-                            Owner: {formFields.owner}
-                        </section>
-
+                        <h3>Preview: <span>{formFields.title} - {formFields.owner}</span></h3>
                     </div>
                     <button className="button new_board_submit" type="submit" value="add_board">Submit</button>
                 </div>
             </section>
+            <button type="button" value="hide" onClick={toggleShow}>Show/Hide</button>
         </form>
     )
 }
