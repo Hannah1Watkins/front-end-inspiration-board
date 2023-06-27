@@ -1,7 +1,47 @@
-import React from 'react';
+import React, {useState} from 'react';
 import BoardForm from "./components/BoardForm";
 
 function App() {
+  const [boards, setBoards] = useState([]);
+  const [selectedBoard, setSelectedBoard] = useState(null);
+
+  const createBoard = (newBoard) => {
+    setBoards([...boards, newBoard]);
+  };
+
+  const deleteBoard = (boardId) => {
+    setBoards(boards.filter((board) => board.id !== boardId));
+    if (selectedBoard && selectedBoard.id === boardId) {
+      setSelectedBoard(null);
+    }
+  };
+
+  const createCard = (newCard) => {
+    if (selectedBoard) {
+      const updatedBoards = boards.map((board) => {
+        if (board.id === selectedBoard.id) {
+          const updatedCards = [...board.cards, newCard];
+          return { ...board, cards: updatedCards };
+        }
+        return board;
+      });
+      setBoards(updatedBoards);
+    }
+  };
+
+  const deleteCard = (cardId) => {
+    if (selectedBoard) {
+      const updatedBoards = boards.map((board) => {
+        if (board.id === selectedBoard.id) {
+          const updatedCards = board.cards.filter((card) => card.id !== cardId);
+          return { ...board, cards: updatedCards };
+        }
+        return board;
+      });
+      setBoards(updatedBoards);
+    }
+  };
+
   return (
     <div className="App">
       <header className="app-headder">
