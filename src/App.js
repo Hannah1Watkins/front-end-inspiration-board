@@ -51,7 +51,7 @@ function App() {
       <main>
         <BoardForm />
       </main>
-      <footer></footer>
+      <footer>&amp</footer>
     </div>
   );
 }
