@@ -23,33 +23,35 @@ const App = () => {
   // }, []);
 
   const deleteBoard = (boardId) => {
-    console.log("boardID",boardId)
-    axios
-      .delete(`http://localhost:5000/boards/${boardId}`)
-      .then((response) => {
-        console.log('response',response)
-        // setBoards(boards.filter((board) => board.board_id !== boardId));
-        // setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
-        // if (selectedBoard && selectedBoard.id === boardId) {
-        //   setSelectedBoard(null);
-        // }
-        setBoards(oldBoards => {
-          const updatedBoards = oldBoards.filter(board => board.boardId !== boardId)
-          return updatedBoards;
-        });
-      
+    console.log(boardId);
+    axios.delete(`http://localhost:5000/boards/${boardId}`).then(resp => {
+      setBoards(prevBoards => {
+        const updatedBoards = prevBoards.filter(board => board.board_id !== boardId)
+        return updatedBoards
       })
-      .catch((error) => {
-        console.log(error);
-      });
+    }).catch(error => console.log(error.response.data))
+    // axios
+    //   .delete(`http://localhost:5000/boards/${boardId}`)
+    //   .then((response) => {
+    //     // setBoards(boards.filter((board) => board.board_id !== boardId));
+    //     setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
+    //     if (selectedBoard && selectedBoard.id === boardId) {
+    //       setSelectedBoard(null);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   const deleteCard = (cardId) => {
-    axios.delete(`http://localhost:5000/boards/1/${cardId}`)
-    .then(() => {
-      setCards(prevCards => {
-        const updatedCards = prevCards.filter(card => card.cardId !== cardId)
-        return updatedCards;
+    if (selectedBoard) {
+      const updatedBoards = boards.map((board) => {
+        if (card.id === selectedBoard.id) {
+          const updatedCards = board.cards.filter((card) => card.id !== cardId);
+          return { ...board, cards: updatedCards };
+        }
+        return board;
       });
     });
   };
@@ -81,15 +83,17 @@ const App = () => {
     axios
     .post('http://localhost:5000/boards', newBoardData)
     .then((response) => {
-      console.log(response)
-      const newBoards = [...boards];
+      setBoards(prevBoards => {
+        return [...prevBoards, response.data]
+      })
+      // const newBoards = [...boards];
 
-      newBoards.push({
-        id: response.data.board_id,
-        owner: response.data.owner,
-        title: response.data.title,
-      });
-      setBoards(newBoards);
+      // newBoards.push({ 
+      //   // board_id: response.data.board_id,
+      //   // owner: response.data.owner,
+      //   // title: response.data.title,
+      // });
+      // setBoards(newBoards);
     })
     .catch((error) => {
       console.log(error)
@@ -100,7 +104,7 @@ const App = () => {
     <div className="App">
       <header className="app-header">
         <h1>Inspiration Board</h1>
-        <NavBar boards={boards} deleteBoard={() => deleteBoard(boards.id)}></NavBar>
+        <NavBar boards={boards} deleteBoard={deleteBoard}/>
       </header>
       <main>
         {selectedBoard ? (
@@ -124,10 +128,12 @@ const App = () => {
             <button onClick={() => setSelectedBoard({})}>Create New Board</button>
             <ul>
               {boards.map((board) => (
-                <li key={board.id}>
+                <li key={board.board_id}>
                   <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
                   <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
+              
               </li>
+              // console.log(board)
             ))}
 
             </ul>
