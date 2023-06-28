@@ -3,6 +3,7 @@ import CardsList from './CardsList';
 
 const SelectedBoard = ({ selectedBoard, deleteCard }) => {
   console.log(selectedBoard)
+  // console.log(selectedBoard.cards)
   return (
     <div>
       <h2>Selected Board: {selectedBoard.title}</h2>
