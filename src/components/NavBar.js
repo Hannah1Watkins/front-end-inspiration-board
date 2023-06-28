@@ -3,19 +3,11 @@ import './NavBar.css';
 import PropTypes from 'prop-types';
 
 const NavBar = ({ boards, deleteBoard }) => {
-<<<<<<< HEAD
-=======
-
->>>>>>> 3512be3f78c227edabd314672f51b5e4f331ccfb
     const board_titles = boards.map((board, index) => {
         return (
             <li key={index} className="board_title">
                 {board.title}
-<<<<<<< HEAD
-                <button onClick={() => deleteBoard(board.board_id)}>Delete Board</button>
-=======
                 <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
->>>>>>> 3512be3f78c227edabd314672f51b5e4f331ccfb
             </li>
         );
     });

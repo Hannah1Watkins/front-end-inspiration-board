@@ -47,13 +47,13 @@ const App = () => {
   const deleteCard = (cardId) => {
     if (selectedBoard) {
       const updatedBoards = boards.map((board) => {
-        if (card.id === selectedBoard.id) {
+        if (cardId === selectedBoard.id) {
           const updatedCards = board.cards.filter((card) => card.id !== cardId);
           return { ...board, cards: updatedCards };
         }
         return board;
       });
-    });
+    };
   };
   // post request needs to go to /<board_id>/cards
   // board needs to be selectedboard
