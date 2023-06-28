@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
+import SelectedBoard from './components/SelectedBoard';
 import CardForm from './components/CardForm';
 import axios from 'axios';
 import Card from './components/Card';
@@ -8,7 +9,7 @@ import Card from './components/Card';
 const App = () => {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
-  const [selectedBoard, setSelectedBoard] = useState(null);
+  const [selectedBoard, setSelectedBoard] = useState([]);
 
   useEffect( () => {
     axios.get('http://127.0.0.1:5000/boards').then(resp => {
@@ -16,11 +17,19 @@ const App = () => {
     })
   }, [])
 
+<<<<<<< HEAD
   // useEffect(() => {
   //   axios.get('http://localhost:5000/boards/1/cards').then((resp)=>{
   //     setCards(resp.data);
   //   });
   // }, []);
+=======
+  useEffect(() => {
+    axios.get(`http://localhost:5000/boards/${selectedBoard.board_id}/cards`).then((resp)=>{
+      setCards(resp.data);
+    });
+  }, []);
+>>>>>>> 114116f59325cbc42fe8abc3011699072348838e
 
   const deleteBoard = (boardId) => {
     console.log(boardId);
@@ -44,6 +53,7 @@ const App = () => {
     //   });
   };
 
+<<<<<<< HEAD
   const deleteCard = (cardId) => {
     if (selectedBoard) {
       const updatedBoards = boards.map((board) => {
@@ -55,29 +65,43 @@ const App = () => {
       });
     };
   };
+=======
+  // const deleteCard = (cardId) => {
+  //   if (selectedBoard) {
+  //     const updatedBoards = boards.map((board) => {
+  //       if (card.id === selectedBoard.id) {
+  //         const updatedCards = board.cards.filter((card) => card.id !== cardId);
+  //         return { ...board, cards: updatedCards };
+  //       }
+  //       return board;
+  //     });
+  //     setBoards(updatedBoards);
+  //   }
+  // };
+>>>>>>> 114116f59325cbc42fe8abc3011699072348838e
   // post request needs to go to /<board_id>/cards
   // board needs to be selectedboard
-  const createCard = (newCardData) => {
-    console.log("new Card Data",newCardData)
-    axios
-    .post('http://localhost:5000/boards/1/cards', newCardData)
-    .then((response) => {
-      console.log('response',response)
-      const newCards = [...cards];
+  // const createCard = (newCardData) => {
+  //   console.log("new Card Data",newCardData)
+  //   axios
+  //   .post('http://localhost:5000/boards/1/cards', newCardData)
+  //   .then((response) => {
+  //     console.log('response',response)
+  //     const newCards = [...cards];
 
-      newCards.push({
-        id: response.data.card_id,
-        message: response.data.message,
-        board_id: response.data.board_id,
-        likedCount: response.data.liked_count,
-      });
+  //     newCards.push({
+  //       id: response.data.card_id,
+  //       message: response.data.message,
+  //       board_id: response.data.board_id,
+  //       likedCount: response.data.liked_count,
+  //     });
 
-      setCards(newCards);
-    })
-    .catch((error) => {
-      console.log(error)
-    });
-  };
+  //     setCards(newCards);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //   });
+  // };
   
   const createBoard = (newBoardData) => {
     axios
@@ -86,28 +110,26 @@ const App = () => {
       setBoards(prevBoards => {
         return [...prevBoards, response.data]
       })
-      // const newBoards = [...boards];
-
-      // newBoards.push({ 
-      //   // board_id: response.data.board_id,
-      //   // owner: response.data.owner,
-      //   // title: response.data.title,
-      // });
-      // setBoards(newBoards);
     })
     .catch((error) => {
       console.log(error)
     });
   };
 
+  const selectBoard = (board) => {
+    setSelectedBoard(board)
+  }
+
   return (
     <div className="App">
       <header className="app-header">
         <h1>Inspiration Board</h1>
-        <NavBar boards={boards} deleteBoard={deleteBoard}/>
+        <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard}/>
       </header>
       <main>
-        {selectedBoard ? (
+        <SelectedBoard selectedBoard = {selectedBoard}/>
+        <BoardForm createBoardCallback={createBoard} />
+        {/* {selectedBoard ? (
           <>
             <h2>{selectedBoard.title}</h2>
             <button onClick={() => setSelectedBoard(null)}>Back to Boards</button>
@@ -130,7 +152,6 @@ const App = () => {
               {boards.map((board) => (
                 <li key={board.board_id}>
                   <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
-                  <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
               
               </li>
               // console.log(board)
@@ -140,7 +161,7 @@ const App = () => {
             <BoardForm createBoardCallback={createBoard} />
             <CardForm createCardCallback={createCard} />
           </>
-        )}
+        )} */}
       </main>
 
       <footer>

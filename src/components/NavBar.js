@@ -2,11 +2,12 @@ import React from 'react'
 import './NavBar.css';
 import PropTypes from 'prop-types';
 
-const NavBar = ({ boards, deleteBoard }) => {
+const NavBar = ({ boards, deleteBoard, selectBoard }) => {
+
     const board_titles = boards.map((board, index) => {
         return (
             <li key={index} className="board_title">
-                {board.title}
+                <button onClick={() => selectBoard(board)}>{board.title}</button>
                 <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
             </li>
         );
