@@ -9,27 +9,13 @@ import Card from './components/Card';
 const App = () => {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
-  const [selectedBoard, setSelectedBoard] = useState([]);
+  const [selectedBoard, setSelectedBoard] = useState(null);
 
   useEffect( () => {
     axios.get('http://127.0.0.1:5000/boards').then(resp => {
       setBoards(resp.data)
     })
-  }, [])
-
-<<<<<<< HEAD
-  // useEffect(() => {
-  //   axios.get('http://localhost:5000/boards/1/cards').then((resp)=>{
-  //     setCards(resp.data);
-  //   });
-  // }, []);
-=======
-  useEffect(() => {
-    axios.get(`http://localhost:5000/boards/${selectedBoard.board_id}/cards`).then((resp)=>{
-      setCards(resp.data);
-    });
   }, []);
->>>>>>> 114116f59325cbc42fe8abc3011699072348838e
 
   const deleteBoard = (boardId) => {
     console.log(boardId);
@@ -39,21 +25,8 @@ const App = () => {
         return updatedBoards
       })
     }).catch(error => console.log(error.response.data))
-    // axios
-    //   .delete(`http://localhost:5000/boards/${boardId}`)
-    //   .then((response) => {
-    //     // setBoards(boards.filter((board) => board.board_id !== boardId));
-    //     setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
-    //     if (selectedBoard && selectedBoard.id === boardId) {
-    //       setSelectedBoard(null);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   };
 
-<<<<<<< HEAD
   const deleteCard = (cardId) => {
     if (selectedBoard) {
       const updatedBoards = boards.map((board) => {
@@ -65,49 +38,37 @@ const App = () => {
       });
     };
   };
-=======
-  // const deleteCard = (cardId) => {
-  //   if (selectedBoard) {
-  //     const updatedBoards = boards.map((board) => {
-  //       if (card.id === selectedBoard.id) {
-  //         const updatedCards = board.cards.filter((card) => card.id !== cardId);
-  //         return { ...board, cards: updatedCards };
-  //       }
-  //       return board;
-  //     });
-  //     setBoards(updatedBoards);
-  //   }
-  // };
->>>>>>> 114116f59325cbc42fe8abc3011699072348838e
+  
   // post request needs to go to /<board_id>/cards
   // board needs to be selectedboard
-  // const createCard = (newCardData) => {
-  //   console.log("new Card Data",newCardData)
-  //   axios
-  //   .post('http://localhost:5000/boards/1/cards', newCardData)
-  //   .then((response) => {
-  //     console.log('response',response)
-  //     const newCards = [...cards];
+  const createCard = (newCardData) => {
+    console.log("new Card Data",newCardData)
+    axios
+    .post('http://localhost:5000/boards/1/cards', newCardData)
+    .then((response) => {
+      console.log('response',response)
+      const newCards = [...cards];
 
-  //     newCards.push({
-  //       id: response.data.card_id,
-  //       message: response.data.message,
-  //       board_id: response.data.board_id,
-  //       likedCount: response.data.liked_count,
-  //     });
+      newCards.push({
+        id: response.data.card_id,
+        message: response.data.message,
+        board_id: response.data.board_id,
+        likedCount: response.data.liked_count,
+      });
 
-  //     setCards(newCards);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error)
-  //   });
-  // };
+      setCards(newCards);
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+  };
   
   const createBoard = (newBoardData) => {
     axios
     .post('http://localhost:5000/boards', newBoardData)
     .then((response) => {
       setBoards(prevBoards => {
+        console.log('response',response.data)
         return [...prevBoards, response.data]
       })
     })
@@ -127,41 +88,10 @@ const App = () => {
         <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard}/>
       </header>
       <main>
-        <SelectedBoard selectedBoard = {selectedBoard}/>
-        <BoardForm createBoardCallback={createBoard} />
-        {/* {selectedBoard ? (
-          <>
-            <h2>{selectedBoard.title}</h2>
-            <button onClick={() => setSelectedBoard(null)}>Back to Boards</button>
-            <ul>
-              {selectedBoard.cards.map((card) => (
-                <Card
-                  key={card.id}
-                  card={card}
-                  deleteCard={() => deleteCard(card.id)}
-                />
-              ))}
-            </ul>
-            <CardForm createCardCallback={createCard} />
-          </>
-        ) : (
-          <>
-            <h2>Boards</h2>
-            <button onClick={() => setSelectedBoard({})}>Create New Board</button>
-            <ul>
-              {boards.map((board) => (
-                <li key={board.board_id}>
-                  <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
-              
-              </li>
-              // console.log(board)
-            ))}
+        {/* conditional rendering: I want to display this thing if both of these are true */}
+        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard}/>}
 
-            </ul>
-            <BoardForm createBoardCallback={createBoard} />
-            <CardForm createCardCallback={createCard} />
-          </>
-        )} */}
+        <BoardForm createBoardCallback={createBoard}></BoardForm>
       </main>
 
       <footer>
