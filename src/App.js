@@ -16,22 +16,28 @@ const App = () => {
     })
   }, [])
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/boards/1/cards').then((resp)=>{
-      setCards(resp.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('http://localhost:5000/boards/1/cards').then((resp)=>{
+  //     setCards(resp.data);
+  //   });
+  // }, []);
 
   const deleteBoard = (boardId) => {
     console.log("boardID",boardId)
     axios
       .delete(`http://localhost:5000/boards/${boardId}`)
       .then((response) => {
+        console.log('response',response)
         // setBoards(boards.filter((board) => board.board_id !== boardId));
-        setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
-        if (selectedBoard && selectedBoard.id === boardId) {
-          setSelectedBoard(null);
-        }
+        // setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
+        // if (selectedBoard && selectedBoard.id === boardId) {
+        //   setSelectedBoard(null);
+        // }
+        setBoards(oldBoards => {
+          const updatedBoards = oldBoards.filter(board => board.boardId !== boardId)
+          return updatedBoards;
+        });
+      
       })
       .catch((error) => {
         console.log(error);
@@ -75,6 +81,7 @@ const App = () => {
     axios
     .post('http://localhost:5000/boards', newBoardData)
     .then((response) => {
+      console.log(response)
       const newBoards = [...boards];
 
       newBoards.push({

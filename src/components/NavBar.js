@@ -7,7 +7,7 @@ const NavBar = ({ boards, deleteBoard }) => {
         return (
             <li key={index} className="board_title">
                 {board.title}
-                <button onClick={deleteBoard(board.board_id)}>Delete Board</button>
+                <button onClick={() => deleteBoard(board.board_id)}>Delete Board</button>
             </li>
         );
     });
