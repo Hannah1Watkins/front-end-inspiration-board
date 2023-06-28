@@ -23,6 +23,7 @@ const App = () => {
   }, []);
 
   const deleteBoard = (boardId) => {
+    console.log("boardID",boardId)
     axios
       .delete(`http://localhost:5000/boards/${boardId}`)
       .then((response) => {
@@ -37,16 +38,13 @@ const App = () => {
   };
 
   const deleteCard = (cardId) => {
-    if (selectedBoard) {
-      const updatedBoards = boards.map((board) => {
-        if (board.id === selectedBoard.id) {
-          const updatedCards = board.cards.filter((card) => card.id !== cardId);
-          return { ...board, cards: updatedCards };
-        }
-        return board;
+    axios.delete(`http://localhost:5000/boards/1/${cardId}`)
+    .then(() => {
+      setCards(prevCards => {
+        const updatedCards = prevCards.filter(card => card.cardId !== cardId)
+        return updatedCards;
       });
-      setBoards(updatedBoards);
-    }
+    });
   };
   // post request needs to go to /<board_id>/cards
   // board needs to be selectedboard
@@ -94,7 +92,7 @@ const App = () => {
     <div className="App">
       <header className="app-header">
         <h1>Inspiration Board</h1>
-        <NavBar boards={boards}/>
+        <NavBar boards={boards} deleteBoard={() => deleteBoard(boards.id)}></NavBar>
       </header>
       <main>
         {selectedBoard ? (
