@@ -1,5 +1,6 @@
 import React from 'react'
 import './NavBar.css';
+import PropTypes from 'prop-types';
 
 const NavBar = ({ boards }) => {
     const board_titles = boards.map((board, index) => {
@@ -18,6 +19,14 @@ const NavBar = ({ boards }) => {
             </ul>
         </nav>
     );
+};
+
+NavBar.propTypes = {
+    boards: PropTypes.arrayOf(
+        PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        })
+    ).isRequired
 };
 
 export default NavBar;
