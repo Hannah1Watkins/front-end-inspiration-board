@@ -1,32 +1,39 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
 import CardForm from './components/CardForm';
 import axios from 'axios';
 import Card from './components/Card';
 
-function App() {
+const App = () => {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
   const [selectedBoard, setSelectedBoard] = useState(null);
 
-  React.useEffect( () => {
+  useEffect( () => {
     axios.get('http://127.0.0.1:5000/boards').then(resp => {
       setBoards(resp.data)
     })
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios.get('http://localhost:5000/cards').then((resp)=>{
       setCards(resp.data);
     });
   }, []);
 
   const deleteBoard = (boardId) => {
-    setBoards(boards.filter((board) => board.id !== boardId));
-    if (selectedBoard && selectedBoard.id === boardId) {
-      setSelectedBoard(null);
-    }
+    axios
+      .delete(`http://localhost:5000/boards/${boardId}`)
+      .then((response) => {
+        setBoards(boards.filter((board) => board.id !== boardId));
+        if (selectedBoard && selectedBoard.id === boardId) {
+          setSelectedBoard(null);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const deleteCard = (cardId) => {
@@ -111,8 +118,9 @@ function App() {
                 <li key={board.id}>
                   <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
                   <button onClick={() => deleteBoard(board.id)}>Delete</button>
-                </li>
-              ))}
+              </li>
+            ))}
+
             </ul>
             <BoardForm createBoardCallback={createBoard} />
           </>
