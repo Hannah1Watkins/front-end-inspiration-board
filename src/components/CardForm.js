@@ -15,6 +15,19 @@ const CardForm = ({createCardCallback}) => {
         createCardCallback(formFields);
     };
 
+
+    React.useEffect(() => {
+        PropTypes.checkPropTypes(
+            {
+            createCardCallback: PropTypes.func.isRequired,
+            },
+            { createCardCallback },
+            'prop',
+            'CardForm'
+        );
+    }, [createCardCallback]);
+
+
     return (
         <form className="new_card_form" onSubmit={handleSubmit}>
             <section>

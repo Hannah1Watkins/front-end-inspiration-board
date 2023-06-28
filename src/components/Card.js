@@ -16,12 +16,7 @@ const Card = () => {
 
 Card.propTypes = {
     card: PropTypes.object.isRequired,
-    deleteCard: PropTypes.func.isRequired(
-        PropTypes.shape({
-            message: PropTypes.string.isRequired,
-            likeCount: PropTypes.number.isRequired
-
-        }))
+    deleteCard: PropTypes.func.isRequired,
 };
 
 export default Card;
