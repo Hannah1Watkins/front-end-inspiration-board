@@ -22,15 +22,18 @@ const BoardForm = ({createBoardCallback}) => {
         });
     };
 
-    const toggleShow = () => {
-        console.log('Show/Hide')
-    }
+    const [displayForm, setDisplayForm] = React.useState(true);
 
+    let show_hide = null;
+    const toggleShow = () => {
+        setDisplayForm(!displayForm);
+        console.log(show_hide)
+    }
 
     return (
         <form className="new_board_form" onSubmit={handleSubmit}>
-            <h2>Add a New Board: </h2>
-            <section>
+            <h2>Add a New Board:</h2>
+            <section className={displayForm ? 'show' : 'hide'}>
                 <div className="new_board_fields">
                     <div>
                         <label htmlFor="title">Title: </label>

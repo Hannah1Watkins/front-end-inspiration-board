@@ -17,7 +17,7 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-    axios.get('http://localhost:5000/cards').then((resp)=>{
+    axios.get('http://localhost:5000/boards/1/cards').then((resp)=>{
       setCards(resp.data);
     });
   }, []);
@@ -26,7 +26,8 @@ const App = () => {
     axios
       .delete(`http://localhost:5000/boards/${boardId}`)
       .then((response) => {
-        setBoards(boards.filter((board) => board.id !== boardId));
+        // setBoards(boards.filter((board) => board.board_id !== boardId));
+        setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
         if (selectedBoard && selectedBoard.id === boardId) {
           setSelectedBoard(null);
         }
@@ -48,17 +49,20 @@ const App = () => {
       setBoards(updatedBoards);
     }
   };
-  
+  // post request needs to go to /<board_id>/cards
+  // board needs to be selectedboard
   const createCard = (newCardData) => {
+    console.log("new Card Data",newCardData)
     axios
-    .post('http://localhost:5000/cards', newCardData)
+    .post('http://localhost:5000/boards/1/cards', newCardData)
     .then((response) => {
+      console.log('response',response)
       const newCards = [...cards];
 
       newCards.push({
         id: response.data.card_id,
         message: response.data.message,
-        board: response.data.board,
+        board_id: response.data.board_id,
         likedCount: response.data.liked_count,
       });
 
@@ -117,12 +121,13 @@ const App = () => {
               {boards.map((board) => (
                 <li key={board.id}>
                   <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
-                  <button onClick={() => deleteBoard(board.id)}>Delete</button>
+                  <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
               </li>
             ))}
 
             </ul>
             <BoardForm createBoardCallback={createBoard} />
+            <CardForm createCardCallback={createCard} />
           </>
         )}
       </main>
