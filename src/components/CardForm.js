@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const CardForm = ({createCardCallback}) => {
     const [formFields, setFormFields] = React.useState({
@@ -13,6 +14,19 @@ const CardForm = ({createCardCallback}) => {
         event.preventDefault();
         createCardCallback(formFields);
     };
+
+
+    React.useEffect(() => {
+        PropTypes.checkPropTypes(
+            {
+            createCardCallback: PropTypes.func.isRequired,
+            },
+            { createCardCallback },
+            'prop',
+            'CardForm'
+        );
+    }, [createCardCallback]);
+
 
     return (
         <form className="new_card_form" onSubmit={handleSubmit}>
@@ -39,5 +53,9 @@ const CardForm = ({createCardCallback}) => {
         </form>
     );
 };
+
+CardForm.propTypes = {
+    createCardCallback: PropTypes.func.isRequired
+};  
 
 export default CardForm;

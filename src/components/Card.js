@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const Card = () => {
     return (
@@ -12,5 +13,10 @@ const Card = () => {
         </section>
     )
 }
+
+Card.propTypes = {
+    card: PropTypes.object.isRequired,
+    deleteCard: PropTypes.func.isRequired,
+};
 
 export default Card;

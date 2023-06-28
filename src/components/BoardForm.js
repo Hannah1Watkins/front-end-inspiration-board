@@ -1,5 +1,6 @@
 import React from 'react';
 import './BoardForm.css'
+import PropTypes from 'prop-types';
 
 const BoardForm = ({createBoardCallback}) => {
     const [formFields, setFormFields] = React.useState({
@@ -58,5 +59,9 @@ const BoardForm = ({createBoardCallback}) => {
         </form>
     )
 }
+
+BoardForm.propTypes = {
+    createBoardCallback: PropTypes.func.isRequired
+};
 
 export default BoardForm;
