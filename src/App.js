@@ -26,7 +26,8 @@ const App = () => {
     axios
       .delete(`http://localhost:5000/boards/${boardId}`)
       .then((response) => {
-        setBoards(boards.filter((board) => board.id !== boardId));
+        // setBoards(boards.filter((board) => board.board_id !== boardId));
+        setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
         if (selectedBoard && selectedBoard.id === boardId) {
           setSelectedBoard(null);
         }
@@ -120,7 +121,7 @@ const App = () => {
               {boards.map((board) => (
                 <li key={board.id}>
                   <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
-                  <button onClick={() => deleteBoard(board.id)}>Delete</button>
+                  <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
               </li>
             ))}
 
