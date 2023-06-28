@@ -1,16 +1,12 @@
 import React from 'react'
 import './NavBar.css';
-import Board from './Board.js'
 
 const NavBar = ({ boards, deleteBoard }) => {
     const board_titles = boards.map((board, index) => {
         return (
             <li key={index} className="board_title">
-                <Board
-                boardId={board.id}
-                title={board.title}
-                deleteBoard={deleteBoard}>
-                </Board>
+                {board.title}
+                <button onClick={deleteBoard(board.board_id)}>Delete Board</button>
             </li>
         );
     });
