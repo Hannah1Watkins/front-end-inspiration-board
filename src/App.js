@@ -17,29 +17,29 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-    axios.get('http://localhost:5000/boards/1/cards').then((resp)=>{
+    axios.get(`http://localhost:5000/boards/${selectedBoard.boardId}/cards`).then((resp)=>{
       setCards(resp.data);
     });
   }, []);
 
-  const deleteBoard = (boardId) => {
-    console.log("boardID",boardId)
-    axios
-      .delete(`http://localhost:5000/boards/${boardId}`)
-      .then((response) => {
-        // setBoards(boards.filter((board) => board.board_id !== boardId));
-        setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
-        if (selectedBoard && selectedBoard.id === boardId) {
-          setSelectedBoard(null);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const deleteBoard = (boardId) => {
+  //   console.log("boardId",boardId)
+  //   axios
+  //     .delete(`http://localhost:5000/boards/${boardId}`)
+  //     .then((response) => {
+  //       // setBoards(boards.filter((board) => board.board_id !== boardId));
+  //       setBoards(oldBoards => oldBoards.filter(board => board.board_id !== boardId));
+  //       if (selectedBoard && selectedBoard.id === boardId) {
+  //         setSelectedBoard(null);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   const deleteCard = (cardId) => {
-    axios.delete(`http://localhost:5000/boards/1/${cardId}`)
+    axios.delete(`http://localhost:5000/boards/${selectedBoard.boardId}/${cardId}`)
     .then(() => {
       setCards(prevCards => {
         const updatedCards = prevCards.filter(card => card.cardId !== cardId)
@@ -52,7 +52,7 @@ const App = () => {
   const createCard = (newCardData) => {
     console.log("new Card Data",newCardData)
     axios
-    .post('http://localhost:5000/boards/1/cards', newCardData)
+    .post('http://localhost:5000/boards/8/cards', newCardData)
     .then((response) => {
       console.log('response',response)
       const newCards = [...cards];
@@ -93,7 +93,7 @@ const App = () => {
     <div className="App">
       <header className="app-header">
         <h1>Inspiration Board</h1>
-        <NavBar boards={boards} deleteBoard={() => deleteBoard(boards.id)}></NavBar>
+        <NavBar boards={boards} ></NavBar>
       </header>
       <main>
         {selectedBoard ? (
@@ -119,7 +119,7 @@ const App = () => {
               {boards.map((board) => (
                 <li key={board.id}>
                   <button onClick={() => setSelectedBoard(board)}>{board.title}</button>
-                  <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
+                  {/* <button onClick={() => deleteBoard(board.board_id)}>Delete</button> */}
               </li>
             ))}
 
