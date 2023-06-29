@@ -1,3 +1,29 @@
+body {
+    font-family: 'Barbie', sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 50px;
+    background-color: #f29ad8;
+    font-family: 'Le Journey', sans-serif;
+    font-size: 30px;
+
+}
+
+nav h1 {
+    font-size: 60px;
+    font-family: 'Barbie', sans-serif;
+    color: #f039b1;
+    margin: 0;
+}
+
+nav h3 {
+    margin: 0;
+}
+
 nav ul li {
     list-style-type: none;
 }
