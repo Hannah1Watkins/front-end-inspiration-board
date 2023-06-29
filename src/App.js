@@ -84,7 +84,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="app-header">
-        <h1>Inspiration Board</h1>
+        {/* <h1>Inspiration Board</h1> */}
         <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard}/>
       </header>
       <main>
