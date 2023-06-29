@@ -26,7 +26,16 @@ SelectedBoard.propTypes = {
       })
     ).isRequired,
   }).isRequired,
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      card_id: PropTypes.number.isRequired,
+      message: PropTypes.string.isRequired,
+      liked_count: PropTypes.number.isRequired,
+    })
+  ).isRequired,
   deleteCard: PropTypes.func.isRequired,
+  createCard: PropTypes.func.isRequired,
+  increaseLikedCount: PropTypes.func.isRequired,
 };
 
 export default SelectedBoard;
