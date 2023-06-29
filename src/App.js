@@ -26,13 +26,19 @@ const App = () => {
 
   const deleteCard = (cardId) => {
     if (selectedBoard) {
-      const updatedBoards = boards.map((board) => {
-        if (cardId === selectedBoard.id) {
-          const updatedCards = board.cards.filter((card) => card.id !== cardId);
-          return { ...board, cards: updatedCards };
-        }
-        return board;
-      });
+      axios.delete(`http://localhost:5000/cards/${cardId}`).then(resp => {
+        setCards(prevCards => {
+          const updatedCards = prevCards.filter(card => card.card_id !== cardId)
+          return updatedCards
+        })
+      })
+      // const updatedBoards = boards.map((board) => {
+      //   if (cardId === selectedBoard.id) {
+      //     const updatedCards = board.cards.filter((card) => card.id !== cardId);
+      //     return { ...board, cards: updatedCards };
+      //   }
+      //   return board;
+      // });
     };
   };
   
@@ -93,7 +99,7 @@ const App = () => {
       </header>
       <main>
         {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard} increaseLikedCount={increaseLikedCount}/>}
+        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard} deleteCard={deleteCard}increaseLikedCount={increaseLikedCount}/>}
 
         <BoardForm createBoardCallback={createBoard}></BoardForm>
       </main>
