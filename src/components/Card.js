@@ -15,12 +15,11 @@ const Card = ({card_id, message, liked_count, increaseLikedCount, deleteCard}) =
 }
 
 Card.propTypes = {
-    // card: PropTypes.object.isRequired,
-    increaseLikedCount: PropTypes.func.isRequired,
-    // id: PropTypes.number.isRequired,
-    // message: PropTypes.string.isRequired,
-    // likedCount: PropTypes.number.isRequired,
+    card_id: PropTypes.number.isRequired,
+    message: PropTypes.string.isRequired,
+    likedCount: PropTypes.number.isRequired,
     deleteCard: PropTypes.func.isRequired,
+    increaseLikedCount: PropTypes.func.isRequired,
 };
 
 export default Card;

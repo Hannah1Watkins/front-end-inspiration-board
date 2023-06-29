@@ -75,7 +75,6 @@ const App = () => {
   const increaseLikedCount = (id) => {
     axios.patch(`http://localhost:5000/cards/${id}`)
     .then(response => {
-      console.log(response.data, id)
       setCards(prevCards => {
         const updatedCards = prevCards.map(card => {
           return card.card_id === id ? response.data : card
