@@ -7,8 +7,8 @@ const NavBar = ({ boards, deleteBoard, selectBoard }) => {
     const board_titles = boards.map((board, index) => {
         return (
             <li key={index} className="board_title">
-                <button onClick={() => selectBoard(board)}>{board.title}</button>
-                <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
+                <button className="boards_list_item" onClick={() => selectBoard(board)}>{board.title}</button>
+                <button className="boards_list_item_delete" onClick={() => deleteBoard(board.board_id)}>X</button>
             </li>
         );
     });

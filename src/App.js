@@ -3,6 +3,7 @@ import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
 import axios from 'axios';
+import './App.css';
 
 const App = () => {
   const [boards, setBoards] = useState([]);
@@ -90,14 +91,15 @@ const App = () => {
         {/* <h1>Inspiration Board</h1> */}
         <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard}/>
       </header>
-      <main>
+      {/* Get To Know The Team Section */}
+      <main className="app-body">
+        <BoardForm createBoardCallback={createBoard}></BoardForm>
         {/* conditional rendering: I want to display this thing if both of these are true */}
         {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard} deleteCard={deleteCard}increaseLikedCount={increaseLikedCount}/>}
 
-        <BoardForm createBoardCallback={createBoard}></BoardForm>
       </main>
 
-      <footer>
+      <footer className="app-footer">
         <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
       </footer>
     </div>

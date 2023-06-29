@@ -6,7 +6,58 @@
     display: none;
 }
 
+.new_board_header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.new_board_header button {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #00000097;
+    height: fit-content;
+    color: #00000097;
+    font-size: inherit;
+    font-weight: bold;
+    line-height: inherit;
+}
+
+.new_board_header button:hover {
+    border-bottom: 2px solid black;
+    color: black;
+    cursor: pointer;
+}
+
+/* ADD FONTS HERE */
+.inputs {
+    width: 15vw;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    border: 2px solid black;
+}
+
+.inputs .new_board_fields {
+    margin-left: 30px;
+}
+
+.inputs .new_board_fields div {
+    margin-bottom: 5px;
+    padding: 10px 0;
+}
+
+.inputs .new_board_fields div label {
+    display: block;
+    text-align: left;
+}
+
+.new_board_fields input {
+    height: 15px;
+    padding: 5px;
+}
+
 .new_board_fields input:required {
-    border: 2px solid pink;
+    border-bottom: 1px solid black;
     border-radius: 3px;
 }
