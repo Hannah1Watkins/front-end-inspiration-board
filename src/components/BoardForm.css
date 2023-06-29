@@ -5,3 +5,8 @@
 .hide {
     display: none;
 }
+
+.new_board_fields input:required {
+    border: 2px solid pink;
+    border-radius: 3px;
+}

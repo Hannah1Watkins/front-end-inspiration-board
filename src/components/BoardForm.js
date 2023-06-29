@@ -15,12 +15,12 @@ const BoardForm = ({createBoardCallback}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         createBoardCallback(formFields);
-
         setFormFields({
             title: '',
             owner: ''
         });
-    };
+    }
+    
 
     const [displayForm, setDisplayForm] = React.useState(true);
 
@@ -40,14 +40,16 @@ const BoardForm = ({createBoardCallback}) => {
                         <input 
                         name="title" 
                         value={formFields.title} 
-                        onChange={handleChange} />
+                        onChange={handleChange} 
+                        required />
                     </div>
                     <div>
                         <label htmlFor="owner">Owner: </label>
                         <input 
                         name="owner" 
                         value={formFields.owner} 
-                        onChange={handleChange} />
+                        onChange={handleChange} 
+                        required />
                     </div>
                     <div>
                         <h3>Preview: <span>{formFields.title} - {formFields.owner}</span></h3>

@@ -32,13 +32,6 @@ const App = () => {
           return updatedCards
         })
       })
-      // const updatedBoards = boards.map((board) => {
-      //   if (cardId === selectedBoard.id) {
-      //     const updatedCards = board.cards.filter((card) => card.id !== cardId);
-      //     return { ...board, cards: updatedCards };
-      //   }
-      //   return board;
-      // });
     };
   };
   
