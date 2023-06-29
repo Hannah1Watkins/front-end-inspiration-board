@@ -10,6 +10,7 @@ const App = () => {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
   const [selectedBoard, setSelectedBoard] = useState(null);
+  const [likedCount, setLikedCount] = useState(0);
 
   useEffect( () => {
     axios.get('http://127.0.0.1:5000/boards').then(resp => {
@@ -76,6 +77,14 @@ const App = () => {
     })
   }
 
+  const increaseLikedCount = (card) => {
+    axios.patch(`http://localhost:5000/cards/${card.card_id}`)
+    .then(response => {
+      setLikedCount(response.data.likedCount)
+    });
+  };
+
+
   return (
     <div className="App">
       <header className="app-header">
@@ -84,7 +93,7 @@ const App = () => {
       </header>
       <main>
         {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard}/>}
+        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard} increaseLikedCount={increaseLikedCount}/>}
 
         <BoardForm createBoardCallback={createBoard}></BoardForm>
       </main>
