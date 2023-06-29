@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-const CardForm = ({createCardCallback}) => {
+const CardForm = ({createCard}) => {
     const [formFields, setFormFields] = React.useState({
         message: '',
     });
@@ -12,20 +12,20 @@ const CardForm = ({createCardCallback}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        createCardCallback(formFields);
+        createCard(formFields);
     };
 
 
     React.useEffect(() => {
         PropTypes.checkPropTypes(
             {
-            createCardCallback: PropTypes.func.isRequired,
+            createCard: PropTypes.func.isRequired,
             },
-            { createCardCallback },
+            { createCard },
             'prop',
             'CardForm'
         );
-    }, [createCardCallback]);
+    }, [createCard]);
 
 
     return (
@@ -55,7 +55,7 @@ const CardForm = ({createCardCallback}) => {
 };
 
 CardForm.propTypes = {
-    createCardCallback: PropTypes.func.isRequired
+    createCard: PropTypes.func.isRequired
 };  
 
 export default CardForm;

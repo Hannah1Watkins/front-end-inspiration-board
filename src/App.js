@@ -42,21 +42,13 @@ const App = () => {
   // post request needs to go to /<board_id>/cards
   // board needs to be selectedboard
   const createCard = (newCardData) => {
-    console.log("new Card Data",newCardData)
     axios
-    .post('http://localhost:5000/boards/1/cards', newCardData)
+    .post(`http://localhost:5000/boards/${selectedBoard.board_id}/cards`, newCardData)
     .then((response) => {
-      console.log('response',response)
-      const newCards = [...cards];
-
-      newCards.push({
-        id: response.data.card_id,
-        message: response.data.message,
-        board_id: response.data.board_id,
-        likedCount: response.data.liked_count,
-      });
-
-      setCards(newCards);
+      setCards(prevCards => {
+        console.log(response.data)
+        return [...prevCards, response.data];
+      })
     })
     .catch((error) => {
       console.log(error)
@@ -68,8 +60,7 @@ const App = () => {
     .post('http://localhost:5000/boards', newBoardData)
     .then((response) => {
       setBoards(prevBoards => {
-        console.log('response',response.data)
-        return [...prevBoards, response.data]
+        return [...prevBoards, response.data];
       })
     })
     .catch((error) => {
@@ -89,7 +80,7 @@ const App = () => {
       </header>
       <main>
         {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard}/>}
+        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} createCard={createCard}/>}
 
         <BoardForm createBoardCallback={createBoard}></BoardForm>
       </main>
