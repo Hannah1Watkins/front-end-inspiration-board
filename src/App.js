@@ -69,7 +69,11 @@ const App = () => {
   };
 
   const selectBoard = (board) => {
-    setSelectedBoard(board)
+    axios.get(`http://localhost:5000/boards/${board.board_id}/cards`)
+    .then(response => {
+      setSelectedBoard(board)
+      setCards(response.data)
+    })
   }
 
   return (
@@ -80,7 +84,7 @@ const App = () => {
       </header>
       <main>
         {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} createCard={createCard}/>}
+        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard}/>}
 
         <BoardForm createBoardCallback={createBoard}></BoardForm>
       </main>

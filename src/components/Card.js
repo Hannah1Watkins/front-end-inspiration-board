@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-const Card = () => {
+const Card = ({id, message, likedCount, deleteCard}) => {
     return (
         <section className='single_card_section'>
-            <p>"Card Content Goes Here"</p>
+            <p>{message}</p>
             <div className="card_interactions_div">
-                <p>heart counts go here</p>
+                <p>{likedCount}</p>
                 <button className='button plus_one_button'>+1</button>
                 <button className='button delete_card_button'>Delete</button>
             </div>
@@ -15,7 +15,9 @@ const Card = () => {
 }
 
 Card.propTypes = {
-    card: PropTypes.object.isRequired,
+    id: PropTypes.number.isRequired,
+    message: PropTypes.string.isRequired,
+    likedCount: PropTypes.number.isRequired,
     deleteCard: PropTypes.func.isRequired,
 };
 
