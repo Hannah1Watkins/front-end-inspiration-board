@@ -2,9 +2,7 @@ import React, {useState, useEffect} from 'react';
 import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
-import CardForm from './components/CardForm';
 import axios from 'axios';
-import Card from './components/Card';
 
 const App = () => {
   const [boards, setBoards] = useState([]);
@@ -18,7 +16,6 @@ const App = () => {
   }, []);
 
   const deleteBoard = (boardId) => {
-    console.log(boardId);
     axios.delete(`http://localhost:5000/boards/${boardId}`).then(resp => {
       setBoards(prevBoards => {
         const updatedBoards = prevBoards.filter(board => board.board_id !== boardId)
@@ -29,34 +26,31 @@ const App = () => {
 
   const deleteCard = (cardId) => {
     if (selectedBoard) {
-      const updatedBoards = boards.map((board) => {
-        if (cardId === selectedBoard.id) {
-          const updatedCards = board.cards.filter((card) => card.id !== cardId);
-          return { ...board, cards: updatedCards };
-        }
-        return board;
-      });
+      axios.delete(`http://localhost:5000/cards/${cardId}`).then(resp => {
+        setCards(prevCards => {
+          const updatedCards = prevCards.filter(card => card.card_id !== cardId)
+          return updatedCards
+        })
+      })
+      // const updatedBoards = boards.map((board) => {
+      //   if (cardId === selectedBoard.id) {
+      //     const updatedCards = board.cards.filter((card) => card.id !== cardId);
+      //     return { ...board, cards: updatedCards };
+      //   }
+      //   return board;
+      // });
     };
   };
   
   // post request needs to go to /<board_id>/cards
   // board needs to be selectedboard
   const createCard = (newCardData) => {
-    console.log("new Card Data",newCardData)
     axios
-    .post('http://localhost:5000/boards/1/cards', newCardData)
+    .post(`http://localhost:5000/boards/${selectedBoard.board_id}/cards`, newCardData)
     .then((response) => {
-      console.log('response',response)
-      const newCards = [...cards];
-
-      newCards.push({
-        id: response.data.card_id,
-        message: response.data.message,
-        board_id: response.data.board_id,
-        likedCount: response.data.liked_count,
-      });
-
-      setCards(newCards);
+      setCards(prevCards => {
+        return [...prevCards, response.data];
+      })
     })
     .catch((error) => {
       console.log(error)
@@ -68,8 +62,7 @@ const App = () => {
     .post('http://localhost:5000/boards', newBoardData)
     .then((response) => {
       setBoards(prevBoards => {
-        console.log('response',response.data)
-        return [...prevBoards, response.data]
+        return [...prevBoards, response.data];
       })
     })
     .catch((error) => {
@@ -78,8 +71,25 @@ const App = () => {
   };
 
   const selectBoard = (board) => {
-    setSelectedBoard(board)
+    axios.get(`http://localhost:5000/boards/${board.board_id}/cards`)
+    .then(response => {
+      setSelectedBoard(board)
+      setCards(response.data)
+    })
   }
+
+  const increaseLikedCount = (id) => {
+    axios.patch(`http://localhost:5000/cards/${id}`)
+    .then(response => {
+      setCards(prevCards => {
+        const updatedCards = prevCards.map(card => {
+          return card.card_id === id ? response.data : card
+        })
+        return updatedCards
+      })
+    })
+  };
+
 
   return (
     <div className="App">
@@ -89,7 +99,7 @@ const App = () => {
       </header>
       <main>
         {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard}/>}
+        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard} deleteCard={deleteCard}increaseLikedCount={increaseLikedCount}/>}
 
         <BoardForm createBoardCallback={createBoard}></BoardForm>
       </main>
