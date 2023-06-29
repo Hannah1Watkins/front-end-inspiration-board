@@ -10,6 +10,7 @@ const App = () => {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
   const [selectedBoard, setSelectedBoard] = useState(null);
+  const [likedCount, setLikedCount] = useState(0);
 
   useEffect( () => {
     axios.get('http://127.0.0.1:5000/boards').then(resp => {
@@ -42,21 +43,13 @@ const App = () => {
   // post request needs to go to /<board_id>/cards
   // board needs to be selectedboard
   const createCard = (newCardData) => {
-    console.log("new Card Data",newCardData)
     axios
-    .post('http://localhost:5000/boards/1/cards', newCardData)
+    .post(`http://localhost:5000/boards/${selectedBoard.board_id}/cards`, newCardData)
     .then((response) => {
-      console.log('response',response)
-      const newCards = [...cards];
-
-      newCards.push({
-        id: response.data.card_id,
-        message: response.data.message,
-        board_id: response.data.board_id,
-        likedCount: response.data.liked_count,
-      });
-
-      setCards(newCards);
+      setCards(prevCards => {
+        console.log(response.data)
+        return [...prevCards, response.data];
+      })
     })
     .catch((error) => {
       console.log(error)
@@ -68,8 +61,7 @@ const App = () => {
     .post('http://localhost:5000/boards', newBoardData)
     .then((response) => {
       setBoards(prevBoards => {
-        console.log('response',response.data)
-        return [...prevBoards, response.data]
+        return [...prevBoards, response.data];
       })
     })
     .catch((error) => {
@@ -78,8 +70,20 @@ const App = () => {
   };
 
   const selectBoard = (board) => {
-    setSelectedBoard(board)
+    axios.get(`http://localhost:5000/boards/${board.board_id}/cards`)
+    .then(response => {
+      setSelectedBoard(board)
+      setCards(response.data)
+    })
   }
+
+  const increaseLikedCount = (card) => {
+    axios.patch(`http://localhost:5000/cards/${card.card_id}`)
+    .then(response => {
+      setLikedCount(response.data.likedCount)
+    });
+  };
+
 
   return (
     <div className="App">
@@ -89,7 +93,7 @@ const App = () => {
       </header>
       <main>
         {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard}/>}
+        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard} increaseLikedCount={increaseLikedCount}/>}
 
         <BoardForm createBoardCallback={createBoard}></BoardForm>
       </main>
