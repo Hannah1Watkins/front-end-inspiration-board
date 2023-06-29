@@ -14,7 +14,8 @@ const NavBar = ({ boards, deleteBoard, selectBoard }) => {
     });
     
     return (
-        <nav>
+        <nav className="nav">
+            <h1>Inspiration Board</h1>
             <ul className="dropdown">
                 <h3>All Boards</h3>
                 <ul className="dropdown_content">{board_titles}</ul>
