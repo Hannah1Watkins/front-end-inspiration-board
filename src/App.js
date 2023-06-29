@@ -2,15 +2,12 @@ import React, {useState, useEffect} from 'react';
 import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
-import CardForm from './components/CardForm';
 import axios from 'axios';
-import Card from './components/Card';
 
 const App = () => {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
   const [selectedBoard, setSelectedBoard] = useState(null);
-  const [likedCount, setLikedCount] = useState(0);
 
   useEffect( () => {
     axios.get('http://127.0.0.1:5000/boards').then(resp => {
@@ -19,7 +16,6 @@ const App = () => {
   }, []);
 
   const deleteBoard = (boardId) => {
-    console.log(boardId);
     axios.delete(`http://localhost:5000/boards/${boardId}`).then(resp => {
       setBoards(prevBoards => {
         const updatedBoards = prevBoards.filter(board => board.board_id !== boardId)
@@ -47,7 +43,6 @@ const App = () => {
     .post(`http://localhost:5000/boards/${selectedBoard.board_id}/cards`, newCardData)
     .then((response) => {
       setCards(prevCards => {
-        console.log(response.data)
         return [...prevCards, response.data];
       })
     })
@@ -77,11 +72,17 @@ const App = () => {
     })
   }
 
-  const increaseLikedCount = (card) => {
-    axios.patch(`http://localhost:5000/cards/${card.card_id}`)
+  const increaseLikedCount = (id) => {
+    axios.patch(`http://localhost:5000/cards/${id}`)
     .then(response => {
-      setLikedCount(response.data.likedCount)
-    });
+      console.log(response.data, id)
+      setCards(prevCards => {
+        const updatedCards = prevCards.map(card => {
+          return card.card_id === id ? response.data : card
+        })
+        return updatedCards
+      })
+    })
   };
 
 

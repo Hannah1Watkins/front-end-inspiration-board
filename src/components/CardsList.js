@@ -3,13 +3,18 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 
 const CardsList = ({ cards, increaseLikedCount, deleteCard }) => {
-    const cardComponents = cards.map( (card) => {
-        return (<Card
-            key={card.card_id}
-            card={card}
-            increaseLikedCount={increaseLikedCount}
-            deleteCard={deleteCard}
-        />)
+    const cardComponents = cards.map( (card, index) => {
+        return (
+            <div key={index}>
+                <Card
+                    card_id={card.card_id}
+                    message={card.message}
+                    liked_count = {card.liked_count}
+                    increaseLikedCount={increaseLikedCount}
+                    deleteCard={deleteCard}
+                />
+            </div>
+        )
     })
 
     return <div>
