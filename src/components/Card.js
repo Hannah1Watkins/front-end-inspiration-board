@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import './Card.css'
 
 const Card = ({card_id, message, liked_count, increaseLikedCount, deleteCard}) => {
     return (
@@ -17,7 +18,7 @@ const Card = ({card_id, message, liked_count, increaseLikedCount, deleteCard}) =
 Card.propTypes = {
     card_id: PropTypes.number.isRequired,
     message: PropTypes.string.isRequired,
-    likedCount: PropTypes.number.isRequired,
+    liked_count: PropTypes.number.isRequired,
     deleteCard: PropTypes.func.isRequired,
     increaseLikedCount: PropTypes.func.isRequired,
 };

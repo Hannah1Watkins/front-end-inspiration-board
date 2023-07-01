@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import './CardForm.css'
 
 const CardForm = ({createCard}) => {
     const [formFields, setFormFields] = React.useState({
@@ -34,7 +35,7 @@ const CardForm = ({createCard}) => {
                 <h2>Create A New Card: </h2>
                 <div className="new_card_fields">
                     <div>
-                        <label htmlFor="message">Message:</label>
+                        <label htmlFor="message">Message: </label>
                         <input 
                             name="message" 
                             value={formFields.message}
@@ -42,7 +43,7 @@ const CardForm = ({createCard}) => {
                         ></input>
                     </div>
                     <div>
-                        <p>Preview:{formFields.message}</p>
+                        <p>Preview: {formFields.message}</p>
                     </div>
                     <button 
                         className="button new_card_submit" 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
-
+import './CardsList.css'
 const CardsList = ({ cards, increaseLikedCount, deleteCard }) => {
     const cardComponents = cards.map( (card, index) => {
         return (

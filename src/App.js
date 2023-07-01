@@ -3,6 +3,7 @@ import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
 import axios from 'axios';
+import './App.css'
 
 const App = () => {
   const [boards, setBoards] = useState([]);
