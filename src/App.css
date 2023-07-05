@@ -1,14 +1,23 @@
+* {
+    /* border: 1px solid red; */
+}
+
 div.App {
     width: 100vw;
-    height: 100vh;
+    height: auto;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .app-header,
+.app-barbie-banner,
 .app-body,
 .app-footer {
     width: 80vw;
     margin: 0 auto;
 }
+
+
 
 .app-footer {
     position: absolute;

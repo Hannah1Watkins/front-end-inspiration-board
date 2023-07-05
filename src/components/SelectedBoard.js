@@ -2,13 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import CardsList from './CardsList';
 import CardForm from './CardForm';
+import './SelectedBoard.css';
 
 const SelectedBoard = ({ selectedBoard, cards, deleteCard, createCard, increaseLikedCount}) => {
   return (
-    <div>
-      <h2>Selected Board: {selectedBoard.title}</h2>
+    <div className="display-selected-board">
+      <section>
+        <h2>Selected Board: {selectedBoard.title}</h2>
+        <CardForm createCard={createCard}/>
+      </section>
       <CardsList cards={cards} deleteCard = {deleteCard} increaseLikedCount={increaseLikedCount}></CardsList>
-      <CardForm createCard={createCard}/>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const NavBar = ({ boards, deleteBoard, selectBoard }) => {
     return (
         <nav className="nav">
             <h1>Inspiration Board</h1>
-            <h3>Get to Know the Team</h3>
+            {/* <h3>Get to Know the Team</h3> */}
             <ul className="dropdown">
                 <h3>All Boards</h3>
                 <ul className="dropdown_content">{board_titles}</ul>

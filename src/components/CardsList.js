@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
+import './CardsList.css';
 
 const CardsList = ({ cards, increaseLikedCount, deleteCard }) => {
     const cardComponents = cards.map( (card, index) => {
         return (
-            <div key={index}>
+            <div key={index} className="display-card">
                 <Card
                     card_id={card.card_id}
                     message={card.message}
@@ -17,9 +18,11 @@ const CardsList = ({ cards, increaseLikedCount, deleteCard }) => {
         )
     })
 
-    return <div>
+    return (
+        <div className="display-cards-list">
             {cardComponents}
-        </div>;
+        </div>
+    )
 };
 
 CardsList.propTypes = {

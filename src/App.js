@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
+import Barbies from './components/Barbies';
 import axios from 'axios';
 import './App.css';
 
@@ -88,14 +89,28 @@ const App = () => {
   return (
     <div className="App">
       <header className="app-header">
-        {/* <h1>Inspiration Board</h1> */}
         <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard}/>
       </header>
+
       {/* Get To Know The Team Section */}
+      <section className="app-barbie-banner">
+        <Barbies /> 
+      </section>
+
       <main className="app-body">
+
         <BoardForm createBoardCallback={createBoard}></BoardForm>
+
         {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard} deleteCard={deleteCard}increaseLikedCount={increaseLikedCount}/>}
+        {selectedBoard && 
+          <SelectedBoard 
+            selectedBoard={selectedBoard} 
+            cards={cards} 
+            createCard={createCard} 
+            deleteCard={deleteCard}
+            increaseLikedCount={increaseLikedCount}
+          />
+        }
 
       </main>
 
