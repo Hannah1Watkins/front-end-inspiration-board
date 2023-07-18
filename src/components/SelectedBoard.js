@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import CardsList from './CardsList';
+// import CardsList from './CardsList';
 import CardForm from './CardForm';
 import './SelectedBoard.css';
 
@@ -11,7 +11,7 @@ const SelectedBoard = ({ selectedBoard, cards, deleteCard, createCard, increaseL
         <h2>Selected Board: {selectedBoard.title}</h2>
         <CardForm createCard={createCard}/>
       </section>
-      <CardsList cards={cards} deleteCard = {deleteCard} increaseLikedCount={increaseLikedCount}></CardsList>
+      {/* <CardsList cards={cards} deleteCard = {deleteCard} increaseLikedCount={increaseLikedCount}></CardsList> */}
     </div>
   );
 };

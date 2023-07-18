@@ -1,5 +1,5 @@
 body {
-    font-family: 'Barbie', sans-serif;
+    /* font-family: 'Barbie', sans-serif; */
 }
 
 .nav {
@@ -8,14 +8,14 @@ body {
     align-items: center;
     padding: 1px 50px;
     background-color: #f29ad8;
-    font-family: 'Le Journey', sans-serif;
+    /* font-family: 'Le Journey', sans-serif; */
     font-size: 30px;
 
 }
 
 nav h1 {
     font-size: 60px;
-    font-family: 'Barbie', sans-serif;
+    /* font-family: 'Barbie', sans-serif; */
     font-weight: bolder;
     color: #f039b1;
     margin: 0;

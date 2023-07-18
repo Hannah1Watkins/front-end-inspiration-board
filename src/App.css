@@ -1,29 +1,43 @@
-* {
-    /* border: 1px solid red; */
-}
+/* * {
+    border: 1px solid red;
+} */
 
 div.App {
-    width: 100vw;
+    display: grid;
+    grid-template-areas: '. head head .'
+                         '. barbie barbie .'
+                         '. body body .'
+                         '. footer footer .';
+    grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
+    grid-row-gap: 5px;
     height: auto;
-    display: flex;
-    flex-flow: column wrap;
 }
 
-.app-header,
-.app-barbie-banner,
-.app-body,
-.app-footer {
-    width: 80vw;
-    margin: 0 auto;
+.app-header {
+    grid-area: head;
+    background-color: yellow;
 }
 
+.app-barbie-banner {
+    grid-area: barbie;
+    background-color: rgb(150, 150, 71);
 
+}
+
+.app-body {
+    grid-area: body;
+    background-color: rgb(147, 147, 125);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 'bf cl cl'
+                         'sb cl cl';
+    row-gap: 5px;
+    column-gap: 5px;
+}
 
 .app-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    grid-area: footer;
     text-align: center;
-}
+    background-color: rgb(230, 230, 213);
 
+}

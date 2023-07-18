@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
+import CardsList from './components/CardsList';
 import Barbies from './components/Barbies';
 import axios from 'axios';
 import './App.css';
@@ -98,7 +99,6 @@ const App = () => {
       </section>
 
       <main className="app-body">
-
         <BoardForm createBoardCallback={createBoard}></BoardForm>
 
         {/* conditional rendering: I want to display this thing if both of these are true */}
@@ -111,6 +111,13 @@ const App = () => {
             increaseLikedCount={increaseLikedCount}
           />
         }
+
+        <CardsList 
+        cards={cards} 
+        deleteCard = {deleteCard} 
+        increaseLikedCount={increaseLikedCount}
+        >
+        </CardsList>
 
       </main>
 

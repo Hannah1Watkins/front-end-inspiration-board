@@ -1,3 +1,9 @@
+.new_board_form {
+    background-color: azure;
+    grid-area: bf;
+    height: auto;
+}
+
 .show {
     display: block;
 }
@@ -34,7 +40,6 @@
     width: 15vw;
     padding: 15px;
     border-radius: 5px;
-    text-align: left;
     border: 2px solid black;
 }
 

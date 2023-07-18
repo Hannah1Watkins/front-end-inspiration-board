@@ -1,5 +1,4 @@
 .display-selected-board {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    background-color: yellowgreen;
+    grid-area: sb;
 }
