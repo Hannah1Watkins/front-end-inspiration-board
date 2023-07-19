@@ -5,3 +5,71 @@
 .hide {
     display: none;
 }
+
+.new_board_form,
+.new_board_fields input {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.new_board_form {
+    grid-area: bf;
+    height: fit-content;
+    border: 1px solid red;
+    margin-bottom: 10px;
+}
+
+.new_board_header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.new_board_header button {
+    position: relative;
+    top: 20px;
+    border: none;
+    border-bottom: 2px solid #00000097;
+    background-color: transparent;
+    height: fit-content;
+    color: #00000097;
+    font-weight: bold;
+    font-family: 'barbiemediumitalic';
+    font-size: 12px;
+}
+
+.new_board_header button:hover {
+    border-bottom: 2px solid black;
+    color: black;
+    cursor: pointer;
+}
+
+.inputs {
+    width: 18vw;
+}
+
+.new_board_fields {
+    padding: 10px;
+}
+
+.new_board_fields div {
+    margin-bottom: 5px;
+    padding: 10px 0;
+}
+
+.new_board_fields div label {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.new_board_fields input {
+    background-color: transparent;
+    width: 16vw;
+    border: none;
+}
+
+.new_board_fields input:required {
+    border-bottom: 1.5px solid black;
+}

@@ -1,41 +1,51 @@
-.Dashboard {
-  background-color: blue;
-}
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div.App {
+    display: grid;
+    grid-template-areas: '. head head .'
+                          '. barbie barbie .'
+                          '. body body .'
+                          '. footer footer .';
+    grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
+    grid-row-gap: 5px;
+    height: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app-header {
+    grid-area: head;
 }
 
-.App-link {
-  color: #61dafb;
+.app-barbie-banner {
+    grid-area: barbie;
+    border: 1px solid red;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-body {
+    grid-area: body;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.app-body aside {
+    flex: 1;
+    align-items: flex-start;
+    
+}
+.app-body section {
+    flex: 2;
+    align-items: flex-start;
+    
+}
+
+.app-footer {
+    grid-area: footer;
+    text-align: center;
+
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-family: 'barbiemediumitalic';
+    background-color: pink;
 }

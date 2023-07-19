@@ -1,0 +1,8 @@
+.single_card_section {
+    display: inline-block;
+    margin: 1px;
+    padding: 10px;
+    text-align: center;
+    width: fit-content;
+    border: 1px solid pink;
+}

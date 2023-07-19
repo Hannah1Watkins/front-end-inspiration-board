@@ -11,6 +11,10 @@ const Dashboard = (props) => {
         <header className="app-header">
             <NavBar boards={props.boards} deleteBoard={props.deleteBoard} selectBoard={props.selectBoard}/>
         </header>
+        {/* Get To Know The Team Section */}
+        <section className="app-barbie-banner">
+            <Barbies /> 
+        </section>
         <main>
             {props.selectedBoard && <SelectedBoard selectedBoard={props.selectedBoard} cards={props.cards} createCard={props.createCard} deleteCard={props.deleteCard}increaseLikedCount={props.increaseLikedCount}/>}
             <BoardForm createBoardCallback={props.createBoardCallback}></BoardForm>

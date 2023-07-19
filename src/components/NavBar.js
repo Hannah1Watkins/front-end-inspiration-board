@@ -7,17 +7,17 @@ const NavBar = ({ boards, deleteBoard, selectBoard }) => {
     const board_titles = boards.map((board, index) => {
         return (
             <li key={index} className="board_title">
-                <button onClick={() => selectBoard(board)}>{board.title}</button>
-                <button onClick={() => deleteBoard(board.board_id)}>Delete</button>
+                <button className="boards_list_item" onClick={() => selectBoard(board)}>{board.title}</button>
+                <button className="boards_list_item_delete" onClick={() => deleteBoard(board.board_id)}>X</button>
             </li>
         );
     });
     
     return (
         <nav className="nav">
-            <h1>Inspiration Board</h1>
+            <h1>Insp<span className='flicker-slow'>ira</span>tion <br/> <span className='flicker-fast'>Bo</span>ard</h1>
             <ul className="dropdown">
-                <h3>All Boards</h3>
+                <h4>All Boards</h4>
                 <ul className="dropdown_content">{board_titles}</ul>
             </ul>
         </nav>

@@ -1,11 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import BoardForm from "./components/BoardForm";
+import CardForm from './components/CardForm';
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
+import CardsList from './components/CardsList';
+import Barbies from './components/Barbies';
 import axios from 'axios';
 import LoginPage from './components/LoginPage.js'
 import NewUser from './components/NewUser.js'
 import Dashboard from './components/Dashboard.js'
+import './App.css';
 
 const App = () => {
   const [boards, setBoards] = useState([]);
@@ -157,10 +161,10 @@ const App = () => {
 
         </main>
 
-        <footer>
-          <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
-        </footer>
-      </div>
+      <footer className="app-footer">
+        <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
+      </footer>
+    </div>
   );
 }
 

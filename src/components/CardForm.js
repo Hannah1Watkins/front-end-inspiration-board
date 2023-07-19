@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import './CardForm.css';
 
 const CardForm = ({createCard}) => {
     const [formFields, setFormFields] = React.useState({
@@ -13,6 +14,9 @@ const CardForm = ({createCard}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         createCard(formFields);
+        setFormFields({
+            message: ''
+        });
     };
 
 
@@ -31,18 +35,19 @@ const CardForm = ({createCard}) => {
     return (
         <form className="new_card_form" onSubmit={handleSubmit}>
             <section>
-                <h2>Create A New Card: </h2>
+                <h2>Create New Card</h2>
                 <div className="new_card_fields">
                     <div>
-                        <label htmlFor="message">Message:</label>
-                        <input 
+                        <label htmlFor="message">Message : </label>
+                        <textarea 
                             name="message" 
                             value={formFields.message}
                             onChange={handleChange}
-                        ></input>
+                        ></textarea>
                     </div>
                     <div>
-                        <p>Preview:{formFields.message}</p>
+                        <label htmlFor="preview">Preview : </label>
+                        <span>{formFields.message}</span>
                     </div>
                     <button 
                         className="button new_card_submit" 
