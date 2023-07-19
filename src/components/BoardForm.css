@@ -2,6 +2,7 @@
     background-color: #ffe5ea;
     grid-area: bf;
     height: auto;
+    border-radius: 10px;
 }
 
 .show {

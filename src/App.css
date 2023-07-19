@@ -26,13 +26,14 @@ div.App {
 
 .app-body {
     grid-area: body;
-    background-color: rgb(147, 147, 125);
+    background-color: rgba(229, 67, 135, 0.549);
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 'bf cl cl'
                          'sb cl cl';
     row-gap: 5px;
     column-gap: 5px;
+    border-radius: 10px;
 }
 
 .app-footer {

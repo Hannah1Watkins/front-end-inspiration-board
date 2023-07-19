@@ -1,6 +1,9 @@
 .display-selected-board {
     grid-area: sb;
-    background: url(./assets/pink-exp-serious.jpeg);
+    background-color: rgba(255, 127, 180, 0.285);
+    border-radius: 10px;
+    
+    /* background: url(./assets/pink-exp-serious.jpeg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
