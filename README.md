@@ -1,3 +1,10 @@
+# Using Fonts
+
+In CSS:
+Barbie - font-family: 'barbiemediumitalic';
+Oppenheimer - font-family: 'Inter', sans-serif; letter-spacing: 5px;
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
