@@ -1,0 +1,39 @@
+.new_card_form {
+    border: 1px solid red;
+    grid-area: cf;
+    margin: 0 auto;
+    height: fit-content;    
+}
+
+.new_card_form h2 {
+    text-align: center;
+}
+
+.new_card_fields {
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.new_card_fields div,
+textarea {
+    padding: 10px;
+}
+
+.new_card_submit {
+    position: relative;
+    left: 10px;
+}
+
+.new_card_fields div label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.new_card_fields textarea {
+    width: 18vw;
+    padding: 10px;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+}

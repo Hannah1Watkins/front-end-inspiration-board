@@ -1,5 +1,5 @@
 body {
-    /* font-family: 'Barbie', sans-serif; */
+    font-family: 'barbiemediumitalic';
 }
 
 .nav {
@@ -13,16 +13,42 @@ body {
 
 }
 
-nav h1 {
-    font-size: 60px;
-    /* font-family: 'Barbie', sans-serif; */
-    font-weight: bolder;
-    color: #f039b1;
+nav h1,
+nav h4 {
     margin: 0;
 }
 
-nav h3 {
-    margin: 0;
+nav h1 {
+    font-size: 60px;
+    font-weight: bolder;
+    color: #f039b1;
+    /* text-shadow: 2px 2px 4px #4d2d48; */
+    width: fit-content;
+    text-shadow:3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #D42CCA,40px 0vw 200px #D42CCA;
+}
+
+.flicker-slow{
+    animation: flicker 3s linear infinite;
+}
+  
+.flicker-fast{
+animation: flicker 1s linear infinite;
+}
+
+@keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        /* text-shadow: none; */
+        opacity: .99;
+        
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+    }
+}
+
+
+nav h4 {
+    padding: 20px;
 }
 
 nav ul li {
@@ -34,23 +60,25 @@ nav ul li {
     width: auto;
 }
 
-.dropdown:hover .dropdown_content {
-    display: block;
-    line-height: 30px;
-    opacity: 1;
-    transition: all .5s ease;
-}
-
 .dropdown_content {
     position: absolute;
     top: 80px;
-    right: 193px;
+    right: 259px;
     width: 10vw;
-    z-index: 1;
+    z-index: 2;
     opacity: 0;
     transform-origin: top;
     border: 2px solid black;
 }
+
+.dropdown:hover .dropdown_content {
+    display: block;
+    margin-top: 30px;
+    line-height: 30px;
+    opacity: 1;
+    transition: all .7s ease;
+}
+
 
 .dropdown_content li {
     position: relative;
@@ -61,7 +89,7 @@ nav ul li {
     right: 40px;
     padding: 5px 10px;
     border-bottom: 2px solid black;
-    z-index: 2;
+    z-index: 3;
     background-color: #f29ad8;
     
 }
@@ -70,6 +98,7 @@ nav ul li {
 .boards_list_item_delete:hover {
     cursor: pointer;
     background-color: #f29ad883;
+    transform: scale(1.03);
 
 }
 
@@ -79,4 +108,8 @@ nav ul li {
     padding: 0;
     font-size: 0.7em;
     background-color: transparent;
+}
+
+.boards_list_item_delete:hover {
+    background-color: red;
 }

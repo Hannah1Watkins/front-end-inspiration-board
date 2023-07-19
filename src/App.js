@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import BoardForm from "./components/BoardForm";
+import CardForm from './components/CardForm';
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
 import CardsList from './components/CardsList';
@@ -99,25 +100,30 @@ const App = () => {
       </section>
 
       <main className="app-body">
-        <BoardForm createBoardCallback={createBoard}></BoardForm>
+        <aside>
+          <BoardForm createBoardCallback={createBoard}></BoardForm>
+          <CardForm createCard={createCard}/>
+        </aside>
+        
+        <section>
+          {/* conditional rendering: I want to display this thing if both of these are true */}
+          {selectedBoard && 
+            <SelectedBoard 
+              selectedBoard={selectedBoard} 
+              cards={cards} 
+              createCard={createCard} 
+              deleteCard={deleteCard}
+              increaseLikedCount={increaseLikedCount}
+            />
+          }
 
-        {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && 
-          <SelectedBoard 
-            selectedBoard={selectedBoard} 
-            cards={cards} 
-            createCard={createCard} 
-            deleteCard={deleteCard}
-            increaseLikedCount={increaseLikedCount}
-          />
-        }
-
-        <CardsList 
-        cards={cards} 
-        deleteCard = {deleteCard} 
-        increaseLikedCount={increaseLikedCount}
-        >
-        </CardsList>
+          <CardsList 
+          cards={cards} 
+          deleteCard = {deleteCard} 
+          increaseLikedCount={increaseLikedCount}
+          >
+          </CardsList>
+        </section>
 
       </main>
 

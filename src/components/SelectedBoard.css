@@ -1,4 +1,9 @@
 .display-selected-board {
-    background-color: yellowgreen;
+    border: 1px solid red;
     grid-area: sb;
+    /* margin: 0 auto; */
+    margin-bottom: 10px;
+
+    height: fit-content;
+    padding: 10px;
 }

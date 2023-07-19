@@ -1,4 +1,4 @@
 .display-cards-list {
-    background-color: aquamarine;
+    border: 1px solid red;
     grid-area: cl;
 }

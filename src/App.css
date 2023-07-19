@@ -1,7 +1,3 @@
-/* * {
-    border: 1px solid red;
-} */
-
 div.App {
     display: grid;
     grid-template-areas: '. head head .'
@@ -15,29 +11,41 @@ div.App {
 
 .app-header {
     grid-area: head;
-    background-color: yellow;
 }
 
 .app-barbie-banner {
     grid-area: barbie;
-    background-color: rgb(150, 150, 71);
+    border: 1px solid red;
 
 }
 
 .app-body {
     grid-area: body;
-    background-color: rgb(147, 147, 125);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas: 'bf cl cl'
-                         'sb cl cl';
-    row-gap: 5px;
-    column-gap: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.app-body aside {
+    flex: 1;
+    align-items: flex-start;
+    
+}
+.app-body section {
+    flex: 2;
+    align-items: flex-start;
+    
 }
 
 .app-footer {
     grid-area: footer;
     text-align: center;
-    background-color: rgb(230, 230, 213);
 
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-family: 'barbiemediumitalic';
+    background-color: pink;
 }

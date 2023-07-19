@@ -33,25 +33,27 @@ const BoardForm = ({createBoardCallback}) => {
         <form className="new_board_form" onSubmit={handleSubmit}>
             <section className="new_board_header">
                 <h2>Create New Board</h2>
-                <button type="button" value="hide" onClick={toggleShow}>Show / Hide</button>
+                <button type="button" onClick={toggleShow}>{displayForm ? 'hide' : 'show'}</button>
             </section>
             <section className={`inputs ${displayForm ? 'show' : 'hide'}`}>
                 <div className="new_board_fields">
                     <div>
-                        <label htmlFor="title">Title </label> 
                         <input 
                         name="title" 
                         value={formFields.title} 
                         onChange={handleChange} 
                         required />
+                        <label htmlFor="title">Title</label> 
+                        
                     </div>
+
                     <div>
-                        <label htmlFor="owner">Owner </label>
                         <input 
                         name="owner" 
                         value={formFields.owner} 
                         onChange={handleChange} 
                         required />
+                        <label htmlFor="owner">Owner</label>
                     </div>
                     <div>
                         <label htmlFor="preview">Preview : </label>
