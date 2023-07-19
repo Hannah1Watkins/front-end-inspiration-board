@@ -2,7 +2,7 @@ import React from 'react';
 import './BoardForm.css'
 import PropTypes from 'prop-types';
 
-const BoardForm = ({createBoardCallback}) => {
+const BoardForm = ({createBoard}) => {
 
     const [formFields, setFormFields] = React.useState({
         title: '',
@@ -17,7 +17,7 @@ const BoardForm = ({createBoardCallback}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setDisplayForm(false);
-        createBoardCallback(formFields);
+        createBoard(formFields);
         setFormFields({
             title: '',
             owner: ''
@@ -67,7 +67,7 @@ const BoardForm = ({createBoardCallback}) => {
 }
 
 BoardForm.propTypes = {
-    createBoardCallback: PropTypes.func.isRequired
+    createBoard: PropTypes.func.isRequired
 };
 
 export default BoardForm;

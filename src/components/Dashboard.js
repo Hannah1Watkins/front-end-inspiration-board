@@ -23,7 +23,7 @@ const Dashboard = (props) => {
 
         <main className="app-body">
             <aside>
-                <BoardForm createBoardCallback={props.createBoard}></BoardForm>
+                <BoardForm createBoard={props.createBoard}></BoardForm>
                 <CardForm createCard={props.createCard}/>
             </aside>
 

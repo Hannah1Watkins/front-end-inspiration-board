@@ -144,7 +144,7 @@ const App = () => {
                 createCard={createCard}
                 deleteCard={deleteCard}
                 increaseLikedCount={increaseLikedCount}
-                createBoardCallback={createBoard}
+                createBoard={createBoard}
                 / >
               }
           { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
