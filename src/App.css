@@ -1,9 +1,9 @@
 div.App {
     display: grid;
     grid-template-areas: '. head head .'
-                         '. barbie barbie .'
-                         '. body body .'
-                         '. footer footer .';
+                          '. barbie barbie .'
+                          '. body body .'
+                          '. footer footer .';
     grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
     grid-row-gap: 5px;
     height: auto;
