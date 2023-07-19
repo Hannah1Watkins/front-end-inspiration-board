@@ -1,5 +1,6 @@
 import React from 'react';
 import NewUser from './NewUser';
+import './LoginPage.css'
 
 const LoginPage = ({verifyLogin, createUser}) => {
     const [userRegistered, setUserRegistered] = React.useState('login')
@@ -26,17 +27,19 @@ const LoginPage = ({verifyLogin, createUser}) => {
         };
         
     return (
-        <div>
+        <div className='login-container'>
             {userRegistered === 'login' ? <div className ="auth-form-container">
                 <form onSubmit={handleSubmit}>
                     <label>
                         Username:
                         <input name="username" type="text" value={formFields.username} onChange={handleChange}/>
                     </label>
+                    <br></br>
                     <label>
                         Password:
                         <input name="password" type="password" value={formFields.password} onChange={handleChange} />
                     </label>
+                    <br></br>
                         <button type="submit">Submit</button>
                 </form>
                 <p>Don't have an account? <button onClick={() => setUserRegistered('register')}>Register Here</button></p>

@@ -23,24 +23,28 @@ const NewUser = ({togglePage, createUser}) => {
     };
         
     return (
-        <div className ="auth-form-container">
+        <div className ="auth-form-container login-container">
             <form onSubmit={handleSubmit}>
                 <label>
                     First Name:
                     <input name="firstName" type="text" value={formFields.firstName} onChange={handleChange}/>
                 </label>
+                <br></br>
                 <label>
                     Last Name:
                     <input name="lastName" type="text" value={formFields.lastName} onChange={handleChange}/>
                 </label>
+                <br></br>
                 <label>
                     Username:
                     <input name="username" type="text" value={formFields.username} onChange={handleChange}/>
                 </label>
+                <br></br>
                 <label>
                     Password:
                     <input name="password" type="password" value={formFields.password} onChange={handleChange} />
                 </label>
+                <br></br>
                     <button type="submit">Submit</button>
                 {/* <label>
                     Profile Pic:

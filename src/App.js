@@ -125,15 +125,11 @@ const App = () => {
   const createResponseMessage = (responseMessage) => {
     setResponseMessage(responseMessage)
     setIsResponseVisible(true)
-    setTimeout(() => {setIsResponseVisible(false);}, 2000);
+    setTimeout(() => {setIsResponseVisible(false);}, 3000);
   }
 
   return (
-      <div className="App">
-        <header className="app-header">
-          {/* <h1>Inspiration Board</h1> */}
-          {/* <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard}/> */}
-        </header>
+      <div className="login-container">
         <main>
           {isLoggedIn === true && <Dashboard 
                 boards={boards} 
