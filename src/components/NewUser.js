@@ -1,6 +1,7 @@
 import React from 'react';
+import { object } from 'yup';
 
-const NewUser = ({onFormSwitch}) => {
+const NewUser = ({togglePage, createUser}) => {
     const [formFields, setFormFields] = React.useState({
         firstName:'',
         lastName:'',
@@ -15,8 +16,9 @@ const NewUser = ({onFormSwitch}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formFields)
-    
+        createUser(formFields)
+
+        
         // function that posts new user here
     };
         
@@ -45,7 +47,7 @@ const NewUser = ({onFormSwitch}) => {
                     <input name="profilePic" type="img" value={formFields.profilePic} onChange={handleChange}/>
                 </label> */}
             </form>
-            <p>Already have an account? <button onClick={() => onFormSwitch('login')}>Login Here</button></p>
+            <p>Already have an account? <button onClick={() => togglePage('login')}>Login Here</button></p>
         </div>
     );
 };

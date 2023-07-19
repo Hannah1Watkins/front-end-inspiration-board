@@ -3,11 +3,20 @@ import BoardForm from "./components/BoardForm";
 import NavBar from './components/NavBar';
 import SelectedBoard from './components/SelectedBoard';
 import axios from 'axios';
+import LoginPage from './components/LoginPage.js'
+import NewUser from './components/NewUser.js'
+import Dashboard from './components/Dashboard.js'
 
 const App = () => {
   const [boards, setBoards] = useState([]);
   const [cards, setCards] = useState([]);
   const [selectedBoard, setSelectedBoard] = useState(null);
+  const [newUser, setNewUsers] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [responseMessage, setResponseMessage] = useState(null);
+  const [isResponseVisible, setIsResponseVisible] = useState(false);
+  
+  
 
   useEffect( () => {
     axios.get('http://127.0.0.1:5000/boards').then(resp => {
@@ -32,18 +41,9 @@ const App = () => {
           return updatedCards
         })
       })
-      // const updatedBoards = boards.map((board) => {
-      //   if (cardId === selectedBoard.id) {
-      //     const updatedCards = board.cards.filter((card) => card.id !== cardId);
-      //     return { ...board, cards: updatedCards };
-      //   }
-      //   return board;
-      // });
     };
   };
   
-  // post request needs to go to /<board_id>/cards
-  // board needs to be selectedboard
   const createCard = (newCardData) => {
     axios
     .post(`http://localhost:5000/boards/${selectedBoard.board_id}/cards`, newCardData)
@@ -90,24 +90,77 @@ const App = () => {
     })
   };
 
+  const createUser = (newUserInfo) => {
+    axios.post(`http://localhost:5000/user/register`, newUserInfo)
+    .then(response => {
+      setNewUsers(prevUsers =>{
+        return [...prevUsers, response.data];
+      })
+      createResponseMessage("you have successfully registered")
+    })
+    .catch((error) => {
+      if (error.response.status == 409) {
+        createResponseMessage('Sorry, that username is already taken')
+      } 
+      else {
+        createResponseMessage('Please complete all fields')
+      }
+    });
+    
+  };
+
+  const verifyLogin = (loginInfo) => {
+    console.log(loginInfo)
+    axios.post(`http://localhost:5000/user/login`, loginInfo)
+    .then(response => {
+      setIsLoggedIn(true)
+    })
+    .catch((error) => {
+      if (error.response.status == 401) {
+        createResponseMessage('Your username or password was incorrect')
+      } 
+      else {
+        createResponseMessage('Please complete all fields')
+      }
+    });
+  }
+
+  const createResponseMessage = (responseMessage) => {
+    setResponseMessage(responseMessage)
+    setIsResponseVisible(true)
+    setTimeout(() => {setIsResponseVisible(false);}, 2000);
+  }
 
   return (
-    <div className="App">
-      <header className="app-header">
-        {/* <h1>Inspiration Board</h1> */}
-        <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard}/>
-      </header>
-      <main>
-        {/* conditional rendering: I want to display this thing if both of these are true */}
-        {selectedBoard && <SelectedBoard selectedBoard={selectedBoard} cards={cards} createCard={createCard} deleteCard={deleteCard}increaseLikedCount={increaseLikedCount}/>}
+      <div className="App">
+        <header className="app-header">
+          {/* <h1>Inspiration Board</h1> */}
+          {/* <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard}/> */}
+        </header>
+        <main>
+          {isLoggedIn === true && <Dashboard 
+                boards={boards} 
+                deleteBoard={deleteBoard} 
+                selectBoard={selectBoard} 
+                selectedBoard={selectedBoard} 
+                cards={cards}
+                createCard={createCard}
+                deleteCard={deleteCard}
+                increaseLikedCount={increaseLikedCount}
+                createBoardCallback={createBoard}
+                / >
+              }
+          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
+          { isResponseVisible &&
+              <h3 className="response"> { responseMessage } </h3> }
+          
 
-        <BoardForm createBoardCallback={createBoard}></BoardForm>
-      </main>
+        </main>
 
-      <footer>
-        <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
-      </footer>
-    </div>
+        <footer>
+          <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
+        </footer>
+      </div>
   );
 }
 
