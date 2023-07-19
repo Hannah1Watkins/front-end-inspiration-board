@@ -42,6 +42,8 @@
     padding: 15px;
     border-radius: 5px;
     border: 2px solid black;
+    align-items: center;
+    
 }
 
 .inputs .new_board_fields {
@@ -61,6 +63,7 @@
 .new_board_fields input {
     height: 15px;
     padding: 5px;
+    background-color: #ff69b4c2;
 }
 
 .new_board_fields input:required {
