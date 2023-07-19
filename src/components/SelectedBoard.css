@@ -1,4 +1,6 @@
 .display-selected-board {
-    background-color: yellowgreen;
     grid-area: sb;
+    background: url(./assets/pink-exp-serious.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
