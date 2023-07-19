@@ -19,6 +19,7 @@ nav h1 {
 
 nav ul li {
     list-style-type: none;
+    
 }
 
 .dropdown:hover {
@@ -38,7 +39,7 @@ nav ul li {
     display: none;
     position: absolute;
     z-index: 1;
-    border: 2px solid black;
+    border: 3px solid rgb(222, 22, 22);
 }
 
 .dropdown_content li:hover {

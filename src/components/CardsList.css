@@ -1,8 +1,10 @@
-/* .cards_list {
+/* 
+  .cards_list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 16px;
-    margin-top: 16px;
-  }
-   */
-  /* Add any additional styling as needed */
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 2 / 3 / 3 / 4; } */

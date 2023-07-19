@@ -1,17 +1,27 @@
 .single_card_section {
+  
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  
     background-color: #fd178e;
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 16px;
-    padding: 10px;
+    padding: 10px, 20px;
     grid-column-end: 2;
 
     
   }
   
   .single_card_section p {
+    display: grid;
+    grid-area: 2 / 2 / 5 / 5; 
+    padding: 10px;
     color: #1e1419;
-    font-size: 16px;
+    font-size: 20px;
     background-color: #ffe5ea;
     text-align: center;
     border-radius: 5px;
