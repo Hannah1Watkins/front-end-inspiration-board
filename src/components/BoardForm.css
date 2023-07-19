@@ -1,5 +1,5 @@
 .new_board_form {
-    background-color: azure;
+    background-color: #ffe5ea;
     grid-area: bf;
     height: auto;
 }
@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #F039B1;
 }
 
 .new_board_header button {
@@ -23,7 +24,7 @@
     border: none;
     border-bottom: 2px solid #00000097;
     height: fit-content;
-    color: #00000097;
+    color: #F039B1;
     font-size: inherit;
     font-weight: bold;
     line-height: inherit;
