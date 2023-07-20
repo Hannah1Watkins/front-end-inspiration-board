@@ -1,13 +1,13 @@
 import React from 'react';
-import '../../App.css';
-import HeroSection from '../HeroSection';
+import OpeningPage from '../components/OpeningPage.js';
 
-function Home () {
-    return (
-        <>
-            <HomePage />
-        </>
-    )
+
+function HomePage() {
+  return (
+    <>
+      <OpeningPage />
+    </>
+  );
 }
 
-export default Home
+export default HomePage;
