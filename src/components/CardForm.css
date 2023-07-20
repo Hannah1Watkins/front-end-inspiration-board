@@ -1,3 +1,6 @@
+* {
+    border-radius: 3px;
+}
 .new_card_form {
     border: 1px solid red;
     grid-area: cf;
