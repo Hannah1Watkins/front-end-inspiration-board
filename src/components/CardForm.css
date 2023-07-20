@@ -1,15 +1,18 @@
 * {
-    border-radius: 3px;
+    border-radius: 4px;
 }
 .new_card_form {
-    border: 1px solid red;
+    border: 3px solid rgb(255, 0, 174);
     grid-area: cf;
     margin: 0 auto;
-    height: fit-content;    
+    height: fit-content;
+    background-color: white;
 }
 
 .new_card_form h2 {
     text-align: center;
+    color: rgb(235, 91, 194)
+
 }
 
 .new_card_fields {
