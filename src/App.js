@@ -144,10 +144,8 @@ const App = () => {
                 createBoard={createBoard}
                 / >
               }
-          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
-          { isResponseVisible &&
-              <h3 className="response"> { responseMessage } </h3> }
-          
+          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} responseMessage={responseMessage} isResponseVisible={isResponseVisible}
+          /> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
 
         </main>
 
