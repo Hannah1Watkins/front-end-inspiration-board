@@ -25,34 +25,37 @@ const NewUser = ({togglePage, createUser}) => {
         <div className ="login-container">
             
             <form onSubmit={handleSubmit}>
-                <h1><span className='flicker-slow'>R</span>eg<span className='flicker-fast'>i</span>ster</h1>
+                <h2 className='new-user-heading'>Register</h2>
+                {/* <h2><span className='flicker-slow'>R</span>eg<span className='flicker-fast'>i</span>ster</h2> */}
                 <label>
-                    First Name:
+                    First Name: <br></br><br></br>
                     <input name="firstName" type="text" value={formFields.firstName} onChange={handleChange} placeholder='First Name'/>
                 </label>
                 <br></br>
                 <label>
-                    Last Name:
+                    Last Name:<br></br><br></br>
                     <input name="lastName" type="text" value={formFields.lastName} placeholder='Last Name' onChange={handleChange}/>
                 </label>
                 <br></br>
                 <label>
-                    Username:
+                    Username:<br></br><br></br>
                     <input name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='Username'/>
                 </label>
                 <br></br>
                 <label>
-                    Password:
+                    Password:<br></br><br></br>
                     <input name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='Password' />
                 </label>
                 <br></br>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className='glow-on-hover'>Submit</button>
                 {/* <label>
                     Profile Pic:
                     <input name="profilePic" type="img" value={formFields.profilePic} onChange={handleChange}/>
                 </label> */}
             </form>
-            <p>Already have an account? <button onClick={() => togglePage('login')}>Login Here</button></p>
+            <div className='login-help'>
+            <p>Already have an account? <button onClick={() => togglePage('login')} className='glow-on-hover'>Login Here</button></p>
+            </div>
         </div>
     );
 };

@@ -129,8 +129,12 @@ const App = () => {
     setTimeout(() => {setIsResponseVisible(false);}, 3000);
   }
 
+  const toggleState = (whichState, whatToggle) => {
+    whichState(whatToggle)
+  }
+
   return (
-      <div>
+      <div className='barbie-container'>
         <main>
           {isLoggedIn === true && <Dashboard 
                 boards={boards} 
@@ -144,9 +148,11 @@ const App = () => {
                 createBoard={createBoard}
                 / >
               }
+            <div>
           { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
           { isResponseVisible &&
               <h3 className="response"> { responseMessage } </h3> }
+            </div>
           
 
         </main>

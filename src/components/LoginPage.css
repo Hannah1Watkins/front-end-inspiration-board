@@ -1,6 +1,49 @@
-h1 {
-    color:#E10686;
+/* contianer positioning and animation */
+.container {
+    margin: 0;
+    width: 800px;
+    height: 100%;
+    padding-left: 5%;
 }
+
+.login-container {
+    margin: 0;
+    display: block;
+    text-align:center;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+} 
+
+@keyframes myAnim {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		transform: scale3d(0.95, 1.05, 1);
+	}
+
+	75% {
+		transform: scale3d(1.05, 0.95, 1);
+	}
+
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+} */
+
+/* inspo board header  */
 
 .flicker-slow{
     animation: flicker 3s linear infinite;
@@ -20,81 +63,156 @@ animation: flicker 1s linear infinite;
         opacity: 0.4;
     }
 }
-.container {
-    margin: 50px auto;
-    width: 640px;
+
+/* login header */
+
+.new-user-heading {
+    padding-top: 5% !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 30px;
+    font-size: 70px !important;
+    color: white !important;
+    text-shadow: 6px 1px #E10686 !important;
+}
+.login-container h2 {
+    color:#E10686;
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 50px;
 }
 
-.login {
-    position: relative;
-    margin: 0 auto;
-    padding: 20px 20px 20px;
-    width: 310px;
+.login-container h1 {
+    color:#E10686;
+    margin: 0;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    margin-top: 0;
+    line-height: 40px;
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    /* color: #E10686; */
+    text-align: center;
+    text-shadow: 6px 1px #E10686;
+    border-radius: 3px 3px 0 0;
 }
 
+/* switch between login + registration section */
 .login-help {
     margin: 20px 0;
-    font-size: 15px;
-    color: white;
+    font-size: 30px;
+    color: #E10686;
     text-align: center;
     text-shadow: 0 1px #2a85a1;
 }
 
+
 :-moz-placeholder {
-    color: #69A5D0 !important;
-    font-size: 13px;
+    color: #2a85a1 !important;
+    font-size: 20px;
 }
 
 ::-webkit-input-placeholder {
-    color: #69A5D0;
-    font-size: 13px;
+    color: #2a85a1;
+    font-size: 20px;
 }
 
-
-
-.login h1 {
-    margin: -20px -20px 21px;
-    line-height: 40px;
-    font-size: 50px;
-    font-weight: bold;
-    color: #E10686;
-    text-align: center;
-    text-shadow: 0 1px white;
-    border-radius: 3px 3px 0 0;
+/* input styling */
+label {
+    font-size: 20px;
+    font-style: bold;
+    color: white;
+    padding-bottom: 20%;
+    text-shadow: 3px 0px #E10686;
 }
-
-.login p {
-    margin: 20px 0 0;
-}
-
-.login p:first-child {
-    margin-top: 0;
-}
-
-.login input[type=text], .login input[type=password] {
-    width: 278px;
-}
-
 input[type=text], input[type=password] {
     margin: 5px;
-    padding: 0 10px;
+    font-size: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     width: 200px;
-    height: 34px;
-    color: black;
+    height: 40px;
+    color: #E10686;
     background: #9bcfca50;
     border: 1px solid;
     border-color: #E10686;
     border-radius: 2px;
-    outline: 2px solid #E10686;
+    outline: 5px solid #E10686;
     -moz-outline-radius: 3px;
     -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
+
+/* buttons */
 button {
+    font-size: 20px;
+    /* color: #2a85a1; */
+    color: white;
     border: none;
     border-radius: 5px;
     padding: 2px 4px;
+    margin-top: 10px !important;
     font-family: 'barbiemediumitalic';
-    background-color: #9BCFCA;
+    background-color: #E10686 !important;
+}
+
+.glow-on-hover {
+    width: 100px;
+    height: 35px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color:  #E10686;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:  #E10686;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }

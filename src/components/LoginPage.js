@@ -30,23 +30,23 @@ const LoginPage = ({verifyLogin, createUser}) => {
         <div className='container'>
             {userRegistered === 'login' ? 
             <div className ='login-container'>
-                <h1><h1>Insp<span className='flicker-slow'>ira</span>tion<span className='flicker-fast'> Bo</span>ard</h1></h1>
-                <h1>Login Here</h1>
+                <h1><h1>Inspiration Board</h1></h1>
+                {/* <h2>Login<span className='flicker-fast'> He</span><span className='flicker-slow'>re</span></h2> */}
                 <form onSubmit={handleSubmit}>
                     <label>
-                        Username:
+                        Username: <br></br><br></br>
                         <input name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='username'/>
                     </label>
                     <br></br>
                     <label>
-                        Password:
+                        Password: <br></br><br></br>
                         <input name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='password' />
                     </label>
                     <br></br>
-                        <button type="submit">Submit</button>
+                        <button className='glow-on-hover' type="submit">Submit</button>
                 </form>
                 <div class='login-help'>
-                    <p>Don't have an account? <button onClick={() => togglePage('register')}>Register Here</button></p>
+                    <p>Don't have an account? <button onClick={() => togglePage('register')} className='glow-on-hover'>Register Here</button></p>
                 </div>
             </div> : <NewUser createUser={createUser} togglePage={togglePage}></NewUser>
             }
