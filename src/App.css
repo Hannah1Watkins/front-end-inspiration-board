@@ -20,7 +20,8 @@ div.App {
 
 .app-barbie-banner {
     grid-area: barbie;
-    background-color: rgb(150, 150, 71);
+    background-color: rgba(103, 238, 216, 0.7);
+    border-radius: 5px;
 
 }
 

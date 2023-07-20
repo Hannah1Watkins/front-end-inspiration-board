@@ -1,24 +1,19 @@
 .display-cards-list {
-    background-color: rgba(255, 127, 180, 0.285);
     border-radius: 10px;
     grid-area: cl;
-    display: flex;
+    display: flex;  
     flex-wrap: wrap;
+    margin-bottom: 10px;
+    height: 100px;
 }
 
 .display-card {
   background-color: rgb(218, 38, 137);
   border: none;
-  /* padding: 15px; */
   margin: 5px;
   border-radius: 5px;
-  height: 100px;
-  /* width: 100px; */
 }
 
-.display-card p {
-  padding-left: 10px;
-}
 
 /* button[type="button"] {
   background-color: #ff69b4;
@@ -27,3 +22,8 @@
   border-radius: 4px;
   padding: 8px 12px;
 } */
+
+.card_interactions_div p {
+  background-color: rgb(246, 131, 179);
+
+}

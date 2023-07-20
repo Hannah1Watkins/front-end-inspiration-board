@@ -1,8 +1,35 @@
 .single_card_section {
-  background-color: #17fdea;
+  background-color: #fd176b;
   border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  padding: 10px, 20px;
+  /* padding: 16px; */
+  width: 100px;
+  padding: 10px;
   grid-column-end: 2;
+  margin: 5px;
+}
+
+.single_card_section p {
+  padding-left: 1px;
+  font-size: 16px;
+  overflow-wrap: break-word;
+  /* color: rgb(209, 26, 26); */
+}
+
+.card_interactions_div {
+
+}
+
+.card_interactions_div p {
+  border-radius: 4px;
+  width: 45px;
+  padding-left: 2px;
+}
+
+.card_interactions_div button {
+  background-color: #ff69b4;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  margin-left: 4px;
+
 }
