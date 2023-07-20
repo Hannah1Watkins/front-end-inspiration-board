@@ -1,12 +1,20 @@
 
-html { 
-    /* background: url(../public/barbie-movie-ryan-gosling-margot-robbie-hd-wallpaper-uhdpaper.com-905@1@k.jpg) no-repeat center center fixed;  */
+.Dashboard { 
+    background: url(../../public/pink-exp-serious.jpeg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
+html {
+  background: url(../../public/barbie-movie-ryan-gosling-margot-robbie-hd-wallpaper-uhdpaper.com-905@1@k.jpg) 
+    no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .login-container {
     margin: 30% auto;
     display: block;
@@ -46,10 +54,16 @@ html {
 } */
 
 
-button {
+/* button {
     border: none;
     border-radius: 5px;
     padding: 2px 4px;
     font-family: 'barbiemediumitalic';
-    background-color: pink;
+    background-color: green;
+} */
+
+
+.app-footer {
+	text-align: center;
+	background-color: white;
 }
