@@ -14,6 +14,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [responseMessage, setResponseMessage] = useState(null);
   const [isResponseVisible, setIsResponseVisible] = useState(false);
+  const [selectedTheme, setSelectedTheme] = useState('barbie');
   
   
 
@@ -144,8 +145,9 @@ const App = () => {
           {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />}
         </header>
         <main>
-          <button>Barbie</button>
-          <button>Oppenheimer</button>
+          {selectedTheme === 'barbie' ? <button onClick={() => setSelectedTheme('oppenheimer')}>Oppenheimer Mode</button> : <button onClick={() => setSelectedTheme('barbie')}>Barbie Mode</button>}
+          
+          
           {isLoggedIn === true && <Dashboard 
                 boards={boards} 
                 deleteBoard={deleteBoard} 
@@ -163,11 +165,6 @@ const App = () => {
           { isResponseVisible &&
               <h3 className="response"> { responseMessage } </h3> }
             </div>
-          
-
-          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} responseMessage={responseMessage} isResponseVisible={isResponseVisible}
-          /> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
-
         </main>
 
       <footer className="app-footer">

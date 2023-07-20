@@ -54,7 +54,7 @@ const NewUser = ({togglePage, createUser}) => {
                 </label> */}
             </form>
             <div className='login-help'>
-            <p>Already have an account? <button onClick={() => togglePage('login')} className='glow-on-hover'>Login Here</button></p>
+            <p>Already have an account? <button onClick={() => togglePage('login')} className='glow-on-hover'>Login</button></p>
             </div>
         </div>
     );

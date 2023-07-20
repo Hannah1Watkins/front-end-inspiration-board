@@ -48,7 +48,7 @@ const LoginPage = ({verifyLogin, createUser, responseMessage, isResponseVisible}
                 {isResponseVisible && responseMessage !== null && responseMessage.trim() !== "" && (
                 <h3 className="response"> {responseMessage} </h3> )}
                 <div class='login-help'>
-                    <p>Don't have an account? <button onClick={() => togglePage('register')} className='glow-on-hover'>Register Here</button></p>
+                    <p>Don't have an account? <button onClick={() => togglePage('register')} className='glow-on-hover'>Register</button></p>
                 </div>
             </div> : <NewUser createUser={createUser} togglePage={togglePage}></NewUser>
             }
