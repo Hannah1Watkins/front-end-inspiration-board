@@ -19,7 +19,6 @@ const CardsList = ({ cards, increaseLikedCount, deleteCard }) => {
     })
 
 
-
     return (
         <div className="display-cards-list">
             {cardComponents}

@@ -5,12 +5,16 @@ body {
 .nav {
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
     align-items: center;
     padding: 1px 50px;
-    background-color: #f29ad8;
-    /* font-family: 'Le Journey', sans-serif; */
+    margin-top: 10px;
+    /* background-color: #f29ad8; */
+    background: rgb(17,180,255);
+    background: linear-gradient(90deg, rgba(17,180,255,1) 24%, rgba(244, 246, 247, 0) 81%); 
+    border-radius: 5px;
+    padding: 10px;
     font-size: 30px;
-
 }
 
 nav h1,
@@ -21,10 +25,10 @@ nav h4 {
 nav h1 {
     font-size: 60px;
     font-weight: bolder;
-    color: #f039b1;
+    color: #F41CA4;
     /* text-shadow: 2px 2px 4px #4d2d48; */
     width: fit-content;
-    text-shadow:3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #D42CCA,40px 0vw 200px #D42CCA;
+    text-shadow:3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA
 }
 
 .flicker-slow{
@@ -48,32 +52,34 @@ animation: flicker 1s linear infinite;
 
 
 nav h4 {
-    padding: 20px;
+    padding: 10px;
 }
 
-nav ul li {
-    list-style-type: none;
+.dropdown {
+    width: 300px;
+    background-color: #F41CA4;
+    color: #F7E5E5;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: right;
 }
 
 .dropdown:hover {
     cursor: pointer;
-    width: auto;
 }
 
 .dropdown_content {
     position: absolute;
     top: 80px;
-    right: 259px;
-    width: 10vw;
-    z-index: 2;
+    width: inherit;
+    z-index: 3;
     opacity: 0;
     transform-origin: top;
-    border: 2px solid black;
 }
 
 .dropdown:hover .dropdown_content {
     display: block;
-    margin-top: 30px;
+    margin-top: 40px;
     line-height: 30px;
     opacity: 1;
     transition: all .7s ease;
@@ -85,12 +91,14 @@ nav ul li {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    width: 212px;
+    width: initial;
     right: 40px;
     padding: 5px 10px;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
     z-index: 3;
-    background-color: #f29ad8;
+    background-color: #F41CA4;
+    list-style-type: none;
+
     
 }
 
@@ -111,5 +119,8 @@ nav ul li {
 }
 
 .boards_list_item_delete:hover {
-    background-color: red;
+    color: #F7E5E5;
+    transform: scale(1.09);
+    background-color: transparent;
+    
 }

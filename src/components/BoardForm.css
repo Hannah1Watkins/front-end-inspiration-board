@@ -15,8 +15,12 @@
 .new_board_form {
     grid-area: bf;
     height: fit-content;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    background-color: #11B4FF;
     margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+
 }
 
 .new_board_header {
@@ -72,4 +76,10 @@
 
 .new_board_fields input:required {
     border-bottom: 1.5px solid black;
+}
+
+.new_board_submit {
+    position: relative;
+    left: 40%;
+    padding: 4px;
 }

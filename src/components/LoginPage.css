@@ -216,3 +216,13 @@ button {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+.response {
+    color: rgb(0, 0, 0);
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+.response {
+    color: rgb(0, 0, 0);
+    font-size: 14px; /* Adjust the font size as needed */
+}
