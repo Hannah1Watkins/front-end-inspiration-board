@@ -46,10 +46,16 @@ html {
 } */
 
 
-button {
+/* button {
     border: none;
     border-radius: 5px;
     padding: 2px 4px;
     font-family: 'barbiemediumitalic';
-    background-color: pink;
+    background-color: green;
+} */
+
+
+.app-footer {
+	text-align: center;
+	background-color: white;
 }

@@ -139,9 +139,9 @@ const App = () => {
 
   return (
       <div>
-        <header>
+        {/* <header>
           {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />}
-        </header>
+        </header> */}
         <main>
           {isLoggedIn === true && <Dashboard 
                 boards={boards} 
@@ -155,14 +155,18 @@ const App = () => {
                 createBoard={createBoard}
                 / >
               }
-          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} responseMessage={responseMessage} isResponseVisible={isResponseVisible}
-          /> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
+          { isLoggedIn === false ? 
+            <LoginPage 
+            verifyLogin={verifyLogin} 
+            createUser={createUser} 
+            responseMessage={responseMessage} 
+            isResponseVisible={isResponseVisible}
+            /> : 
+          <button className='logout-btn' onClick={() => setIsLoggedIn(false)}>Logout</button> }
 
         </main>
 
-      <footer className="app-footer">
-        <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
-      </footer>
+
     </div>
   );
 }

@@ -1,8 +1,13 @@
 import React from 'react'
 
-function Barbies() {
+const Barbies = () => {
 return (
-    <div>Barbies Section</div>
+    <div className="team-section">
+        <img src='' alt=''></img>
+        <img src='' alt=''></img>
+        <img src='' alt=''></img>
+        <img src='' alt=''></img>
+    </div>
 )
 }
 
