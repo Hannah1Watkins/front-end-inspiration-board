@@ -8,5 +8,18 @@
     padding: 10px;
     text-align: center;
     background-color: white;
-    color: rgb(235, 91, 194)
-}
+    color: rgb(235, 91, 194);
+  }
+  
+  .display-selected-board h2 {
+    animation: bounce 3s infinite; /* Apply the bounce animation to the element */
+
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0); /* Start and end position (no vertical movement) */
+    }
+    50% {
+      transform: translateY(-5px); /* Bounce up 5 pixels at 50% of the animation */
+    }
+  }
