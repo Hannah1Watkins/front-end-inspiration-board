@@ -2,7 +2,7 @@ import React from 'react'
 import './NavBar.css';
 import PropTypes from 'prop-types';
 
-const NavBar = ({ boards, deleteBoard, selectBoard }) => {
+const NavBar = ({ boards, deleteBoard, selectBoard, handleLogout }) => {
 
     const board_titles = boards.map((board, index) => {
         return (
@@ -20,6 +20,7 @@ const NavBar = ({ boards, deleteBoard, selectBoard }) => {
                 <h4>All Boards</h4>
                 <ul className="dropdown_content">{board_titles}</ul>
             </ul>
+            <button className="logout-button" onClick={handleLogout}>Logout</button>
         </nav>
     );
 };
@@ -29,7 +30,8 @@ NavBar.propTypes = {
         PropTypes.shape({
         title: PropTypes.string.isRequired,
         })
-    ).isRequired
+    ).isRequired,
+    handleLogout: PropTypes.func.isRequired,
 };
 
 export default NavBar;

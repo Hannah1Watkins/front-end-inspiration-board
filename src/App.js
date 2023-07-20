@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import LoginPage from './components/LoginPage.js'
-import Dashboard from './components/Dashboard.js'
+import LoginPage from './components/LoginPage.js';
+import Dashboard from './components/Dashboard.js';
+import NavBar from './components/NavBar.js';
 import './App.css'
 
 
@@ -129,8 +130,15 @@ const App = () => {
     setTimeout(() => {setIsResponseVisible(false);}, 3000);
   }
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
       <div>
+        <header>
+          {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />}
+        </header>
         <main>
           {isLoggedIn === true && <Dashboard 
                 boards={boards} 
