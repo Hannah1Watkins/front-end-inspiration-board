@@ -8,8 +8,6 @@ video {
 }
 
 .home-container {
-    /* background: url('/public/images/img-home.jpg') center center/cover */
-    /* no-repeat; */
     height: 100vh;
     width: 100%;
     display: flex;
@@ -22,14 +20,15 @@ video {
 
 .home-container > h1 {
     color: #fff;
-    font-size: 60px;
+    font-size: 40px;
     justify-content: center;
     align-items: center;
-    word-wrap: normal;
+    font-family:'Inter', sans-serif; 
+    letter-spacing: 5px;
 }
 
 .home-container > p {
-    margin-bottom: 200px;
+    margin-top: 140px;
     color: #fff;
     font-size: 32px;
 }
