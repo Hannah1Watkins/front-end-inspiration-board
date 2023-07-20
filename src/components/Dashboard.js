@@ -5,23 +5,23 @@ import CardForm from './CardForm.js';
 import CardsList from './CardsList.js';
 import NavBar from './NavBar.js';
 import SelectedBoard from './SelectedBoard.js';
-import '../App.css';
+import './Dashboard.css';
 
 
 const Dashboard = (props) => {
     return (
-    <div className="App">
+    <div className="Dashboard">
 
-        <header className="app-header">
+        <header className="dashboard-header">
             <NavBar boards={props.boards} deleteBoard={props.deleteBoard} selectBoard={props.selectBoard}/>
         </header>
 
         {/* Get To Know The Team Section */}
-        <section className="app-barbie-banner">
+        <section className="dashboard-barbie-banner">
             <Barbies /> 
         </section>
 
-        <main className="app-body">
+        <main className="dashboard-body">
             <aside>
                 <BoardForm createBoard={props.createBoard}></BoardForm>
                 <CardForm createCard={props.createCard}/>

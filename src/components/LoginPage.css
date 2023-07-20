@@ -1,3 +1,100 @@
-label {
-    padding: 50px;
+h1 {
+    color:#E10686;
+}
+
+.flicker-slow{
+    animation: flicker 3s linear infinite;
+}
+
+.flicker-fast{
+animation: flicker 1s linear infinite;
+}
+
+@keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        /* text-shadow: none; */
+        opacity: .99;
+        
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+    }
+}
+.container {
+    margin: 50px auto;
+    width: 640px;
+}
+
+.login {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 20px 20px;
+    width: 310px;
+}
+
+.login-help {
+    margin: 20px 0;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px #2a85a1;
+}
+
+:-moz-placeholder {
+    color: #69A5D0 !important;
+    font-size: 13px;
+}
+
+::-webkit-input-placeholder {
+    color: #69A5D0;
+    font-size: 13px;
+}
+
+
+
+.login h1 {
+    margin: -20px -20px 21px;
+    line-height: 40px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #E10686;
+    text-align: center;
+    text-shadow: 0 1px white;
+    border-radius: 3px 3px 0 0;
+}
+
+.login p {
+    margin: 20px 0 0;
+}
+
+.login p:first-child {
+    margin-top: 0;
+}
+
+.login input[type=text], .login input[type=password] {
+    width: 278px;
+}
+
+input[type=text], input[type=password] {
+    margin: 5px;
+    padding: 0 10px;
+    width: 200px;
+    height: 34px;
+    color: black;
+    background: #9bcfca50;
+    border: 1px solid;
+    border-color: #E10686;
+    border-radius: 2px;
+    outline: 2px solid #E10686;
+    -moz-outline-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-family: 'barbiemediumitalic';
+    background-color: #9BCFCA;
 }

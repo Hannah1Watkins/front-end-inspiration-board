@@ -27,22 +27,27 @@ const LoginPage = ({verifyLogin, createUser}) => {
         };
         
     return (
-        <div className='login-container'>
-            {userRegistered === 'login' ? <div className ="auth-form-container">
+        <div className='container'>
+            {userRegistered === 'login' ? 
+            <div className ='login-container'>
+                <h1><h1>Insp<span className='flicker-slow'>ira</span>tion<span className='flicker-fast'> Bo</span>ard</h1></h1>
+                <h1>Login Here</h1>
                 <form onSubmit={handleSubmit}>
                     <label>
                         Username:
-                        <input name="username" type="text" value={formFields.username} onChange={handleChange}/>
+                        <input name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='username'/>
                     </label>
                     <br></br>
                     <label>
                         Password:
-                        <input name="password" type="password" value={formFields.password} onChange={handleChange} />
+                        <input name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='password' />
                     </label>
                     <br></br>
                         <button type="submit">Submit</button>
                 </form>
-                <p>Don't have an account? <button onClick={() => setUserRegistered('register')}>Register Here</button></p>
+                <div class='login-help'>
+                    <p>Don't have an account? <button onClick={() => togglePage('register')}>Register Here</button></p>
+                </div>
             </div> : <NewUser createUser={createUser} togglePage={togglePage}></NewUser>
             }
             

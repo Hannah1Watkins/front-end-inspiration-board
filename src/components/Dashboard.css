@@ -1,0 +1,55 @@
+div.Dashboard {
+    display: grid;
+    grid-template-areas: '. head head .'
+                            '. barbie barbie .'
+                            '. body body .'
+                            '. footer footer .';
+    grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
+    grid-row-gap: 5px;
+    height: auto;
+    
+}
+
+html {
+    background-image: none;
+}
+.dashboard-header {
+    grid-area: head;
+}
+
+.dashboard-barbie-banner {
+    grid-area: barbie;
+    border: 1px solid red;
+
+}
+
+.dashboard-body {
+    grid-area: body;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.dashboard-body aside {
+    flex: 1;
+    align-items: flex-start;
+    
+}
+.dashboard-body section {
+    flex: 2;
+    align-items: flex-start;
+    
+}
+
+.dashboard-footer {
+    grid-area: footer;
+    text-align: center;
+
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-family: 'barbiemediumitalic';
+    background-color: pink;
+}

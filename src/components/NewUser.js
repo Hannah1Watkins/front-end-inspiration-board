@@ -1,5 +1,4 @@
 import React from 'react';
-import { object } from 'yup';
 
 const NewUser = ({togglePage, createUser}) => {
     const [formFields, setFormFields] = React.useState({
@@ -23,26 +22,28 @@ const NewUser = ({togglePage, createUser}) => {
     };
         
     return (
-        <div className ="auth-form-container login-container">
+        <div className ="login-container">
+            
             <form onSubmit={handleSubmit}>
+                <h1><span className='flicker-slow'>R</span>eg<span className='flicker-fast'>i</span>ster</h1>
                 <label>
                     First Name:
-                    <input name="firstName" type="text" value={formFields.firstName} onChange={handleChange}/>
+                    <input name="firstName" type="text" value={formFields.firstName} onChange={handleChange} placeholder='First Name'/>
                 </label>
                 <br></br>
                 <label>
                     Last Name:
-                    <input name="lastName" type="text" value={formFields.lastName} onChange={handleChange}/>
+                    <input name="lastName" type="text" value={formFields.lastName} placeholder='Last Name' onChange={handleChange}/>
                 </label>
                 <br></br>
                 <label>
                     Username:
-                    <input name="username" type="text" value={formFields.username} onChange={handleChange}/>
+                    <input name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='Username'/>
                 </label>
                 <br></br>
                 <label>
                     Password:
-                    <input name="password" type="password" value={formFields.password} onChange={handleChange} />
+                    <input name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='Password' />
                 </label>
                 <br></br>
                     <button type="submit">Submit</button>

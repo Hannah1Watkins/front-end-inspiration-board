@@ -1,21 +1,20 @@
-div.App {
-    display: grid;
-    grid-template-areas: '. head head .'
-                          '. barbie barbie .'
-                          '. body body .'
-                          '. footer footer .';
-    grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
-    grid-row-gap: 5px;
-    height: auto;
+
+html { 
+    background: url(../public/barbie-movie-ryan-gosling-margot-robbie-hd-wallpaper-uhdpaper.com-905@1@k.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .login-container {
-  margin: 30% auto;
-  display: block;
-  width:500px;
-  text-align:center;
-  animation: myAnim 2s ease 0s 1 normal forwards;
-}
+    margin: 30% auto;
+    display: block;
+    text-align:center;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+} 
+
+
 @keyframes myAnim {
 	0% {
 		transform: scale3d(1, 1, 1);
@@ -44,40 +43,8 @@ div.App {
 	100% {
 		transform: scale3d(1, 1, 1);
 	}
-}
+} */
 
-.app-header {
-    grid-area: head;
-}
-
-.app-barbie-banner {
-    grid-area: barbie;
-    border: 1px solid red;
-
-}
-
-.app-body {
-    grid-area: body;
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-.app-body aside {
-    flex: 1;
-    align-items: flex-start;
-    
-}
-.app-body section {
-    flex: 2;
-    align-items: flex-start;
-    
-}
-
-.app-footer {
-    grid-area: footer;
-    text-align: center;
-
-}
 
 button {
     border: none;

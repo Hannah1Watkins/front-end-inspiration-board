@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import LoginPage from './components/LoginPage.js'
 import Dashboard from './components/Dashboard.js'
+import './App.css'
 
 
 const App = () => {
@@ -129,7 +130,7 @@ const App = () => {
   }
 
   return (
-      <div className="login-container">
+      <div>
         <main>
           {isLoggedIn === true && <Dashboard 
                 boards={boards} 
