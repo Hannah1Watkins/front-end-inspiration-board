@@ -89,15 +89,17 @@ const App = () => {
   };
 
   const createUser = (newUserInfo) => {
+    console.log(newUserInfo)
     axios.post(`http://localhost:5000/user/register`, newUserInfo)
     .then(response => {
       setNewUsers(prevUsers =>{
+        console.log(response)
         return [...prevUsers, response.data];
       })
       createResponseMessage("you have successfully registered")
     })
     .catch((error) => {
-      if (error.response.status == 409) {
+      if (error.response.status === 409) {
         createResponseMessage('Sorry, that username is already taken')
       } 
       else {
@@ -112,9 +114,10 @@ const App = () => {
     axios.post(`http://localhost:5000/user/login`, loginInfo)
     .then(response => {
       setIsLoggedIn(true)
+      console.log(response)
     })
     .catch((error) => {
-      if (error.response.status == 401) {
+      if (error.response.status === 401) {
         createResponseMessage('Your username or password was incorrect')
       } 
       else {

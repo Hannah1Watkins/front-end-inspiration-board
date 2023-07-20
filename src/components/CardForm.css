@@ -1,12 +1,15 @@
 .new_card_form {
-    border: 1px solid red;
+    background-color: #11B4FF;
     grid-area: cf;
-    margin: 0 auto;
+    margin: -5px auto;
     height: fit-content;    
+    padding-top: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .new_card_form h2 {
-    text-align: center;
+    margin-left: 32px;
 }
 
 .new_card_fields {
@@ -21,7 +24,9 @@ textarea {
 
 .new_card_submit {
     position: relative;
-    left: 10px;
+    left: 35%;
+    padding: 4px;
+
 }
 
 .new_card_fields div label {

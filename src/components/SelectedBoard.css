@@ -1,9 +1,10 @@
 .display-selected-board {
-    border: 1px solid red;
+    background-color: #11B4FF;
     grid-area: sb;
-    /* margin: 0 auto; */
+    margin-right: 2px;
     margin-bottom: 10px;
-
     height: fit-content;
     padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
 }

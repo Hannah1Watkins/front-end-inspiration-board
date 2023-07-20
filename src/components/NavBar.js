@@ -16,10 +16,10 @@ const NavBar = ({ boards, deleteBoard, selectBoard }) => {
     return (
         <nav className="nav">
             <h1>Insp<span className='flicker-slow'>ira</span>tion <br/> <span className='flicker-fast'>Bo</span>ard</h1>
-            <ul className="dropdown">
+            <aside className="dropdown">
                 <h4>All Boards</h4>
                 <ul className="dropdown_content">{board_titles}</ul>
-            </ul>
+            </aside>
         </nav>
     );
 };
