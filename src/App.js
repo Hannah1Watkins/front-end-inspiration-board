@@ -90,17 +90,15 @@ const App = () => {
   };
 
   const createUser = (newUserInfo) => {
-    console.log(newUserInfo)
     axios.post(`http://localhost:5000/user/register`, newUserInfo)
     .then(response => {
       setNewUsers(prevUsers =>{
-        console.log(response)
         return [...prevUsers, response.data];
       })
       createResponseMessage("you have successfully registered")
     })
     .catch((error) => {
-      if (error.response.status === 409) {
+      if (error.response.status == 409) {
         createResponseMessage('Sorry, that username is already taken')
       } 
       else {
@@ -115,10 +113,9 @@ const App = () => {
     axios.post(`http://localhost:5000/user/login`, loginInfo)
     .then(response => {
       setIsLoggedIn(true)
-      console.log(response)
     })
     .catch((error) => {
-      if (error.response.status === 401) {
+      if (error.response.status == 401) {
         createResponseMessage('Your username or password was incorrect')
       } 
       else {
@@ -133,25 +130,22 @@ const App = () => {
     setTimeout(() => {setIsResponseVisible(false);}, 3000);
   }
 
-<<<<<<< HEAD
   const toggleState = (whichState, whatToggle) => {
     whichState(whatToggle)
   }
 
-  return (
-      <div className='barbie-container'>
-=======
   const handleLogout = () => {
     setIsLoggedIn(false);
   };
 
   return (
-      <div>
+      <div className='barbie-container'>
         <header>
           {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />}
         </header>
->>>>>>> 77f4c624d4a73ac7b2d64f9f521f665168de8e23
         <main>
+          <button>Barbie</button>
+          <button>Oppenheimer</button>
           {isLoggedIn === true && <Dashboard 
                 boards={boards} 
                 deleteBoard={deleteBoard} 
@@ -164,17 +158,15 @@ const App = () => {
                 createBoard={createBoard}
                 / >
               }
-<<<<<<< HEAD
             <div>
           { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
           { isResponseVisible &&
               <h3 className="response"> { responseMessage } </h3> }
             </div>
           
-=======
+
           { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} responseMessage={responseMessage} isResponseVisible={isResponseVisible}
           /> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
->>>>>>> 77f4c624d4a73ac7b2d64f9f521f665168de8e23
 
         </main>
 
