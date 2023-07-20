@@ -2,7 +2,7 @@ import React from 'react';
 import NewUser from './NewUser';
 import './LoginPage.css'
 
-const LoginPage = ({verifyLogin, createUser}) => {
+const LoginPage = ({verifyLogin, createUser, responseMessage, isResponseVisible}) => {
     const [userRegistered, setUserRegistered] = React.useState('login')
     const [formFields, setFormFields] = React.useState({
         username: '',
@@ -45,6 +45,8 @@ const LoginPage = ({verifyLogin, createUser}) => {
                     <br></br>
                         <button type="submit">Submit</button>
                 </form>
+                {isResponseVisible && responseMessage !== null && responseMessage.trim() !== "" && (
+                <h3 className="response"> {responseMessage} </h3> )}
                 <div class='login-help'>
                     <p>Don't have an account? <button onClick={() => togglePage('register')}>Register Here</button></p>
                 </div>

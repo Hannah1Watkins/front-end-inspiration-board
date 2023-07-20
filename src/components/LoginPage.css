@@ -98,3 +98,8 @@ button {
     font-family: 'barbiemediumitalic';
     background-color: #9BCFCA;
 }
+
+.response {
+    color: rgb(0, 0, 0);
+    font-size: 14px; /* Adjust the font size as needed */
+}

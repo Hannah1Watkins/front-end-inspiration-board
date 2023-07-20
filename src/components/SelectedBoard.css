@@ -1,9 +1,12 @@
 .display-selected-board {
-    border: 1px solid red;
+    border: 3px solid rgb(255, 0, 174);
+    border-radius: 4px;
     grid-area: sb;
-    /* margin: 0 auto; */
+    margin-right: 2px;
     margin-bottom: 10px;
-
     height: fit-content;
     padding: 10px;
+    text-align: center;
+    background-color: white;
+    color: rgb(235, 91, 194)
 }
