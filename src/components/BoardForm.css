@@ -16,8 +16,10 @@
     grid-area: bf;
     height: fit-content;
     border: 5px solid #30CDB1;
-    background-color: #76ccbc;
+    background-color:#f29ad8;
     margin-bottom: 10px;
+    /* background: url(./src/margo_clouds.webp); */
+    /* background: url(./public/margo_clouds.webp); */
 }
 
 .new_board_header {
