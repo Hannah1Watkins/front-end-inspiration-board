@@ -6,6 +6,7 @@
     display: none;
 }
 
+
 /* Barbie Theme */
 /* .barbie-show {
     display: block;
@@ -24,10 +25,11 @@
     grid-area: bf;
     height: fit-content;
     border: 5px solid #30CDB1;
-    background-color:#f29ad8;
+    background-color:white;
     margin-bottom: 10px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid #E10686;
+    color: #E10686;
 
 }
 
@@ -43,8 +45,9 @@
     background: transparent;
     border: none;
     border-radius: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #E10686;
     font-size: 14px;
+    color:#E10686;
 }
 
 .barbie-new-board-header .toggleShow {
@@ -54,13 +57,14 @@
 
 
 .barbie-new-board-header button:hover {
-    border-bottom: 2px solid black;
-    color: black;
+    border-bottom: 2px solid #E10686;
+    color: #E10686;
     cursor: pointer;
 }
 
 .barbie-inputs {
     width: 18vw;
+    margin-left: 55px;
 }
 
 .barbie-new-board-fields {
@@ -87,12 +91,12 @@
 }
 
 .barbie-new-board-fields input:required {
-    border-bottom: 1.5px solid black;
+    border-bottom: 1.5px solid #E10686;
 }
 
 .barbie-new-board-submit {
     position: relative;
-    left: 40%;
+    left: 20%;
     padding: 4px;
 }
 
@@ -113,11 +117,12 @@
     padding: 10px;
 }
 
-.oppenheimer-new-board-form {        
+.oppenheimer-new-board-form { 
+        color: white;       
         grid-area: bf;
         height: fit-content;
         border: 5px solid #b75f13;
-        background-color:#394335;
+        background-color:black;
         margin-bottom: 10px;
         border-radius: 10px;
         border: 2px solid rgb(224, 88, 4);
@@ -131,7 +136,7 @@
     font-family: 'Inter', sans-serif; letter-spacing: 3px;
     margin-top: 5px;
     font-size: 13px;
-    color: #000000;
+    color: white;
 }
 
 .oppenheimer-new-board-header .toggleShow {

@@ -1,18 +1,20 @@
 * {
     border-radius: 4px;
 }
+
 .barbie-new-card-form {
     border: 3px solid rgb(255, 0, 174);
     grid-area: cf;
     margin: 0 auto;
     height: fit-content;
     background-color: white;
+    color: #E10686;
 }
 
 .barbie-new-card-form h2 {
-    text-align: center;
+    position: relative;
+    left: 30px;
     color: rgb(235, 91, 194)
-
 }
 
 .barbie-new-card-fields {
@@ -25,9 +27,9 @@ textarea {
     padding: 10px;
 }
 
-.barbie-new-card-submit {
+.new-card-submit {
     position: relative;
-    left: 35%;
+    left: 25%;
     padding: 4px;
 
 }
@@ -41,12 +43,18 @@ textarea {
 .barbie-new-card-fields textarea {
     width: 18vw;
     padding: 10px;
-    border: 1.5px solid black;
+    border: 1.5px solid #E10686;
     border-radius: 5px;
     background-color: transparent;
 }
 
+.oppenheimer-new-card-form h2 {
+    position: relative;
+    left: 20px;
+}
+
 /* -------------------- oppenheimer ---------------------
+
 .oppenheimer-new-card-form {
     border: 3px solid rgb(255, 0, 174);
     grid-area: cf;
@@ -55,12 +63,11 @@ textarea {
     background-color: white;
 }
 
-.oppenheimer-new-card-form h2 {
-    text-align: center;
+.barbie-new-card-form h2 {
+    position: relative;
+    left: 30px;
     color: rgb(235, 91, 194)
-
 }
-
 .oppenheimer-new-card-fields {
     margin-bottom: 5px;
     padding: 10px;
