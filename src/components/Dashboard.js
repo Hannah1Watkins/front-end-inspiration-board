@@ -15,7 +15,6 @@ const Dashboard = (props) => {
                 <NavBar boards={props.boards} deleteBoard={props.deleteBoard} selectBoard={props.selectBoard} selectedTheme={props.selectedTheme}/>
             </header>
 
-            {/* Get To Know The Team Section */}
             <section className={`dashboard-${props.selectedTheme}-banner`}>
                 <Barbies /> 
             </section>
@@ -46,9 +45,9 @@ const Dashboard = (props) => {
                     </CardsList>
                 </section>
             </main>
-            {/* <footer className={`${props.selectedTheme}-dashboard-footer}`}>
+            <footer className="dashboard-footer">
                 <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
-            </footer> */}
+            </footer> */} */}
         </div>
     )
 }

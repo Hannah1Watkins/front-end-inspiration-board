@@ -6,21 +6,23 @@ div.barbie-Dashboard {
                             '. barbie barbie .'
                             '. body body .'
                             '. footer footer .';
-    grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
+    grid-template-rows: 0.5fr 0.5fr 6fr 0.3fr;
     grid-row-gap: 5px;
-    height: auto;
-    
-    
+    width: 80vw;
+    height: 100vw;
+    margin: 15px auto;
 }
 
+html {
+    background-image: none;
+    overflow-y: hidden;
+}
 .barbie-dashboard-header {
     grid-area: head;
 }
 
 .dashboard-barbie-banner {
     grid-area: barbie;
-    border: 1px solid red;
-
 }
 
 .barbie-dashboard-body {
@@ -62,14 +64,14 @@ div.barbie-Dashboard {
 div.oppenheimer-Dashboard {
     display: grid;
     grid-template-areas: '. head head .'
-                            '. barbie barbie .'
-                            '. body body .'
-                            '. footer footer .';
+                         '. barbie barbie .'
+                         '. body body .'
+                         '. footer footer .';
     grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
     grid-row-gap: 5px;
-    height: auto;
-    
-    
+    width: 80vw;
+    height: 100vw;
+    margin: 15px auto;
 }
 
 .oppenheimer-dashboard-header {
@@ -78,8 +80,6 @@ div.oppenheimer-Dashboard {
 
 .dashboard-oppenheimer-banner {
     grid-area: barbie;
-    border: 1px solid red;
-
 }
 
 .oppenheimer-dashboard-body {
