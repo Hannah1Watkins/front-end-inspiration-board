@@ -30,7 +30,8 @@ html, body {
     box-sizing: inherit;
 	text-transform: uppercase;
 	font-weight: lighter;
-	font-family: 'Inter', sans-serif; letter-spacing: 5px;
+    font-family: 'Inter', sans-serif; letter-spacing: 5px;
+    color: #E7AE58;
 }
 
 
