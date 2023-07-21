@@ -25,7 +25,7 @@ const App = () => {
   }, []);
 
   const deleteBoard = (boardId) => {
-    axios.delete(`http://localhost:5000/boards/${boardId}`).then(resp => {
+    axios.delete(`https://barbenheimer.onrender.com/boards/${boardId}`).then(resp => {
       setBoards(prevBoards => {
         const updatedBoards = prevBoards.filter(board => board.board_id !== boardId)
         return updatedBoards
@@ -35,7 +35,7 @@ const App = () => {
 
   const deleteCard = (cardId) => {
     if (selectedBoard) {
-      axios.delete(`http://localhost:5000/cards/${cardId}`).then(resp => {
+      axios.delete(`https://barbenheimer.onrender.com/cards/${cardId}`).then(resp => {
         setCards(prevCards => {
           const updatedCards = prevCards.filter(card => card.card_id !== cardId)
           return updatedCards
@@ -46,7 +46,7 @@ const App = () => {
   
   const createCard = (newCardData) => {
     axios
-    .post(`http://localhost:5000/boards/${selectedBoard.board_id}/cards`, newCardData)
+    .post(`https://barbenheimer.onrender.com/boards/${selectedBoard.board_id}/cards`, newCardData)
     .then((response) => {
       setCards(prevCards => {
         return [...prevCards, response.data];
@@ -59,7 +59,7 @@ const App = () => {
   
   const createBoard = (newBoardData) => {
     axios
-    .post('http://localhost:5000/boards', newBoardData)
+    .post('https://barbenheimer.onrender.com/boards', newBoardData)
     .then((response) => {
       setBoards(prevBoards => {
         return [...prevBoards, response.data];
@@ -71,7 +71,7 @@ const App = () => {
   };
 
   const selectBoard = (board) => {
-    axios.get(`http://localhost:5000/boards/${board.board_id}/cards`)
+    axios.get(`https://barbenheimer.onrender.com/${board.board_id}/cards`)
     .then(response => {
       setSelectedBoard(board)
       setCards(response.data)
@@ -79,7 +79,7 @@ const App = () => {
   }
 
   const increaseLikedCount = (id) => {
-    axios.patch(`http://localhost:5000/cards/${id}`)
+    axios.patch(`https://barbenheimer.onrender.com/cards/${id}`)
     .then(response => {
       setCards(prevCards => {
         const updatedCards = prevCards.map(card => {
@@ -91,7 +91,7 @@ const App = () => {
   };
 
   const createUser = (newUserInfo) => {
-    axios.post(`http://localhost:5000/user/register`, newUserInfo)
+    axios.post(`https://barbenheimer.onrender.com/user/register`, newUserInfo)
     .then(response => {
       setNewUsers(prevUsers =>{
         return [...prevUsers, response.data];
@@ -111,7 +111,7 @@ const App = () => {
 
   const verifyLogin = (loginInfo) => {
     console.log(loginInfo)
-    axios.post(`http://localhost:5000/user/login`, loginInfo)
+    axios.post(`https://barbenheimer.onrender.com/user/login`, loginInfo)
     .then(response => {
       setIsLoggedIn(true)
     })
