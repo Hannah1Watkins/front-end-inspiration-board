@@ -139,7 +139,7 @@ const App = () => {
       <div className={`${selectedTheme}-container`}>
         <main>
       
-          {selectedTheme === 'barbie' ? <button className='oppenheimer-button' onClick={() => setSelectedTheme('oppenheimer')}>Oppenheimer Mode</button> : <button className='barbie-button' onClick={() => setSelectedTheme('barbie')}>Barbie Mode</button>}
+          {selectedTheme === 'barbie' ? <button className='oppenheimer-button' onClick={() => setSelectedTheme('oppenheimer')}>Oppenheimer</button> : <button className='barbie-button barbie-glow-on-hover' onClick={() => setSelectedTheme('barbie')}>Barbie</button>}
           
           
           {isLoggedIn === true && <Dashboard 
@@ -153,10 +153,11 @@ const App = () => {
                 increaseLikedCount={increaseLikedCount}
                 createBoard={createBoard}
                 selectedTheme={selectedTheme}
+                handleLogout={handleLogout}
                 / >
               }
             <div>
-          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} selectedTheme={selectedTheme}/> : <button className = "logout-btn" onClick={() => setIsLoggedIn(false)}>Logout</button> }
+          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} selectedTheme={selectedTheme}/> : <button className={`${selectedTheme}-glow-on-hover ${selectedTheme}-logout-btn`} onClick={() => setIsLoggedIn(false)}>Logout</button> }
           { isResponseVisible &&
               <h3 className="response"> { responseMessage } </h3> }
             </div>

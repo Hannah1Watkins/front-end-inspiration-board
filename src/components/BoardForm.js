@@ -33,7 +33,7 @@ const BoardForm = ({createBoard, selectedTheme}) => {
         <form className={`${selectedTheme}-new-board-form`} onSubmit={handleSubmit}>
             <section className={`${selectedTheme}-new-board-header`}>
                 <h2>Create New Board</h2>
-                <button type="button" onClick={toggleShow}>{displayForm ? 'hide' : 'show'}</button>
+                <button type="button" className = "toggleShow" onClick={toggleShow}>{displayForm ? 'hide' : 'show'}</button>
             </section>
             <section className={`${selectedTheme}-inputs ${displayForm ? 'show' : 'hide'}`}>
                 <div className={`${selectedTheme}-new-board-fields`}>
@@ -60,7 +60,7 @@ const BoardForm = ({createBoard, selectedTheme}) => {
                         <label htmlFor="preview">Preview : </label>
                         <span>{formFields.title} - {formFields.owner}</span>
                     </div>
-                    <button className={`${selectedTheme}-button ${selectedTheme}-new-board-submit`} type="submit" value="add_board">Create Board</button>
+                    <button className={`${selectedTheme}-button ${selectedTheme}-new-board-submit ${selectedTheme}-glow-on-hover `} type="submit" value="add_board">Create Board</button>
                 </div>
             </section>
         </form>

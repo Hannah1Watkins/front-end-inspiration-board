@@ -50,7 +50,7 @@ const CardForm = ({createCard, selectedTheme}) => {
                         <span>{formFields.message}</span>
                     </div>
                     <button 
-                        className={`${selectedTheme}-button new-card-submit`}
+                        className={`${selectedTheme}-button new-card-submit ${selectedTheme}-glow-on-hover`}
                         type="submit" 
                         value="add_card">Create Card</button>
                 </div>
