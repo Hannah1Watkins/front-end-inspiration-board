@@ -15,6 +15,7 @@ html, body {
     padding: 0px;
     box-sizing: inherit;
     height: 100vh;
+    font-family: 'barbiemediumitalic';
 } 
 
 .oppenheimer-container {
@@ -30,6 +31,8 @@ html, body {
     box-sizing: inherit;
 	text-transform: uppercase;
 	font-weight: lighter;
+    font-family: 'Inter', sans-serif; letter-spacing: 5px;
+    color: #E7AE58;
 }
 
 
