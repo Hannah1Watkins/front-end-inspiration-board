@@ -56,13 +56,16 @@ textarea {
     left: 20px;
 }
 
+/* -------------------- oppenheimer --------------------- */
+
 .oppenheimer-new-card-form {
     border: 3px solid orange;
+    border: 3px solid rgb(244, 192, 49);
     grid-area: cf;
     margin: 0 auto;
     height: fit-content;
     background-color: black;
-    color: white;
+    color: rgba(255, 255, 255, 0);
 }
 
 .oppenheimer-new-card-form h2 {
@@ -101,3 +104,16 @@ textarea {
     border-radius: 5px;
     background-color: transparent;
 } 
+
+label[for='preview'] {
+    color: rgb(249, 203, 21);
+    font-weight: bold;
+}
+
+label[for='message'] {
+    font-weight: bold;
+}
+
+label[for='message'] {
+    font-weight: bold;
+}
