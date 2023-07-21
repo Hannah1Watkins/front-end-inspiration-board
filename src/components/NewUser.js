@@ -29,22 +29,22 @@ const NewUser = ({togglePage, createUser, selectedTheme}) => {
                     {/* <h2><span className='flicker-slow'>R</span>eg<span className='flicker-fast'>i</span>ster</h2> */}
                     <label className='firstName'>
                         First Name: <br></br><br></br>
-                        <input name="firstName" type="text" value={formFields.firstName} onChange={handleChange} placeholder='First Name'/>
+                        <input required name="firstName" type="text" value={formFields.firstName} onChange={handleChange} placeholder='First Name'/>
                     </label>
                     <br></br>
                     <label className='lastName'>
                         Last Name:<br></br><br></br>
-                        <input name="lastName" type="text" value={formFields.lastName} placeholder='Last Name' onChange={handleChange}/>
+                        <input required name="lastName" type="text" value={formFields.lastName} placeholder='Last Name' onChange={handleChange}/>
                     </label>
                     <br></br>
                     <label className='username'>
                         Username:<br></br><br></br>
-                        <input name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='Username'/>
+                        <input required name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='Username'/>
                     </label>
                     <br></br>
                     <label className='password'>
                         Password:<br></br><br></br>
-                        <input name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='Password' />
+                        <input required name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='Password' />
                     </label>
                     <br></br>
                         <button type="submit" className={`${selectedTheme}-button ${selectedTheme}-glow-on-hover submit-button`}>Submit</button>

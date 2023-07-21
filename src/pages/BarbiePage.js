@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import LoginPage from '../components/LoginPage.js'
-import Dashboard from '../components/Dashboard.js'
+import LoginPage from '../components/LoginPage.js';
+import Dashboard from '../components/Dashboard.js';
 import './BarbiePage.css'
 
 const BarbiePage = () => {
@@ -12,6 +12,7 @@ const BarbiePage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [responseMessage, setResponseMessage] = useState(null);
   const [isResponseVisible, setIsResponseVisible] = useState(false);
+  const [selectedTheme, setSelectedTheme] = useState('barbie');
   
   
 
@@ -88,17 +89,15 @@ const BarbiePage = () => {
   };
 
   const createUser = (newUserInfo) => {
-    console.log(newUserInfo)
     axios.post(`http://localhost:5000/user/register`, newUserInfo)
     .then(response => {
       setNewUsers(prevUsers =>{
-        console.log(response)
         return [...prevUsers, response.data];
       })
       createResponseMessage("you have successfully registered")
     })
     .catch((error) => {
-      if (error.response.status === 409) {
+      if (error.response.status == 409) {
         createResponseMessage('Sorry, that username is already taken')
       } 
       else {
@@ -113,10 +112,9 @@ const BarbiePage = () => {
     axios.post(`http://localhost:5000/user/login`, loginInfo)
     .then(response => {
       setIsLoggedIn(true)
-      console.log(response)
     })
     .catch((error) => {
-      if (error.response.status === 401) {
+      if (error.response.status == 401) {
         createResponseMessage('Your username or password was incorrect')
       } 
       else {
@@ -131,16 +129,21 @@ const BarbiePage = () => {
     setTimeout(() => {setIsResponseVisible(false);}, 3000);
   }
 
+  const toggleState = (whichState, whatToggle) => {
+    whichState(whatToggle)
+  }
+
   const handleLogout = () => {
     setIsLoggedIn(false);
   };
 
   return (
-      <div>
-        {/* <header>
-          {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />}
-        </header> */}
+      <div className={`${selectedTheme}-container`}>
         <main>
+          {/* <OpeningPage></OpeningPage> */}
+          {selectedTheme === 'barbie' ? <button className='oppenheimer-button' onClick={() => setSelectedTheme('oppenheimer')}>Oppenheimer Mode</button> : <button className='barbie-button' onClick={() => setSelectedTheme('barbie')}>Barbie Mode</button>}
+          
+          
           {isLoggedIn === true && <Dashboard 
                 boards={boards} 
                 deleteBoard={deleteBoard} 
@@ -151,20 +154,20 @@ const BarbiePage = () => {
                 deleteCard={deleteCard}
                 increaseLikedCount={increaseLikedCount}
                 createBoard={createBoard}
+                selectedTheme={selectedTheme}
                 / >
               }
-          { isLoggedIn === false ? 
-            <LoginPage 
-            verifyLogin={verifyLogin} 
-            createUser={createUser} 
-            responseMessage={responseMessage} 
-            isResponseVisible={isResponseVisible}
-            /> : 
-          <button className='logout-btn' onClick={() => setIsLoggedIn(false)}>Logout</button> }
+            <div>
+          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} selectedTheme={selectedTheme}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
+          { isResponseVisible &&
+              <h3 className="response"> { responseMessage } </h3> }
+            </div>
 
         </main>
 
-
+      <footer className={`${selectedTheme}-footer`}>
+        <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
+      </footer>
     </div>
   );
 }
