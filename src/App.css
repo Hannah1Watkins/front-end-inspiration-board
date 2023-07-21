@@ -14,8 +14,7 @@ html, body {
     margin: 0px;
     padding: 0px;
     box-sizing: inherit;
-    height: 100vh;
-	font-family: 'barbiemediumitalic';
+    height: 100%;
 } 
 
 .oppenheimer-container {

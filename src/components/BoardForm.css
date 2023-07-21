@@ -6,6 +6,7 @@
     display: none;
 }
 
+
 /* Barbie Theme */
 /* .barbie-show {
     display: block;
@@ -63,6 +64,7 @@
 
 .barbie-inputs {
     width: 18vw;
+    margin-left: 55px;
 }
 
 .barbie-new-board-fields {
@@ -92,7 +94,7 @@
 
 .barbie-new-board-submit {
     position: relative;
-    left: 40%;
+    left: 20%;
     padding: 4px;
 }
 
