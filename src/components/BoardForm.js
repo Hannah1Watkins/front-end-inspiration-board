@@ -60,7 +60,7 @@ const BoardForm = ({createBoard, selectedTheme}) => {
                         <label htmlFor="preview">Preview : </label>
                         <span>{formFields.title} - {formFields.owner}</span>
                     </div>
-                    <button className={`${selectedTheme}-button ${selectedTheme}-new-board-submit ${selectedTheme}-glow-on-hover `} type="submit" value="add_board">Create Board</button>
+                    <button className={`${selectedTheme}-button ${selectedTheme}-new-board-submit ${selectedTheme}-glow-on-hover `} type="submit" value="add_board">Create</button>
                 </div>
             </section>
         </form>

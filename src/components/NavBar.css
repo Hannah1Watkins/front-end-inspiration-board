@@ -131,8 +131,8 @@ animation: flicker 1s linear infinite;
     border-radius: 5px;
     padding: 10px;
     font-family: 'Inter', sans-serif; letter-spacing: 5px;
-    font-style: normal;
     font-size: 30px;
+    font-weight: lighter;
 
 }
 
@@ -144,8 +144,9 @@ animation: flicker 1s linear infinite;
 .oppenheimer-nav h1 {
     font-size: 60px;
     font-weight: lighter;
-    color: #4c5358;
+    color: black;
     width: fit-content;
+    text-shadow: 2px 2px rgb(178, 99, 25);
 
 }
 

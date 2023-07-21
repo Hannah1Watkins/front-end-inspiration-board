@@ -52,7 +52,7 @@ const CardForm = ({createCard, selectedTheme}) => {
                     <button 
                         className={`${selectedTheme}-button new-card-submit ${selectedTheme}-glow-on-hover`}
                         type="submit" 
-                        value="add_card">Create Card</button>
+                        value="add_card">Create</button>
                 </div>
             </section>
         </form>
