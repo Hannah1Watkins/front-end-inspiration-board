@@ -146,8 +146,8 @@
 }
 
 .oppenheimer-new-board-header button:hover {
-    border-bottom: orange;
-    color: orange;
+    border-bottom: 2px solid rgb(6, 0, 0);
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -176,6 +176,7 @@
     background-color: transparent;
     width: 16vw;
     border: none;
+    color: white;
 }
 
 .oppenheimer-new-board-fields input:required {
