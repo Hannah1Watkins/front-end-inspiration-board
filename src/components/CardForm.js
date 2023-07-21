@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import './CardForm.css';
 
-const CardForm = ({createCard}) => {
+const CardForm = ({createCard, selectedTheme}) => {
     const [formFields, setFormFields] = React.useState({
         message: '',
     });
@@ -33,10 +33,10 @@ const CardForm = ({createCard}) => {
 
 
     return (
-        <form className="new_card_form" onSubmit={handleSubmit}>
+        <form className={`${selectedTheme}-new-card-form`} onSubmit={handleSubmit}>
             <section>
                 <h2>Create New Card</h2>
-                <div className="new_card_fields">
+                <div className={`${selectedTheme}-new-card-fields`}>
                     <div>
                         <label htmlFor="message">Message : </label>
                         <textarea 
@@ -50,7 +50,7 @@ const CardForm = ({createCard}) => {
                         <span>{formFields.message}</span>
                     </div>
                     <button 
-                        className="button new_card_submit" 
+                        className={`${selectedTheme}-button new-card-submit`}
                         type="submit" 
                         value="add_card">Create Card</button>
                 </div>

@@ -12,18 +12,17 @@ const Dashboard = (props) => {
     return (
         <div className="Dashboard">
             <header className="dashboard-header">
-                <NavBar boards={props.boards} deleteBoard={props.deleteBoard} selectBoard={props.selectBoard}/>
+                <NavBar boards={props.boards} deleteBoard={props.deleteBoard} selectBoard={props.selectBoard} selectedTheme={props.selectedTheme}/>
             </header>
 
-            {/* Get To Know The Team Section */}
             <section className="dashboard-barbie-banner">
                 <Barbies /> 
             </section>
 
             <main className="dashboard-body">
                 <aside>
-                    <BoardForm createBoard={props.createBoard}></BoardForm>
-                    <CardForm createCard={props.createCard}/>
+                    <BoardForm createBoard={props.createBoard} selectedTheme={props.selectedTheme}></BoardForm>
+                    <CardForm createCard={props.createCard}selectedTheme={props.selectedTheme}/>
                 </aside>
 
                 <section>
@@ -41,13 +40,14 @@ const Dashboard = (props) => {
                         cards={props.cards} 
                         deleteCard = {props.deleteCard} 
                         increaseLikedCount={props.increaseLikedCount}
+                        selectedTheme={props.selectedTheme}
                         >
                     </CardsList>
                 </section>
             </main>
-            <footer className="dashboard-footer">
+            {/* <footer className="dashboard-footer">
                 <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
-            </footer>
+            </footer> */}
         </div>
     )
 }
