@@ -14,7 +14,12 @@ html, body {
     margin: 0px;
     padding: 0px;
     box-sizing: inherit;
+<<<<<<< HEAD
+    height: 100%;
+=======
     height: 100vh;
+	font-family: 'barbiemediumitalic';
+>>>>>>> d623a31aeddc7b1eef39d31fc4462be69f069d0d
 } 
 
 .oppenheimer-container {
@@ -26,10 +31,11 @@ html, body {
     background-size: cover;
     margin: 0px;
     padding: 0px;
-	height: 100vh;
+	height: 100%;
     box-sizing: inherit;
 	text-transform: uppercase;
 	font-weight: lighter;
+	font-family: 'Inter', sans-serif; letter-spacing: 5px;
 }
 
 
@@ -47,9 +53,35 @@ html, body {
 	left: 40%;
 }
 
-.logout-btn {
-    position: absolute;
+.barbie-logout-btn {
     top: 100px;
     right: 440px;
+    font-size: 20px;
+    font-family: 'barbiemediumitalic';
+    background-color: #E10686 !important;
+	position:absolute; 
+	top:5px; 
+	right:5px;
 }
 
+
+.oppenheimer-logout-btn {
+	top: 100px;
+    right: 440px;
+	position:absolute; 
+	top:5px; 
+	right:5px;
+	font-size: 10px !important;
+}
+
+.oppenheimer-button:hover {
+	background-color: black;
+	color: white;
+}
+
+.theme-toggle-button {
+	position: absolute;
+	margin: 0px;
+	top: 5px;
+	left: 5px;
+}

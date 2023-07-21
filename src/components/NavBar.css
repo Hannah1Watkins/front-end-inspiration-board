@@ -1,3 +1,10 @@
+/* SHARED STYLES */
+.barbie-nav, 
+.oppenheimer-nav {
+    margin-bottom: 10px;
+}
+
+
 /* BARBIE THEME */
 .barbie-nav {
     display: flex;
@@ -5,8 +12,6 @@
     align-items: center;
     padding: 1px 50px;
     margin-top: 10px;
-    background: rgb(17,180,255);
-    background: linear-gradient(90deg, rgba(17,180,255,1) 24%, rgba(244, 246, 247, 0) 81%); 
     border-radius: 5px;
     padding: 10px;
     font-family: 'barbiemediumitalic';
@@ -22,7 +27,6 @@
     font-size: 60px;
     font-weight: bolder;
     color: #F41CA4;
-    /* text-shadow: 2px 2px 4px #4d2d48; */
     width: fit-content;
     text-shadow:3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA
 }
@@ -37,7 +41,6 @@ animation: flicker 1s linear infinite;
 
 @keyframes flicker {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-        /* text-shadow: none; */
         opacity: .99;
         
     }
@@ -65,7 +68,7 @@ animation: flicker 1s linear infinite;
 
 .barbie-dropdown-content {
     position: absolute;
-    top: 80px;
+    top: 120px;
     width: inherit;
     z-index: 3;
     opacity: 0;
@@ -125,8 +128,6 @@ animation: flicker 1s linear infinite;
     align-items: center;
     padding: 1px 50px;
     margin-top: 10px;
-    background:  #e3582e70;
-    /* background: linear-gradient(90deg, rgba(17,180,255,1) 24%, rgba(244, 246, 247, 0) 81%);  */
     border-radius: 5px;
     padding: 10px;
     font-family: 'Inter', sans-serif; letter-spacing: 5px;
@@ -144,9 +145,8 @@ animation: flicker 1s linear infinite;
     font-size: 60px;
     font-weight: lighter;
     color: #4c5358;
-    /* text-shadow: 2px 2px 4px #4d2d48; */
     width: fit-content;
-    /* text-shadow:3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA */
+
 }
 
 .oppenheimer-nav h4 {
@@ -169,7 +169,7 @@ animation: flicker 1s linear infinite;
 
 .oppenheimer-dropdown-content {
     position: absolute;
-    top: 80px;
+    top: 130px;
     width: inherit;
     z-index: 3;
     opacity: 0;
