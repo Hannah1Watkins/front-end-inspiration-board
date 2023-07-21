@@ -35,12 +35,12 @@ const LoginPage = ({verifyLogin, createUser, responseMessage, isResponseVisible,
                 <form className={`${selectedTheme}-login-form`}onSubmit={handleSubmit}>
                     <label className='label1'>
                         Username: <br></br><br></br>
-                        <input name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='username'/>
+                        <input required name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='username'/>
                     </label>
                     <br></br>
                     <label className='label2'>
                         Password: <br></br><br></br>
-                        <input name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='password' />
+                        <input required name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='password' />
                     </label>
                     <br></br>
                         <button className={`${selectedTheme}-button ${selectedTheme}-glow-on-hover login-submit-button`} type="submit">Submit</button>

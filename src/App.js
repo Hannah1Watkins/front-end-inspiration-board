@@ -1,9 +1,9 @@
+
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import LoginPage from './components/LoginPage.js';
 import Dashboard from './components/Dashboard.js';
-import NavBar from './components/NavBar.js';
-import './App.css'
+import './App.css';
 
 
 const App = () => {
@@ -131,20 +131,14 @@ const App = () => {
     setTimeout(() => {setIsResponseVisible(false);}, 3000);
   }
 
-  const toggleState = (whichState, whatToggle) => {
-    whichState(whatToggle)
-  }
-
   const handleLogout = () => {
     setIsLoggedIn(false);
   };
 
   return (
       <div className={`${selectedTheme}-container`}>
-        <header>
-          {/* {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />} */}
-        </header>
         <main>
+      
           {selectedTheme === 'barbie' ? <button className='oppenheimer-button' onClick={() => setSelectedTheme('oppenheimer')}>Oppenheimer Mode</button> : <button className='barbie-button' onClick={() => setSelectedTheme('barbie')}>Barbie Mode</button>}
           
           
@@ -166,6 +160,7 @@ const App = () => {
           { isResponseVisible &&
               <h3 className="response"> { responseMessage } </h3> }
             </div>
+
         </main>
 
       <footer className={`${selectedTheme}-footer`}>
