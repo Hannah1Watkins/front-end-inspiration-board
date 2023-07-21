@@ -42,6 +42,7 @@
   border-radius: 5px;
   display: flex;
   transition: transform 0.3s ease;
+  color: white;
   
 }
 
