@@ -7,7 +7,6 @@
     display: none;
 }
 
-.barbie-new-board-form,
 .barbie-new-board-fields input {
     margin: 0 auto;
     padding: 10px;
@@ -86,58 +85,58 @@
 }
 
 
-
-/* Oppenheimer Theme */
+/* Oppenheimer css */
 
 .oppenheimer-show {
     display: block;
+    background-color:#d96d2b;
 }
 
 .oppenheimer-hide {
     display: none;
 }
 
-.oppenheimer-new-board-form,
 .oppenheimer-new-board-fields input {
     margin: 0 auto;
     padding: 10px;
 }
 
-.oppenheimer-new-board-form {
-    .barbie-new_board_form {
+.oppenheimer-new-board-form {        
         grid-area: bf;
         height: fit-content;
-        border: 5px solid #ed9a55;
-        background-color:#073103;
+        border: 5px solid #b75f13;
+        background-color:#374a35;
         margin-bottom: 10px;
         border-radius: 10px;
-        border: 2px solid rgb(253, 250, 250);
+        border: 2px solid rgb(224, 88, 4);
     }
-}
 
 .oppenheimer-new-board-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 10px;
+    font-family: 'Inter', sans-serif; letter-spacing: 3px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #000000;
 }
 
 .oppenheimer-board-header button {
     position: relative;
     top: 20px;
     border: none;
-    border-bottom: 2px solid #00000097;
+    border-bottom: 2px solid #01000097;
     background-color: transparent;
     height: fit-content;
-    color: #00000097;
+    color: #030000;
     font-weight: bold;
-    font-family: 'barbiemediumitalic';
     font-size: 12px;
 }
 
 .oppenheimer-new-board-header button:hover {
-    border-bottom: 2px solid black;
-    color: black;
+    border-bottom: 2px solid rgb(6, 0, 0);
+    color: rgb(6, 0, 0);
     cursor: pointer;
 }
 
@@ -167,7 +166,7 @@
 }
 
 .oppenheimer-new-board-fields input:required {
-    border-bottom: 1.5px solid black;
+    border-bottom: 1.5px solid rgb(178, 99, 25);
 }
 
 .oppenheimer-new-board-submit {
