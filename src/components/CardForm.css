@@ -107,7 +107,7 @@ textarea {
     padding: 0;
     height: fit-content;
     background-color: black;
-    color: rgba(255, 255, 255, 0);
+    color: white;
 }
 
 .oppenheimer-new-card-form h2 {
@@ -124,6 +124,7 @@ textarea {
 .oppenheimer-new-card-fields div,
 textarea {
     padding: 10px;
+    color: white;
 }
 
 .oppenheimer-new-card-submit {
