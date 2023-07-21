@@ -1,7 +1,6 @@
 .barbie-single-card-section {
   background-color: #fa3d82c6;
   border-radius: 8px;
-  /* padding: 16px; */
   width: 100px;
   padding: 10px;
   grid-column-end: 2;
@@ -18,7 +17,7 @@
   padding-bottom: 30px;
   font-size: 16px;
   overflow-wrap: break-word;
-  /* color: rgb(209, 26, 26); */
+
 }
 
 .barbie-card-interactions-div{
@@ -80,7 +79,6 @@
 .oppenheimer-card-interactions-div p {
   border-radius: 4px;
   width: 45px;
-  /* padding-left: 60px; */
   padding-top: 0px;
   padding-bottom: 12px;
   display: grid;

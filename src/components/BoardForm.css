@@ -68,7 +68,6 @@
 .barbie-inputs {
     width: 18vw;
     margin-left: 10px;
-    /* margin-left: 55px; */
 }
 
 .barbie-new-board-fields {
@@ -103,17 +102,6 @@
     padding: 4px;
 }
 
-
-/* Oppenheimer css */
-
-/* .oppenheimer-show {
-    display: block;
-    background-color:#d96d2b;
-}
-
-.oppenheimer-hide {
-    display: none;
-} */
 
 .oppenheimer-new-board-fields input {
     margin: 0 auto;
