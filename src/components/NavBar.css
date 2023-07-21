@@ -164,6 +164,10 @@ animation: flicker 1s linear infinite;
     font-weight: lighter;
 }
 
+.oppenheimer-dropdown h4 {
+    background-color: black;
+}
+
 .oppenheimer-dropdown:hover {
     cursor: pointer;
 }
