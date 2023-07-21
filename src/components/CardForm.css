@@ -135,6 +135,8 @@ textarea {
 .oppenheimer-new-card-fields div label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
 }
 
 .oppenheimer-new-card-fields textarea {
