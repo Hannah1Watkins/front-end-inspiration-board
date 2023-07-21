@@ -45,6 +45,12 @@ html, body {
 	left: 40%;
 }
 
+.logout-btn {
+    position: absolute;
+    top: 100px;
+    right: 440px;
+}
+
 
 	/* * {
     box-sizing: border-box;

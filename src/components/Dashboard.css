@@ -13,7 +13,8 @@ div.Dashboard {
 
 html {
     background-image: none;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
+    height: fit-content;
 }
 .dashboard-header {
     grid-area: head;
@@ -53,8 +54,3 @@ button {
     background-color: pink;
 }
 
-.logout-btn {
-    position: absolute;
-    top: 50px;
-    right: 450px;
-}
