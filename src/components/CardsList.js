@@ -13,6 +13,7 @@ const CardsList = ({ cards, increaseLikedCount, deleteCard, selectedTheme }) => 
                     liked_count = {card.liked_count}
                     increaseLikedCount={increaseLikedCount}
                     deleteCard={deleteCard}
+                    selectedTheme={selectedTheme}
                 />
             </div>
         )
