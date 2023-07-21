@@ -139,11 +139,13 @@
 
 .oppenheimer-new-board-header .toggleShow {
     top: 15px;
+    color: white;
+    border-bottom: white;
 }
 
 .oppenheimer-new-board-header button:hover {
-    border-bottom: 2px solid rgb(6, 0, 0);
-    color: rgb(6, 0, 0);
+    border-bottom: orange;
+    color: orange;
     cursor: pointer;
 }
 

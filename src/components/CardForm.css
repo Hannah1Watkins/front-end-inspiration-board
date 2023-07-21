@@ -48,29 +48,32 @@ textarea {
     background-color: transparent;
 }
 
+
+
+/* -------------------- oppenheimer ---------------------*/
 .oppenheimer-new-card-form h2 {
     position: relative;
     left: 20px;
 }
 
-/* -------------------- oppenheimer ---------------------
-
 .oppenheimer-new-card-form {
-    border: 3px solid rgb(255, 0, 174);
+    border: 3px solid orange;
     grid-area: cf;
     margin: 0 auto;
     height: fit-content;
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 
-.barbie-new-card-form h2 {
+.oppenheimer-new-card-form h2 {
     position: relative;
     left: 30px;
-    color: rgb(235, 91, 194)
+    color: white
 }
 .oppenheimer-new-card-fields {
     margin-bottom: 5px;
     padding: 10px;
+    color: white;
 }
 
 .oppenheimer-new-card-fields div,
@@ -94,7 +97,7 @@ textarea {
 .oppenheimer-new-card-fields textarea {
     width: 18vw;
     padding: 10px;
-    border: 1.5px solid black;
+    border: 1.5px solid orange;
     border-radius: 5px;
     background-color: transparent;
-} */
+} 
