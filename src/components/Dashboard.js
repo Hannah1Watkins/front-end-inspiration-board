@@ -45,9 +45,6 @@ const Dashboard = (props) => {
                     </CardsList>
                 </section>
             </main>
-            <footer className="dashboard-footer">
-                <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
-            </footer> */} */}
         </div>
     )
 }
