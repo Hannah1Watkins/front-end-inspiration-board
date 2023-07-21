@@ -4,13 +4,21 @@
     flex-flow: row wrap;
     justify-content: center;
     width: auto;
+    margin-bottom: 20px;
     gap: 15px;
-    background-color: pink;
+    border-radius: 5px;
+    border-right: 4px solid #F41CA4;
+    border-left: 4px solid #F41CA4;
 }
 
-.barbie {
+.barbie,
+.oppenheimer {
     width: 8%;
     object-fit: contain;
-    border: 2px solid white;
     border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.oppenheimer {
+    filter: grayscale(1);
 }

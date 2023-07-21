@@ -1,11 +1,19 @@
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
 /* Barbie Theme */
-.barbie-show {
+/* .barbie-show {
     display: block;
 }
 
 .barbie-hide {
     display: none;
-}
+} */
 
 .barbie-new-board-fields input {
     margin: 0 auto;
@@ -30,18 +38,20 @@
     gap: 10px;
 }
 
-.barbie-board-header button {
+.toggleShow {
     position: relative;
-    top: 20px;
+    background: transparent;
     border: none;
-    border-bottom: 2px solid #00000097;
-    background-color: transparent;
-    height: fit-content;
-    color: #00000097;
-    font-weight: bold;
-    font-family: 'barbiemediumitalic';
-    font-size: 12px;
+    border-radius: 0;
+    border-bottom: 2px solid black;
+    font-size: 14px;
 }
+
+.barbie-new-board-header .toggleShow {
+    top: 25px;
+    font-family: 'barbiemediumitalic';
+}
+
 
 .barbie-new-board-header button:hover {
     border-bottom: 2px solid black;
@@ -87,14 +97,14 @@
 
 /* Oppenheimer css */
 
-.oppenheimer-show {
+/* .oppenheimer-show {
     display: block;
     background-color:#d96d2b;
 }
 
 .oppenheimer-hide {
     display: none;
-}
+} */
 
 .oppenheimer-new-board-fields input {
     margin: 0 auto;
@@ -105,7 +115,7 @@
         grid-area: bf;
         height: fit-content;
         border: 5px solid #b75f13;
-        background-color:#374a35;
+        background-color:#394335;
         margin-bottom: 10px;
         border-radius: 10px;
         border: 2px solid rgb(224, 88, 4);
@@ -122,16 +132,8 @@
     color: #000000;
 }
 
-.oppenheimer-board-header button {
-    position: relative;
-    top: 20px;
-    border: none;
-    border-bottom: 2px solid #01000097;
-    background-color: transparent;
-    height: fit-content;
-    color: #030000;
-    font-weight: bold;
-    font-size: 12px;
+.oppenheimer-new-board-header .toggleShow {
+    top: 15px;
 }
 
 .oppenheimer-new-board-header button:hover {

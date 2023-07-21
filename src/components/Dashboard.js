@@ -16,7 +16,7 @@ const Dashboard = (props) => {
             </header>
 
             <section className={`dashboard-${props.selectedTheme}-banner`}>
-                <Barbies /> 
+                <Barbies selectedTheme={props.selectedTheme}/> 
             </section>
 
             <main className={`${props.selectedTheme}-dashboard-body`}>

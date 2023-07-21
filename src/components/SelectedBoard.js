@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import './SelectedBoard.css';
 
-const SelectedBoard = ({ selectedBoard, cards, deleteCard, createCard, increaseLikedCount}) => {
+const SelectedBoard = ({ selectedBoard, cards, deleteCard, createCard, increaseLikedCount, selectedTheme}) => {
   return (
-    <div className="display-selected-board">
-        <h2>Selected Board: {selectedBoard.title}</h2>
+    <div className={`${selectedTheme}-display-selected-board`}>
+      <h2 className={`${selectedTheme}-selected-board-title`}>Selected Board: {selectedBoard.title}</h2>
     </div>
   );
 };
@@ -31,6 +31,6 @@ SelectedBoard.propTypes = {
   deleteCard: PropTypes.func.isRequired,
   createCard: PropTypes.func.isRequired,
   increaseLikedCount: PropTypes.func.isRequired,
-};
-
+  selectedTheme: PropTypes.string.isRequired,
+  };
 export default SelectedBoard;
