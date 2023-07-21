@@ -10,19 +10,19 @@ import './Dashboard.css';
 
 const Dashboard = (props) => {
     return (
-        <div className="Dashboard">
-            <header className="dashboard-header">
+        <div className={`${props.selectedTheme}-Dashboard`}>
+            <header className={`${props.selectedTheme}-dashboard-header`}>
                 <NavBar boards={props.boards} deleteBoard={props.deleteBoard} selectBoard={props.selectBoard} selectedTheme={props.selectedTheme}/>
             </header>
 
-            <section className="dashboard-barbie-banner">
+            <section className={`dashboard-${props.selectedTheme}-banner`}>
                 <Barbies /> 
             </section>
 
-            <main className="dashboard-body">
+            <main className={`${props.selectedTheme}-dashboard-body`}>
                 <aside>
                     <BoardForm createBoard={props.createBoard} selectedTheme={props.selectedTheme}></BoardForm>
-                    <CardForm createCard={props.createCard}selectedTheme={props.selectedTheme}/>
+                    <CardForm createCard={props.createCard} selectedTheme={props.selectedTheme}/>
                 </aside>
 
                 <section>
@@ -45,9 +45,6 @@ const Dashboard = (props) => {
                     </CardsList>
                 </section>
             </main>
-            {/* <footer className="dashboard-footer">
-                <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
-            </footer> */}
         </div>
     )
 }
