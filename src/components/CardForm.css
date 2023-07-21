@@ -48,6 +48,20 @@ textarea {
     background-color: transparent;
 }
 
+.barbie-new-card-form label [for='preview'] {
+    font-weight: bold;
+    color: #E10686;
+}
+
+.barbie-new-card-form label[for='message'] {
+    font-weight: bold;
+    color: #E10686
+}
+
+.barbie-new-card-form label[for='message'] {
+    font-weight: bold;
+    color: #E10686
+}
 
 
 /* -------------------- oppenheimer ---------------------*/
@@ -59,7 +73,6 @@ textarea {
 /* -------------------- oppenheimer --------------------- */
 
 .oppenheimer-new-card-form {
-    border: 3px solid orange;
     border: 3px solid rgb(244, 192, 49);
     grid-area: cf;
     margin: 0 auto;
@@ -105,15 +118,12 @@ textarea {
     background-color: transparent;
 } 
 
-label[for='preview'] {
-    color: rgb(249, 203, 21);
+.oppenheimer-new-card-form label [for='preview'] {
     font-weight: bold;
+    color: white;
 }
 
-label[for='message'] {
+.oppenheimer-new-card-form label[for='message'] {
     font-weight: bold;
-}
-
-label[for='message'] {
-    font-weight: bold;
+    color: white;
 }

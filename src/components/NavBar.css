@@ -57,7 +57,7 @@ animation: flicker 1s linear infinite;
     width: 300px;
     background-color: #F41CA4;
     color: #F7E5E5;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 5px;
     text-align: right;
 }
@@ -92,7 +92,7 @@ animation: flicker 1s linear infinite;
     width: initial;
     right: 40px;
     padding: 5px 10px;
-    border: 2px solid black;
+    border: 2px solid white;
     z-index: 3;
     background-color: #F41CA4;
     list-style-type: none; 
