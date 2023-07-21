@@ -158,6 +158,7 @@ const App = () => {
                 deleteCard={deleteCard}
                 increaseLikedCount={increaseLikedCount}
                 createBoard={createBoard}
+                selectedTheme={selectedTheme}
                 / >
               }
             <div>

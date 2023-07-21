@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 import './CardsList.css';
 
-const CardsList = ({ cards, increaseLikedCount, deleteCard }) => {
+const CardsList = ({ cards, increaseLikedCount, deleteCard, selectedTheme }) => {
     const cardComponents = cards.map( (card, index) => {
         return (
-            <div key={index} className="display-card">
+            <div key={index} className={`${selectedTheme}-display-card`}>
                 <Card
                     card_id={card.card_id}
                     message={card.message}
@@ -20,7 +20,7 @@ const CardsList = ({ cards, increaseLikedCount, deleteCard }) => {
 
 
     return (
-        <div className="display-cards-list">
+        <div className={`${selectedTheme}-display-cards-list`}>
             {cardComponents}
         </div>
     )

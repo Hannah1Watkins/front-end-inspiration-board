@@ -12,7 +12,7 @@ const Dashboard = (props) => {
     return (
         <div className="Dashboard">
             <header className="dashboard-header">
-                <NavBar boards={props.boards} deleteBoard={props.deleteBoard} selectBoard={props.selectBoard}/>
+                <NavBar boards={props.boards} deleteBoard={props.deleteBoard} selectBoard={props.selectBoard} selectedTheme={props.selectedTheme}/>
             </header>
 
             {/* Get To Know The Team Section */}
@@ -22,8 +22,8 @@ const Dashboard = (props) => {
 
             <main className="dashboard-body">
                 <aside>
-                    <BoardForm createBoard={props.createBoard}></BoardForm>
-                    <CardForm createCard={props.createCard}/>
+                    <BoardForm createBoard={props.createBoard} selectedTheme={props.selectedTheme}></BoardForm>
+                    <CardForm createCard={props.createCard}selectedTheme={props.selectedTheme}/>
                 </aside>
 
                 <section>
@@ -34,12 +34,14 @@ const Dashboard = (props) => {
                         createCard={props.createCard} 
                         deleteCard={props.deleteCard}
                         increaseLikedCount={props.increaseLikedCount}
+                        selectedTheme={props.selectedTheme}
                         />
                     }
                     <CardsList 
                         cards={props.cards} 
                         deleteCard = {props.deleteCard} 
                         increaseLikedCount={props.increaseLikedCount}
+                        selectedTheme={props.selectedTheme}
                         >
                     </CardsList>
                 </section>

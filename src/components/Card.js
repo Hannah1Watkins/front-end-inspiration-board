@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import './Card.css';
 
-const Card = ({card_id, message, liked_count, increaseLikedCount, deleteCard}) => {
+const Card = ({card_id, message, liked_count, increaseLikedCount, deleteCard, selectedTheme}) => {
     return (
-        <section className='single_card_section'>
+        <section className={`${selectedTheme}-single-card-section`}>
             <p>{message}</p>
-            <div className="card_interactions_div">
+            <div className={`${selectedTheme}-card-interactions-div`}>
                 <p>{liked_count}❤️s</p>
-                <button className='button plus_one_button' onClick = {() => increaseLikedCount(card_id)}>+1</button>
-                <button className='button delete_card_button' onClick = {() => deleteCard(card_id)}>Delete</button>
+                <button className={`${selectedTheme}-button plus-one-button`} onClick = {() => increaseLikedCount(card_id)}>+1</button>
+                <button className={`${selectedTheme}-button delete-card-button`} onClick = {() => deleteCard(card_id)}>Delete</button>
             </div>
         </section>
     )

@@ -1,7 +1,7 @@
 * {
     border-radius: 4px;
 }
-.new_card_form {
+.barbie-new-card-form {
     border: 3px solid rgb(255, 0, 174);
     grid-area: cf;
     margin: 0 auto;
@@ -9,39 +9,85 @@
     background-color: white;
 }
 
-.new_card_form h2 {
+.barbie-new-card-form h2 {
     text-align: center;
     color: rgb(235, 91, 194)
 
 }
 
-.new_card_fields {
+.barbie-new-card-fields {
     margin-bottom: 5px;
     padding: 10px;
 }
 
-.new_card_fields div,
+.barbie-new-card-fields div,
 textarea {
     padding: 10px;
 }
 
-.new_card_submit {
+.barbie-new-card-submit {
     position: relative;
     left: 35%;
     padding: 4px;
 
 }
 
-.new_card_fields div label {
+.barbie-new-card-fields div label {
     display: block;
     margin-bottom: 5px;
     font-size: 12px;
 }
 
-.new_card_fields textarea {
+.barbie-new-card-fields textarea {
     width: 18vw;
     padding: 10px;
     border: 1.5px solid black;
     border-radius: 5px;
     background-color: transparent;
 }
+
+/* -------------------- oppenheimer ---------------------
+.oppenheimer-new-card-form {
+    border: 3px solid rgb(255, 0, 174);
+    grid-area: cf;
+    margin: 0 auto;
+    height: fit-content;
+    background-color: white;
+}
+
+.oppenheimer-new-card-form h2 {
+    text-align: center;
+    color: rgb(235, 91, 194)
+
+}
+
+.oppenheimer-new-card-fields {
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.oppenheimer-new-card-fields div,
+textarea {
+    padding: 10px;
+}
+
+.oppenheimer-new-card-submit {
+    position: relative;
+    left: 35%;
+    padding: 4px;
+
+}
+
+.oppenheimer-new-card-fields div label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.oppenheimer-new-card-fields textarea {
+    width: 18vw;
+    padding: 10px;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+} */
