@@ -156,7 +156,7 @@ const App = () => {
                 / >
               }
             <div>
-          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} selectedTheme={selectedTheme}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
+          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} selectedTheme={selectedTheme}/> : <button className = "logout-btn" onClick={() => setIsLoggedIn(false)}>Logout</button> }
           { isResponseVisible &&
               <h3 className="response"> { responseMessage } </h3> }
             </div>

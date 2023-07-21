@@ -46,3 +46,10 @@ html, body {
     color: #383b3d;
 	left: 40%;
 }
+
+.logout-btn {
+    position: absolute;
+    top: 100px;
+    right: 440px;
+}
+
