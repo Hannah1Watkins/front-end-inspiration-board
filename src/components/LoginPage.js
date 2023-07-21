@@ -30,7 +30,7 @@ const LoginPage = ({verifyLogin, createUser, responseMessage, isResponseVisible,
         <div className={`${selectedTheme}-main`}>
             {userRegistered === 'login' ? 
             <div className ={`${selectedTheme}-login-container`}>
-                <h1><h1>Inspiration Board</h1></h1>
+                <h1>Inspiration Board</h1>
                 {/* <h2>Login<span className='flicker-fast'> He</span><span className='flicker-slow'>re</span></h2> */}
                 <form className={`${selectedTheme}-login-form`}onSubmit={handleSubmit}>
                     <label className='label1'>
