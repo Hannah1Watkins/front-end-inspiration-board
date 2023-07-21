@@ -6,15 +6,19 @@
     display: none;
 }
 
-
-/* Barbie Theme */
-/* .barbie-show {
-    display: block;
+.barbie-new-board-fields {
+    position: relative;
+    left: 8%;
+    font-size: 16px;
 }
 
-.barbie-hide {
-    display: none;
-} */
+.oppenheimer-new-board-fields {
+    position: relative;
+    left: 10%;
+    font-size: 16px;
+}
+
+
 
 .barbie-new-board-fields input {
     margin: 0 auto;
@@ -46,7 +50,6 @@
     border: none;
     border-radius: 0;
     border-bottom: 2px solid #E10686;
-    font-size: 14px;
     color:#E10686;
 }
 
@@ -64,7 +67,8 @@
 
 .barbie-inputs {
     width: 18vw;
-    margin-left: 55px;
+    margin-left: 10px;
+    /* margin-left: 55px; */
 }
 
 .barbie-new-board-fields {
@@ -79,7 +83,6 @@
 .barbie-new-board-fields div label {
     display: block;
     margin-top: 5px;
-    font-size: 12px;
     font-weight: bold;
     color: #E10686;
 }
@@ -96,7 +99,7 @@
 
 .barbie-new-board-submit {
     position: relative;
-    left: 20%;
+    left: 25%;
     padding: 4px;
 }
 
@@ -167,7 +170,6 @@
 .oppenheimer-new-board-fields div label {
     display: block;
     margin-top: 5px;
-    font-size: 12px;
     font-weight: bold;
     color: rgb(255, 255, 255);
 }
@@ -185,6 +187,6 @@
 
 .oppenheimer-new-board-submit {
     position: relative;
-    left: 40%;
+    left: 25%;
     padding: 4px;
 }

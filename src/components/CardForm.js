@@ -7,6 +7,8 @@ const CardForm = ({createCard, selectedTheme}) => {
         message: '',
     });
 
+    const [displayForm, setDisplayForm] = React.useState(false);
+
     const handleChange = (e) => {
         setFormFields({ ...formFields, [e.target.name] : e.target.value });
     };
@@ -31,12 +33,18 @@ const CardForm = ({createCard, selectedTheme}) => {
         );
     }, [createCard]);
 
+    const toggleShow = () => {
+        setDisplayForm(!displayForm);
+    }
 
     return (
         <form className={`${selectedTheme}-new-card-form`} onSubmit={handleSubmit}>
-            <section>
-                <h2>Create New Card</h2>
-                <div className={`${selectedTheme}-new-card-fields`}>
+                <section className={`${selectedTheme}-new-board-header`}>
+                    <h2>Create New Card</h2>
+                    <button type="button" className = "toggleShow" onClick={toggleShow}>{displayForm ? 'hide' : 'show'}</button>
+                </section>
+
+                <section className={`${selectedTheme}-new-card-fields ${displayForm ? 'show' : 'hide'}`}>
                     <div>
                         <label htmlFor="message">Message : </label>
                         <textarea 
@@ -53,8 +61,7 @@ const CardForm = ({createCard, selectedTheme}) => {
                         className={`${selectedTheme}-button new-card-submit ${selectedTheme}-glow-on-hover`}
                         type="submit" 
                         value="add_card">Create</button>
-                </div>
-            </section>
+                </section>
         </form>
     );
 };
