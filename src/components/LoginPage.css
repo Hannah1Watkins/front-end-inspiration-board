@@ -143,6 +143,13 @@ animation: flicker 1s linear infinite;
     -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
 }
+.barbie-login-container input:required {
+    color: #E10686;
+}
+
+.barbie-registration-container input:required {
+    color: #E10686;
+}
 
 
 /* buttons */
@@ -352,6 +359,11 @@ animation: flicker 1s linear infinite;
     font-size: 20px;
 }
 
+.oppenheimer-login-container input:required {
+    color: black;
+}
+
+
 /* input styling */
 .oppenheimer-login-container label {
     font-size: 20px;
@@ -375,6 +387,8 @@ animation: flicker 1s linear infinite;
     outline: 5px solid #e3592e;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
 }
+
+
 
 
 /* buttons */

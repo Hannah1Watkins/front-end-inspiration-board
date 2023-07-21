@@ -103,8 +103,7 @@
     padding: 10px;
 }
 
-.oppenheimer-new-board-form {
-    .barbie-new_board_form {
+.oppenheimer-new_board_form {
         grid-area: bf;
         height: fit-content;
         border: 5px solid #ed9a55;
@@ -113,7 +112,7 @@
         border-radius: 10px;
         border: 2px solid rgb(253, 250, 250);
     }
-}
+
 
 .oppenheimer-new-board-header {
     display: flex;
