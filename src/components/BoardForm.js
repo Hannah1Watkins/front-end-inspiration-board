@@ -33,7 +33,7 @@ const BoardForm = ({createBoard, selectedTheme}) => {
         <form className={`${selectedTheme}-new-board-form`} onSubmit={handleSubmit}>
             <section className={`${selectedTheme}-new-board-header`}>
                 <h2>Create New Board</h2>
-                <button type="button" onClick={toggleShow}>{displayForm ? 'hide' : 'show'}</button>
+                <button type="button" className = "toggleShow" onClick={toggleShow}>{displayForm ? 'hide' : 'show'}</button>
             </section>
             <section className={`${selectedTheme}-inputs ${displayForm ? 'show' : 'hide'}`}>
                 <div className={`${selectedTheme}-new-board-fields`}>
