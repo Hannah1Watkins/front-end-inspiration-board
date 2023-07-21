@@ -35,13 +35,17 @@ html, body {
     position: fixed;
     bottom: 0px;
     color: #E10686;
+	left: 40%;
 }
 
 .oppenheimer-footer {
 	position: fixed;
     bottom: 0px;
     color: #383b3d;
+	left: 40%;
 }
+
+
 	/* * {
     box-sizing: border-box;
     margin: 0;
