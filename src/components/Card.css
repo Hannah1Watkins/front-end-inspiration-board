@@ -36,7 +36,7 @@
   left: 0;
 }
 
-.barbie-card-interactions-div button {
+.barbie-card-interactions-div-button {
   background-color: #ff69b4;
   color: #ffffff;
   border: none;
@@ -47,7 +47,7 @@
 }
 
 /* -------------------------- oppenheimer --------------------- */
-/* .oppenheimer-single-card-section {
+.oppenheimer-single-card-section {
   background-color: #fa3d82c6;
   border-radius: 8px;
   width: 100px;
@@ -60,8 +60,8 @@
 
 .oppenheimer-single-card-section:hover {
   transform: scale(1.1);
-} */
-/* .oppenheimer-single-card-section p {
+} 
+ .oppenheimer-single-card-section p {
   padding-left: 1px;
   font-size: 16px;
   overflow-wrap: break-word;
@@ -91,4 +91,4 @@
   margin-left: 4px;
   margin-top: 90%;
   
-} */
+}
