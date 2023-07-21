@@ -7,6 +7,7 @@
     margin: 0 auto;
     height: fit-content;
     background-color: white;
+    color: #E10686;
 }
 
 .barbie-new-card-form h2 {
@@ -41,7 +42,7 @@ textarea {
 .barbie-new-card-fields textarea {
     width: 18vw;
     padding: 10px;
-    border: 1.5px solid black;
+    border: 1.5px solid #E10686;
     border-radius: 5px;
     background-color: transparent;
 }

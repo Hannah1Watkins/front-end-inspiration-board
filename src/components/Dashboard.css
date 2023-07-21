@@ -64,9 +64,9 @@ html {
 div.oppenheimer-Dashboard {
     display: grid;
     grid-template-areas: '. head head .'
-                         '. barbie barbie .'
-                         '. body body .'
-                         '. footer footer .';
+                            '. barbie barbie .'
+                            '. body body .'
+                            '. footer footer .';
     grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
     grid-row-gap: 5px;
     width: 80vw;
@@ -97,20 +97,5 @@ div.oppenheimer-Dashboard {
     flex: 2;
     align-items: flex-start;
     
-}
-
-
-.oppenheimer-button {
-    border: none;
-    border-radius: 5px;
-    padding: 2px 4px;
-    font-family: 'Inter', sans-serif; letter-spacing: 5px;
-    background-color: pink;
-}
-
-.oppenheimer-logout-btn {
-    position: absolute;
-    top: 50px;
-    right: 450px;
 }
 
