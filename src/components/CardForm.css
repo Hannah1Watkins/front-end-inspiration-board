@@ -104,6 +104,7 @@ textarea {
     border: 3px solid rgb(244, 192, 49);
     grid-area: cf;
     margin: 0 auto;
+    padding: 0;
     height: fit-content;
     background-color: black;
     color: rgba(255, 255, 255, 0);
