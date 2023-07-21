@@ -68,16 +68,14 @@ html, body {
 	top:5px; 
 	right:5px;
 	font-size: 10px !important;
-}
-
-.oppenheimer-button:hover {
-	background-color: black;
-	color: white;
+	font-family: 'Inter', sans-serif; letter-spacing: 5px;
+	text-transform: uppercase;
 }
 
 .theme-toggle-button {
 	position: absolute;
 	margin: 0px;
-	top: 5px;
-	left: 5px;
+	padding: 0px;
+	top: 0px;
+	left: 3px;
 }

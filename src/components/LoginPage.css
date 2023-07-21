@@ -176,6 +176,7 @@ animation: flicker 1s linear infinite;
     position: relative;
     z-index: 0;
     border-radius: 10px;
+    margin-left: 5px;
 }
 
 .barbie-glow-on-hover:before {
@@ -399,12 +400,17 @@ animation: flicker 1s linear infinite;
     color: black;
     border: none;
     border-radius: 5px;
-    padding: 2px 4px;
+    padding-left: 5px;
     margin-top: 10px !important;
+    margin-left: 5px;
     font-family: 'Inter', sans-serif; letter-spacing: 5px;
     font-style: bold !important;
     background-color: #e3592e !important;
     text-transform: uppercase;
+}
+.oppenheimer-button:hover {
+	background-color: black !important;
+	color: white;
 }
 
 .oppenheimer-glow-on-hover {
