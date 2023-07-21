@@ -1,8 +1,47 @@
 .single_card_section {
-    display: inline-block;
-    margin: 1px;
-    padding: 10px;
-    text-align: center;
-    width: fit-content;
-    border: 1px solid pink;
+  background-color: #fa3d82c6;
+  border-radius: 8px;
+  /* padding: 16px; */
+  width: 100px;
+  padding: 10px;
+  grid-column-end: 2;
+  margin: 5px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.single_card_section:hover {
+  transform: scale(1.1);
+}
+.single_card_section p {
+  padding-left: 1px;
+  font-size: 16px;
+  overflow-wrap: break-word;
+  /* color: rgb(209, 26, 26); */
+}
+
+.card_interactions_div{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.card_interactions_div p {
+  border-radius: 4px;
+  width: 45px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  display: grid;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.card_interactions_div button {
+  background-color: #ff69b4;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  margin-left: 4px;
+  margin-top: 90%;
+  
 }

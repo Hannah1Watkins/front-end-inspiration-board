@@ -5,11 +5,9 @@ body {
 .nav {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     align-items: center;
     padding: 1px 50px;
     margin-top: 10px;
-    /* background-color: #f29ad8; */
     background: rgb(17,180,255);
     background: linear-gradient(90deg, rgba(17,180,255,1) 24%, rgba(244, 246, 247, 0) 81%); 
     border-radius: 5px;
@@ -97,9 +95,7 @@ nav h4 {
     border: 2px solid black;
     z-index: 3;
     background-color: #F41CA4;
-    list-style-type: none;
-
-    
+    list-style-type: none; 
 }
 
 .dropdown_content li:hover, 

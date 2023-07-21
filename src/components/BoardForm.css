@@ -15,8 +15,8 @@
 .new_board_form {
     grid-area: bf;
     height: fit-content;
-    /* border: 1px solid red; */
-    background-color: #11B4FF;
+    border: 5px solid #30CDB1;
+    background-color:#f29ad8;
     margin-bottom: 10px;
     border-radius: 10px;
     border: 2px solid black;

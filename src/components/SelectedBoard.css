@@ -1,10 +1,25 @@
 .display-selected-board {
-    background-color: #11B4FF;
+    border: 3px solid rgb(255, 0, 174);
+    border-radius: 4px;
     grid-area: sb;
     margin-right: 2px;
     margin-bottom: 10px;
     height: fit-content;
     padding: 10px;
-    border-radius: 5px;
-    border: 2px solid black;
-}
+    text-align: center;
+    background-color: white;
+    color: rgb(235, 91, 194);
+  }
+  
+  .display-selected-board h2 {
+    animation: bounce 3s infinite; /* Apply the bounce animation to the element */
+
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0); /* Start and end position (no vertical movement) */
+    }
+    50% {
+      transform: translateY(-5px); /* Bounce up 5 pixels at 50% of the animation */
+    }
+  }
