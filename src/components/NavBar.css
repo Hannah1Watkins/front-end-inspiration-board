@@ -26,7 +26,7 @@
 .barbie-nav h1 {
     font-size: 60px;
     font-weight: bolder;
-    color: #F41CA4;
+    color: #E10686;
     width: fit-content;
     text-shadow:3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA
 }
@@ -55,7 +55,7 @@ animation: flicker 1s linear infinite;
 
 .barbie-dropdown {
     width: 300px;
-    background-color: #F41CA4;
+    background-color: #E10686;
     color: #F7E5E5;
     border: 2px solid white;
     border-radius: 5px;
@@ -94,7 +94,7 @@ animation: flicker 1s linear infinite;
     padding: 5px 10px;
     border: 2px solid white;
     z-index: 3;
-    background-color: #F41CA4;
+    background-color: #E10686;
     list-style-type: none; 
 }
 
@@ -162,6 +162,10 @@ animation: flicker 1s linear infinite;
     border-radius: 5px;
     text-align: right;
     font-weight: lighter;
+}
+
+.oppenheimer-dropdown h4 {
+    background-color: black;
 }
 
 .oppenheimer-dropdown:hover {
