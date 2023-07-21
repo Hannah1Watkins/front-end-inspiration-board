@@ -14,7 +14,9 @@ html, body {
     margin: 0px;
     padding: 0px;
     box-sizing: inherit;
-    height: 100%;
+    height: 100vh;
+	font-family: 'barbiemediumitalic';
+	overflow: hidden
 } 
 
 .oppenheimer-container {
@@ -72,10 +74,3 @@ html, body {
 	text-transform: uppercase;
 }
 
-.theme-toggle-button {
-	position: absolute;
-	margin: 0px;
-	padding: 0px;
-	top: 0px;
-	left: 3px;
-}
