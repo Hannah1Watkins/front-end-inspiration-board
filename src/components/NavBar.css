@@ -146,7 +146,7 @@ animation: flicker 1s linear infinite;
     font-weight: lighter;
     color: black;
     width: fit-content;
-    text-shadow: 2px 2px rgb(178, 99, 25);
+    text-shadow: 2px 2px #f8eed8;
 
 }
 
@@ -157,7 +157,7 @@ animation: flicker 1s linear infinite;
 .oppenheimer-dropdown {
     width: 300px;
     background-color:#4c5358;
-    color: #F7E5E5;
+    color: #f8eed8;
     border: 2px solid black;
     border-radius: 5px;
     text-align: right;
@@ -196,7 +196,7 @@ animation: flicker 1s linear infinite;
     padding: 5px 10px;
     border: 2px solid black;
     z-index: 3;
-    background-color: #F5D096;
+    background-color: #f8eed8;
     list-style-type: none; 
 }
 
