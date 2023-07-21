@@ -1,18 +1,19 @@
-.show {
+/* Barbie Theme */
+.barbie-show {
     display: block;
 }
 
-.hide {
+.barbie-hide {
     display: none;
 }
 
-.new_board_form,
-.new_board_fields input {
+.barbie-new-board-form,
+.barbie-new-board-fields input {
     margin: 0 auto;
     padding: 10px;
 }
 
-.new_board_form {
+.barbie-new-board-form {
     grid-area: bf;
     height: fit-content;
     border: 5px solid #30CDB1;
@@ -23,14 +24,14 @@
 
 }
 
-.new_board_header {
+.barbie-new-board-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 10px;
 }
 
-.new_board_header button {
+.barbie-board-header button {
     position: relative;
     top: 20px;
     border: none;
@@ -43,42 +44,133 @@
     font-size: 12px;
 }
 
-.new_board_header button:hover {
+.barbie-new-board-header button:hover {
     border-bottom: 2px solid black;
     color: black;
     cursor: pointer;
 }
 
-.inputs {
+.barbie-inputs {
     width: 18vw;
 }
 
-.new_board_fields {
+.barbie-new-board-fields {
     padding: 10px;
 }
 
-.new_board_fields div {
+.barbie-new-board-fields div {
     margin-bottom: 5px;
     padding: 10px 0;
 }
 
-.new_board_fields div label {
+.barbie-new-board-fields div label {
     display: block;
     margin-top: 5px;
     font-size: 12px;
 }
 
-.new_board_fields input {
+.barbie-new-board-fields input {
     background-color: transparent;
     width: 16vw;
     border: none;
 }
 
-.new_board_fields input:required {
+.barbie-new-board-fields input:required {
     border-bottom: 1.5px solid black;
 }
 
-.new_board_submit {
+.barbie-new-board-submit {
+    position: relative;
+    left: 40%;
+    padding: 4px;
+}
+
+
+
+/* Oppenheimer Theme */
+
+.oppenheimer-show {
+    display: block;
+}
+
+.oppenheimer-hide {
+    display: none;
+}
+
+.oppenheimer-new-board-form,
+.oppenheimer-new-board-fields input {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.oppenheimer-new-board-form {
+    .barbie-new_board_form {
+        grid-area: bf;
+        height: fit-content;
+        border: 5px solid #ed9a55;
+        background-color:#073103;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        border: 2px solid rgb(253, 250, 250);
+    }
+}
+
+.oppenheimer-new-board-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.oppenheimer-board-header button {
+    position: relative;
+    top: 20px;
+    border: none;
+    border-bottom: 2px solid #00000097;
+    background-color: transparent;
+    height: fit-content;
+    color: #00000097;
+    font-weight: bold;
+    font-family: 'barbiemediumitalic';
+    font-size: 12px;
+}
+
+.oppenheimer-new-board-header button:hover {
+    border-bottom: 2px solid black;
+    color: black;
+    cursor: pointer;
+}
+
+.oppenheimer-inputs {
+    width: 18vw;
+}
+
+.oppenheimer-new-board-fields {
+    padding: 10px;
+}
+
+.oppenheimer-new-board-fields div {
+    margin-bottom: 5px;
+    padding: 10px 0;
+}
+
+.oppenheimer-new-board-fields div label {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.oppenheimer-new-board-fields input {
+    background-color: transparent;
+    width: 16vw;
+    border: none;
+}
+
+.oppenheimer-new-board-fields input:required {
+    border-bottom: 1.5px solid black;
+}
+
+.oppenheimer-new-board-submit {
     position: relative;
     left: 40%;
     padding: 4px;

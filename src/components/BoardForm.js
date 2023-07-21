@@ -2,7 +2,7 @@ import React from 'react';
 import './BoardForm.css'
 import PropTypes from 'prop-types';
 
-const BoardForm = ({createBoard}) => {
+const BoardForm = ({createBoard, selectedTheme}) => {
 
     const [formFields, setFormFields] = React.useState({
         title: '',
@@ -30,13 +30,14 @@ const BoardForm = ({createBoard}) => {
     }
 
     return (
-        <form className="new_board_form" onSubmit={handleSubmit}>
-            <section className="new_board_header">
+        <form className={`${selectedTheme}-new_board_form`} onSubmit={handleSubmit}>
+            <section className={`${selectedTheme}-new_board_header`}>
                 <h2>Create New Board</h2>
                 <button type="button" onClick={toggleShow}>{displayForm ? 'hide' : 'show'}</button>
             </section>
-            <section className={`inputs ${displayForm ? 'show' : 'hide'}`}>
-                <div className="new_board_fields">
+            <section className={`${selectedTheme}-inputs ${displayForm ? 'show' : 'hide'}`}>
+                <div className={`${selectedTheme}-new_board_fields`}>
+
                     <div>
                         <input 
                         name="title" 
@@ -59,7 +60,7 @@ const BoardForm = ({createBoard}) => {
                         <label htmlFor="preview">Preview : </label>
                         <span>{formFields.title} - {formFields.owner}</span>
                     </div>
-                    <button className="button new_board_submit" type="submit" value="add_board">Create Board</button>
+                    <button className={`${selectedTheme}-button ${selectedTheme}-new_board_submit`} type="submit" value="add_board">Create Board</button>
                 </div>
             </section>
         </form>
