@@ -76,6 +76,8 @@
     display: block;
     margin-top: 5px;
     font-size: 12px;
+    font-weight: bold;
+    color: black;
 }
 
 .barbie-new-board-fields input {
@@ -159,6 +161,8 @@
     display: block;
     margin-top: 5px;
     font-size: 12px;
+    font-weight: bold;
+    color: black;
 }
 
 .oppenheimer-new-board-fields input {
