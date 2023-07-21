@@ -28,6 +28,8 @@ html, body {
     padding: 0px;
 	height: 100vh;
     box-sizing: inherit;
+	text-transform: uppercase;
+	font-weight: lighter;
 }
 
 

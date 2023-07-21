@@ -1,9 +1,11 @@
-div.Dashboard {
+/* BARBIE THEME */
+
+div.barbie-Dashboard {
     display: grid;
     grid-template-areas: '. head head .'
-                         '. barbie barbie .'
-                         '. body body .'
-                         '. footer footer .';
+                            '. barbie barbie .'
+                            '. body body .'
+                            '. footer footer .';
     grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
     grid-row-gap: 5px;
     height: auto;
@@ -11,10 +13,7 @@ div.Dashboard {
     
 }
 
-html {
-    background-image: none;
-}
-.dashboard-header {
+.barbie-dashboard-header {
     grid-area: head;
 }
 
@@ -24,30 +23,25 @@ html {
 
 }
 
-.dashboard-body {
+.barbie-dashboard-body {
     grid-area: body;
     display: flex;
     flex-flow: row nowrap;
 }
 
-.dashboard-body aside {
+.barbie-dashboard-body aside {
     flex: 1;
     align-items: flex-start;
     
 }
-.dashboard-body section {
+.barbie-dashboard-body section {
     flex: 2;
     align-items: flex-start;
     
 }
 
-.dashboard-footer {
-    grid-area: footer;
-    text-align: center;
 
-}
-
-button {
+.barbie-button {
     border: none;
     border-radius: 5px;
     padding: 2px 4px;
@@ -55,8 +49,68 @@ button {
     background-color: pink;
 }
 
-.logout-btn {
+.barbie-logout-btn {
     position: absolute;
     top: 50px;
     right: 450px;
 }
+
+
+
+/* OPPENHEIMER THEME */
+
+div.oppenheimer-Dashboard {
+    display: grid;
+    grid-template-areas: '. head head .'
+                            '. barbie barbie .'
+                            '. body body .'
+                            '. footer footer .';
+    grid-template-rows: 0.5fr 1fr 6fr 0.3fr;
+    grid-row-gap: 5px;
+    height: auto;
+    
+    
+}
+
+.oppenheimer-dashboard-header {
+    grid-area: head;
+}
+
+.dashboard-oppenheimer-banner {
+    grid-area: barbie;
+    border: 1px solid red;
+
+}
+
+.oppenheimer-dashboard-body {
+    grid-area: body;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.oppenheimer-dashboard-body aside {
+    flex: 1;
+    align-items: flex-start;
+    
+}
+.oppenheimer-dashboard-body section {
+    flex: 2;
+    align-items: flex-start;
+    
+}
+
+
+.oppenheimer-button {
+    border: none;
+    border-radius: 5px;
+    padding: 2px 4px;
+    font-family: 'Inter', sans-serif; letter-spacing: 5px;
+    background-color: pink;
+}
+
+.oppenheimer-logout-btn {
+    position: absolute;
+    top: 50px;
+    right: 450px;
+}
+

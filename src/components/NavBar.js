@@ -2,24 +2,24 @@ import React from 'react'
 import './NavBar.css';
 import PropTypes from 'prop-types';
 
-const NavBar = ({ boards, deleteBoard, selectBoard, handleLogout }) => {
+const NavBar = ({ boards, deleteBoard, selectBoard, selectedTheme }) => {
 
     const board_titles = boards.map((board, index) => {
         return (
-            <li key={index} className="board_title">
-                <button className="boards_list_item" onClick={() => selectBoard(board)}>{board.title}</button>
-                <button className="boards_list_item_delete" onClick={() => deleteBoard(board.board_id)}>X</button>
+            <li key={index} className={`${selectedTheme}-board-title`}>
+                <button className={`${selectedTheme}-boards-list-item`} onClick={() => selectBoard(board)}>{board.title}</button>
+                <button className={`${selectedTheme}-boards-list-item-delete`} onClick={() => deleteBoard(board.board_id)}>X</button>
             </li>
         );
     });
     
     return (
-        <nav className="nav">
-            <h1>Insp<span className='flicker-slow'>ira</span>tion <br/> <span className='flicker-fast'>Bo</span>ard</h1>
+        <nav className={`${selectedTheme}-nav`}>
+            <h1>Insp<span className={`${selectedTheme}-flicker-slow`}>ira</span>tion <br/> <span className={`${selectedTheme}-flicker-fast`}>Bo</span>ard</h1>
             {/* <button className="logout-button" onClick={handleLogout}>Logout</button> */}
-            <aside className="dropdown">
+            <aside className={`${selectedTheme}-dropdown`}>
                 <h4>All Boards</h4>
-                <ul className="dropdown_content">{board_titles}</ul>
+                <ul className={`${selectedTheme}-dropdown-content`}>{board_titles}</ul>
             </aside>
         </nav>
     );
