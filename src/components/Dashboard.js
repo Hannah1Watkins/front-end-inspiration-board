@@ -34,6 +34,7 @@ const Dashboard = (props) => {
                         createCard={props.createCard} 
                         deleteCard={props.deleteCard}
                         increaseLikedCount={props.increaseLikedCount}
+                        selectedTheme={props.selectedTheme}
                         />
                     }
                     <CardsList 
