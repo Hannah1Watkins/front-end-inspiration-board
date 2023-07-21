@@ -34,8 +34,8 @@
     height: fit-content;
     padding: 5px;
     text-align: center;
-    background-color:#394335;
-    color:  rgb(178, 99, 25);
+    background-color:#000000;
+    color:  rgb(255, 255, 255);
   }
   
   .oppenheimer-display-selected-board h2 {

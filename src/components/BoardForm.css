@@ -167,7 +167,7 @@
     margin-top: 5px;
     font-size: 12px;
     font-weight: bold;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .oppenheimer-new-board-fields input {
