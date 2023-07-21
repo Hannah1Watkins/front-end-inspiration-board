@@ -17,8 +17,8 @@ html, body {
     height: 100vh;
 } 
 
-.opp-container {
-    background: url(../public/8881280.jpg) no-repeat center center fixed;
+.oppenheimer-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url(../public/8881280.jpg) no-repeat center center fixed;
     /* background: url(../public/barbie-movie-ryan-gosling-margot-robbie-hd-wallpaper-uhdpaper.com-905@1@k.jpg) no-repeat center center fixed;  */
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -26,15 +26,19 @@ html, body {
     background-size: cover;
     margin: 0px;
     padding: 0px;
+	height: 100vh;
     box-sizing: inherit;
-    font-family: 'gotham-narrowbold', Arial, Helvetica, sans-serif;
-    font-style: bold;
-    text-transform: uppercase;
 }
 
 
-footer {
+.barbie-footer {
     position: fixed;
     bottom: 0px;
     color: #E10686;
+}
+
+.oppenheimer-footer {
+	position: fixed;
+    bottom: 0px;
+    color: #383b3d;
 }

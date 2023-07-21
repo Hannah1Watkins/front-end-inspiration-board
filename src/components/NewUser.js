@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewUser = ({togglePage, createUser}) => {
+const NewUser = ({togglePage, createUser, selectedTheme}) => {
     const [formFields, setFormFields] = React.useState({
         firstName:'',
         lastName:'',
@@ -22,39 +22,40 @@ const NewUser = ({togglePage, createUser}) => {
     };
         
     return (
-        <div className ="login-container">
-            
-            <form onSubmit={handleSubmit}>
-                <h2 className='new-user-heading'>Register</h2>
-                {/* <h2><span className='flicker-slow'>R</span>eg<span className='flicker-fast'>i</span>ster</h2> */}
-                <label>
-                    First Name: <br></br><br></br>
-                    <input name="firstName" type="text" value={formFields.firstName} onChange={handleChange} placeholder='First Name'/>
-                </label>
-                <br></br>
-                <label>
-                    Last Name:<br></br><br></br>
-                    <input name="lastName" type="text" value={formFields.lastName} placeholder='Last Name' onChange={handleChange}/>
-                </label>
-                <br></br>
-                <label>
-                    Username:<br></br><br></br>
-                    <input name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='Username'/>
-                </label>
-                <br></br>
-                <label>
-                    Password:<br></br><br></br>
-                    <input name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='Password' />
-                </label>
-                <br></br>
-                    <button type="submit" className='glow-on-hover'>Submit</button>
-                {/* <label>
-                    Profile Pic:
-                    <input name="profilePic" type="img" value={formFields.profilePic} onChange={handleChange}/>
-                </label> */}
-            </form>
-            <div className='login-help'>
-            <p>Already have an account? <button onClick={() => togglePage('login')} className='glow-on-hover'>Login</button></p>
+        <div className ={`${selectedTheme}-main`}>
+            <div className={`${selectedTheme}-login-container`}>
+                <h2 className={`${selectedTheme}-new-user-heading`}>Register</h2> 
+                <form className={`${selectedTheme}-registration-form`}onSubmit={handleSubmit}>
+                    {/* <h2><span className='flicker-slow'>R</span>eg<span className='flicker-fast'>i</span>ster</h2> */}
+                    <label className='firstName'>
+                        First Name: <br></br><br></br>
+                        <input name="firstName" type="text" value={formFields.firstName} onChange={handleChange} placeholder='First Name'/>
+                    </label>
+                    <br></br>
+                    <label className='lastName'>
+                        Last Name:<br></br><br></br>
+                        <input name="lastName" type="text" value={formFields.lastName} placeholder='Last Name' onChange={handleChange}/>
+                    </label>
+                    <br></br>
+                    <label className='username'>
+                        Username:<br></br><br></br>
+                        <input name="username" type="text" value={formFields.username} onChange={handleChange} placeholder='Username'/>
+                    </label>
+                    <br></br>
+                    <label className='password'>
+                        Password:<br></br><br></br>
+                        <input name="password" type="password" value={formFields.password} onChange={handleChange} placeholder='Password' />
+                    </label>
+                    <br></br>
+                        <button type="submit" className={`${selectedTheme}-button ${selectedTheme}-glow-on-hover submit-button`}>Submit</button>
+                    {/* <label>
+                        Profile Pic:
+                        <input name="profilePic" type="img" value={formFields.profilePic} onChange={handleChange}/>
+                    </label> */}
+                </form>
+                <div className={`${selectedTheme}-login-help registration-login-help`}>
+                <p>Already have an account? <button onClick={() => togglePage('login')} className={`${selectedTheme}-button ${selectedTheme}-glow-on-hover`}>Login</button></p>
+                </div>
             </div>
         </div>
     );

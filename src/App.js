@@ -140,12 +140,12 @@ const App = () => {
   };
 
   return (
-      <div className='barbie-container'>
+      <div className={`${selectedTheme}-container`}>
         <header>
           {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />}
         </header>
         <main>
-          {selectedTheme === 'barbie' ? <button onClick={() => setSelectedTheme('oppenheimer')}>Oppenheimer Mode</button> : <button onClick={() => setSelectedTheme('barbie')}>Barbie Mode</button>}
+          {selectedTheme === 'barbie' ? <button className='oppenheimer-button' onClick={() => setSelectedTheme('oppenheimer')}>Oppenheimer Mode</button> : <button className='barbie-button' onClick={() => setSelectedTheme('barbie')}>Barbie Mode</button>}
           
           
           {isLoggedIn === true && <Dashboard 
@@ -161,13 +161,13 @@ const App = () => {
                 / >
               }
             <div>
-          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
+          { isLoggedIn === false ? <LoginPage verifyLogin={verifyLogin} createUser={createUser} selectedTheme={selectedTheme}/> : <button onClick={() => setIsLoggedIn(false)}>Logout</button> }
           { isResponseVisible &&
               <h3 className="response"> { responseMessage } </h3> }
             </div>
         </main>
 
-      <footer className="app-footer">
+      <footer className={`${selectedTheme}-footer`}>
         <p>© 2023 Elaine, Maz, Hannah, Raina, Angela</p>
       </footer>
     </div>
