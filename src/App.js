@@ -142,7 +142,7 @@ const App = () => {
   return (
       <div className={`${selectedTheme}-container`}>
         <header>
-          {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />}
+          {/* {isLoggedIn && <NavBar boards={boards} deleteBoard={deleteBoard} selectBoard={selectBoard} />} */}
         </header>
         <main>
           {selectedTheme === 'barbie' ? <button className='oppenheimer-button' onClick={() => setSelectedTheme('oppenheimer')}>Oppenheimer Mode</button> : <button className='barbie-button' onClick={() => setSelectedTheme('barbie')}>Barbie Mode</button>}
