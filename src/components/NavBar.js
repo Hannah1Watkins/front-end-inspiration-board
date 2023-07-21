@@ -2,7 +2,7 @@ import React from 'react'
 import './NavBar.css';
 import PropTypes from 'prop-types';
 
-const NavBar = ({ boards, deleteBoard, selectBoard, selectedTheme }) => {
+const NavBar = ({ boards, deleteBoard, selectBoard, selectedTheme, handleLogout }) => {
 
     const board_titles = boards.map((board, index) => {
         return (
@@ -16,7 +16,6 @@ const NavBar = ({ boards, deleteBoard, selectBoard, selectedTheme }) => {
     return (
         <nav className={`${selectedTheme}-nav`}>
             <h1>Insp<span className={`${selectedTheme}-flicker-slow`}>ira</span>tion <br/> <span className={`${selectedTheme}-flicker-fast`}>Bo</span>ard</h1>
-            {/* <button className="logout-button" onClick={handleLogout}>Logout</button> */}
             <aside className={`${selectedTheme}-dropdown`}>
                 <h4>All Boards</h4>
                 <ul className={`${selectedTheme}-dropdown-content`}>{board_titles}</ul>
